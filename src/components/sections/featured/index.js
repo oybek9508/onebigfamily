@@ -2,7 +2,6 @@ import { Box, Grid, ImageListItemBar, Typography } from "@mui/material";
 import React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import Image from "next/image";
 import Link from "next/link";
 
 const Featured = () => {

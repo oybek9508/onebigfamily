@@ -78,7 +78,7 @@ const DrawerAppBar = (props) => {
                   },
                 }}
               >
-                One Big Family
+                Big Way Trading
               </Typography>
             </Button>
           </Box>

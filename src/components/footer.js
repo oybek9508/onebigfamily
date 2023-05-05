@@ -49,7 +49,7 @@ const Footer = ({ isFixed }) => {
             component="div"
           >
             {" "}
-            One Big Family
+            Big Way Trading
           </Typography>
           <Typography>
             Block no2/1/38, Batisehir, Bagcilar, Istanbul, Turkiye
