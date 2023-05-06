@@ -28,7 +28,11 @@ const ClothCategory = () => {
       >
         {itemData.map((item, idx) => (
           <Link
-            href={`/threads/${item.title.toLocaleLowerCase()}`}
+            href={`/cloth/${item.title
+              .toLocaleLowerCase()
+              .substring(0, item.title.indexOf(" "))}/#${item.title
+              .toLocaleLowerCase()
+              .substring(0, item.title.indexOf(" "))}`}
             key={item.img}
           >
             <ImageListItem rows={1} cols={1}>
@@ -65,6 +69,6 @@ const itemData = [
   },
   {
     img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-    title: "Rectangular",
+    title: "Rectangular ",
   },
 ];

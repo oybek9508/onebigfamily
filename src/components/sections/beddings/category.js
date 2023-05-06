@@ -28,7 +28,11 @@ const BeddingCategory = () => {
       >
         {itemData.map((item, idx) => (
           <Link
-            href={`/beddings/${item.title.toLocaleLowerCase()}`}
+            href={`/beddings/${item.title
+              .toLocaleLowerCase()
+              .substring(0, item.title.indexOf(" "))}/#${item.title
+              .toLocaleLowerCase()
+              .substring(0, item.title.indexOf(" "))}`}
             key={item.img}
           >
             <ImageListItem rows={1} cols={1}>
@@ -57,19 +61,19 @@ export default BeddingCategory;
 const itemData = [
   {
     img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-    title: "Bonitta",
+    title: "Bonitta ",
   },
   {
     img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-    title: "Bamboo",
+    title: "Bamboo ",
   },
   {
     img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-    title: "Premium",
+    title: "Premium ",
   },
   {
     img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-    title: "Exclusive",
+    title: "Exclusive ",
   },
   {
     img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
@@ -97,6 +101,6 @@ const itemData = [
   },
   {
     img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-    title: "Baby",
+    title: "Baby ",
   },
 ];

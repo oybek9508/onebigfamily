@@ -11,7 +11,10 @@ const Layout = ({ children, isFixed }) => {
       }}
     >
       <Header />
-      <>{children}</>
+      <div>
+        <div style={{ height: "60px" }} />
+        {children}
+      </div>
       <Footer />
     </div>
   );

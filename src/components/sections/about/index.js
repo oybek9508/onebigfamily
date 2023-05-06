@@ -4,6 +4,9 @@ import React from "react";
 const About = () => {
   return (
     <Grid
+      container
+      justifyContent="center"
+      alignItems="center"
       sx={{
         py: "10rem",
         px: "5rem",
@@ -11,8 +14,6 @@ const About = () => {
         position: "relative",
         backgroundPosition: "center center",
         backgroundSize: "cover",
-        // filter: "brightness(50%)",
-        // backgroundImage: `url(https://images.unsplash.com/photo-1635353059173-461b9c459f2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI5NjF8MHwxfHNlYXJjaHwyNnx8dG93ZWx8ZW58MHx8fHwxNjc3MTU0Mjgw&ixlib=rb-4.0.3&q=80&w=1080)`,
         backgroundImage: "url(assets/images/bg_images/intro.png)",
         top: 0,
       }}
@@ -21,9 +22,9 @@ const About = () => {
         <Typography
           sx={{ fontSize: "48px", fontFamily: "Rufina", fontWeight: 700 }}
         >
-          One Big Family
+          Big Way
         </Typography>
-        <Typography
+        {/* <Typography
           sx={{
             width: "770px",
             fontSize: "20px",
@@ -36,7 +37,7 @@ const About = () => {
           part of our family, with a range of beddings, kitchen linens, and
           other home décor items that come together to create a unique and
           inviting atmosphere. Make One Big Family part of your home today!
-        </Typography>
+        </Typography> */}
         {/* <Button
           sx={{
             bgcolor: "#4A7F51",

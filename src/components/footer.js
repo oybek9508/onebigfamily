@@ -81,19 +81,24 @@ const Footer = ({ isFixed }) => {
               About us
             </Button>
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.title}
+                {...(router.asPath !== "/"
+                  ? {
+                      onClick: () => router.replace(`/#${item.link}`),
+                    }
+                  : { onClick: () => router.push(`/#${item.link}`) })}
                 href={`#${item.link}`}
                 style={{ textDecoration: "none", curser: "pointer" }}
               >
                 <Button sx={{ color: "#fff", ...customStyle }}>
                   {item.title}
                 </Button>
-              </Link>
+              </a>
             ))}
           </Box>
           <Box sx={{ ml: "50px" }}>
-            <a href="mailto:oybektoshmatov95@gmail.com">
+            <a href="mailto:sales@bigwaytrading.com">
               <Button
                 sx={{ color: "#fff", bgcolor: "#4A7F51", ...customStyle }}
               >

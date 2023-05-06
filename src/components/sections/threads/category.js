@@ -28,7 +28,11 @@ const ThreadCategory = () => {
       >
         {itemData.map((item, idx) => (
           <Link
-            href={`/threads/${item.title.toLocaleLowerCase()}`}
+            href={`/threads/${item.title
+              .toLocaleLowerCase()
+              .substring(0, item.title.indexOf(" "))}/#${item.title
+              .toLocaleLowerCase()
+              .substring(0, item.title.indexOf(" "))}`}
             key={item.img}
           >
             <ImageListItem rows={1} cols={1}>
@@ -57,7 +61,7 @@ export default ThreadCategory;
 const itemData = [
   {
     img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-    title: "Combed",
+    title: "Combed ",
   },
   {
     img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",

@@ -49,10 +49,12 @@ const DrawerAppBar = (props) => {
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
+  console.log("router", router);
+
   return (
     <Box sx={{ display: "flex" }}>
       {/* <CssBaseline /> */}
-      <AppBar component="nav" position="static" sx={{ bgcolor: "#527768" }}>
+      <AppBar component="nav" position="fixed" sx={{ bgcolor: "#527768" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -96,10 +98,19 @@ const DrawerAppBar = (props) => {
               About us
             </Button>
             {navItems.map((item) => (
-              <Link
+              <a
+                {...(router.asPath !== "/"
+                  ? {
+                      onClick: () => router.replace(`/#${item.link}`),
+                    }
+                  : { onClick: () => router.push(`/#${item.link}`) })}
                 key={item.title}
                 href={`#${item.link}`}
-                style={{ textDecoration: "none", curser: "pointer" }}
+                style={{
+                  textDecoration: "none",
+                  curser: "pointer",
+                  // display: "flex",
+                }}
               >
                 <Button
                   sx={{
@@ -112,7 +123,7 @@ const DrawerAppBar = (props) => {
                 >
                   {item.title}
                 </Button>
-              </Link>
+              </a>
             ))}
           </Box>
           <Box sx={{ ml: "50px" }}>
