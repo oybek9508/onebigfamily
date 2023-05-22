@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import Layout from "@/components/layout.js";
-import { Box, Divider, Grid, Typography } from "@mui/material";
+import { Box, CardMedia, Divider, Grid, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { threadTypes } from "@/constants/threads";
@@ -39,8 +39,12 @@ const Detailed = () => {
             container
           >
             <Grid item md={4}>
-              <img
-                style={{ height: "216px", width: "200px" }}
+              <CardMedia
+                component="img"
+                sx={{
+                  height: { lg: "350px" },
+                  width: { lg: "350px" },
+                }}
                 src={data?.img}
                 alt="towel"
                 loading="lazy"

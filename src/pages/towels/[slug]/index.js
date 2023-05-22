@@ -1,5 +1,12 @@
 import Layout from "@/components/layout.js";
-import { Box, Grid, Typography, ImageList, ImageListItem } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Typography,
+  ImageList,
+  ImageListItem,
+  CardMedia,
+} from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import {
@@ -15,7 +22,7 @@ const Slug = () => {
   return (
     <Grid>
       <Layout>
-        <Box sx={{ px: "5rem", py: "2rem" }}>
+        <Box sx={{ px: "5rem", py: "4rem" }}>
           <Box id="bonitta">
             <Typography
               sx={{ fontSize: "48px", fontFamily: "Rufina", fontWeight: 700 }}
@@ -34,10 +41,14 @@ const Slug = () => {
             >
               {terryData.map((item, idx) => (
                 <Link href={`/towels/terry/${idx + 1}`} key={item.img}>
-                  <ImageListItem rows={1} cols={1}>
-                    <img
-                      style={{ height: "216px" }}
-                      src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                  <ImageListItem rows={1} cols={1} sx={{ textAlign: "center" }}>
+                    <CardMedia
+                      component="img"
+                      sx={{
+                        height: { lg: "350px" },
+                        width: { lg: "350px" },
+                      }}
+                      src={`${item.img}`}
                       srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                       alt={item.title}
                       loading="lazy"
@@ -53,7 +64,7 @@ const Slug = () => {
               ))}
             </ImageList>
           </Box>
-          <Box id="dobby">
+          <Box id="dobby" sx={{ py: "4rem" }}>
             <Typography
               sx={{ fontSize: "48px", fontFamily: "Rufina", fontWeight: 700 }}
             >
@@ -72,8 +83,12 @@ const Slug = () => {
               {dobbyData.map((item, idx) => (
                 <Link href={`/towels/dobby/${idx + 1}`} key={item.img}>
                   <ImageListItem rows={1} cols={1}>
-                    <img
-                      style={{ height: "216px" }}
+                    <CardMedia
+                      component="img"
+                      sx={{
+                        height: { lg: "350px" },
+                        width: { lg: "350px" },
+                      }}
                       src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                       srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                       alt={item.title}
@@ -90,7 +105,7 @@ const Slug = () => {
               ))}
             </ImageList>
           </Box>
-          <Box id="jacquard">
+          <Box id="jacquard" sx={{ py: "4rem" }}>
             <Typography
               sx={{ fontSize: "48px", fontFamily: "Rufina", fontWeight: 700 }}
             >
@@ -109,8 +124,12 @@ const Slug = () => {
               {data?.map((item, idx) => (
                 <Link href={`/towels/jacquard/${idx + 1}`} key={item.img}>
                   <ImageListItem rows={1} cols={1}>
-                    <img
-                      style={{ height: "216px" }}
+                    <CardMedia
+                      component="img"
+                      sx={{
+                        height: { lg: "350px" },
+                        width: { lg: "350px" },
+                      }}
                       src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                       srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                       alt={item.title}
@@ -127,7 +146,7 @@ const Slug = () => {
               ))}
             </ImageList>
           </Box>
-          <Box id="pestemal">
+          <Box id="pestemal" sx={{ py: "4rem" }}>
             <Typography
               sx={{ fontSize: "48px", fontFamily: "Rufina", fontWeight: 700 }}
             >
@@ -146,8 +165,12 @@ const Slug = () => {
               {pestemalData.map((item, idx) => (
                 <Link href={`/towels/pestemal/${idx + 1}`} key={item.img}>
                   <ImageListItem rows={1} cols={1}>
-                    <img
-                      style={{ height: "216px" }}
+                    <CardMedia
+                      component="img"
+                      sx={{
+                        height: { lg: "350px" },
+                        width: { lg: "350px" },
+                      }}
                       src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                       srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                       alt={item.title}
@@ -164,7 +187,7 @@ const Slug = () => {
               ))}
             </ImageList>
           </Box>
-          <Box id="waffle">
+          <Box id="waffle" sx={{ py: "4rem" }}>
             <Typography
               sx={{ fontSize: "48px", fontFamily: "Rufina", fontWeight: 700 }}
             >
@@ -183,8 +206,12 @@ const Slug = () => {
               {waffleData.map((item, idx) => (
                 <Link href={`/towels/waffle/${idx + 1}`} key={item.img}>
                   <ImageListItem rows={1} cols={1}>
-                    <img
-                      style={{ height: "216px" }}
+                    <CardMedia
+                      component="img"
+                      sx={{
+                        height: { lg: "350px" },
+                        width: { lg: "350px" },
+                      }}
                       src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                       srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                       alt={item.title}
@@ -201,7 +228,7 @@ const Slug = () => {
               ))}
             </ImageList>
           </Box>
-          <Box id="velour">
+          <Box id="velour" sx={{ py: "4rem" }}>
             <Typography
               sx={{ fontSize: "48px", fontFamily: "Rufina", fontWeight: 700 }}
             >
@@ -220,8 +247,12 @@ const Slug = () => {
               {velourData.map((item, idx) => (
                 <Link href={`/towels/velour/${idx + 1}`} key={item.img}>
                   <ImageListItem rows={1} cols={1}>
-                    <img
-                      style={{ height: "216px" }}
+                    <CardMedia
+                      component="img"
+                      sx={{
+                        height: { lg: "350px" },
+                        width: { lg: "350px" },
+                      }}
                       src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                       srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                       alt={item.title}

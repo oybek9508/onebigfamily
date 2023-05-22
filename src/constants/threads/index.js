@@ -36,7 +36,7 @@ export const threadTypes = [
     ],
   },
   {
-    id: "openend",
+    id: "open",
     title: "Open End",
     data: [
       {

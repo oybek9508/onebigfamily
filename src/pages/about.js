@@ -1,3 +1,4 @@
+import ImgGallery from "@/components/common/img-gallery";
 import Layout from "@/components/layout.js";
 import { Grid, Typography } from "@mui/material";
 import React from "react";
@@ -34,6 +35,7 @@ const About = () => {
           Come join the One Big Family today and see what a difference quality
           home textiles can make in your home.
         </Typography>
+        {/* <ImgGallery /> */}
       </Grid>
     </Layout>
   );

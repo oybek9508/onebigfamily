@@ -1,7 +1,7 @@
 export const terryData = [
   {
     id: "1",
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    img: "/assets/images/towels/blue1.jpg",
     title: "Terry1",
     description: "terry1",
     rating: 4.5,

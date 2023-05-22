@@ -1,4 +1,5 @@
 import {
+  CardMedia,
   Grid,
   ImageList,
   ImageListItem,
@@ -36,15 +37,24 @@ const BeddingCategory = () => {
             key={item.img}
           >
             <ImageListItem rows={1} cols={1}>
-              <img
-                style={{ height: "216px" }}
+              <CardMedia
+                component="img"
+                sx={{
+                  height: { lg: "350px" },
+                  width: { lg: "350px" },
+                }}
                 src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                 srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                 alt={item.title}
                 loading="lazy"
               />
               <Typography
-                sx={{ fontSize: "24px", fontFamily: "Rufina", mt: 2 }}
+                sx={{
+                  fontSize: "24px",
+                  fontFamily: "Rufina",
+                  mt: 2,
+                  textAlign: "center",
+                }}
               >
                 {item.title}
               </Typography>
@@ -83,24 +93,24 @@ const itemData = [
     img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
     title: "Digital Series",
   },
-  {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-    title: "Cotton Satin",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-    title: "Duet Style",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-    title: "Deluxe Ranforce",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-    title: "Always Knit Blanket",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-    title: "Baby ",
-  },
+  // {
+  //   img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
+  //   title: "Cotton Satin",
+  // },
+  // {
+  //   img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
+  //   title: "Duet Style",
+  // },
+  // {
+  //   img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
+  //   title: "Deluxe Ranforce",
+  // },
+  // {
+  //   img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
+  //   title: "Always Knit Blanket",
+  // },
+  // {
+  //   img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
+  //   title: "Baby ",
+  // },
 ];

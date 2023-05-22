@@ -1,4 +1,10 @@
-import { Grid, ImageList, ImageListItem, Typography } from "@mui/material";
+import {
+  CardMedia,
+  Grid,
+  ImageList,
+  ImageListItem,
+  Typography,
+} from "@mui/material";
 import Link from "next/link";
 import React from "react";
 
@@ -30,8 +36,12 @@ const TowelCategory = () => {
             key={item.img}
           >
             <ImageListItem rows={1} cols={1}>
-              <img
-                style={{ height: "216px" }}
+              <CardMedia
+                component="img"
+                sx={{
+                  height: { lg: "350px" },
+                  width: { lg: "350px" },
+                }}
                 src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                 srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                 alt={item.title}
@@ -39,7 +49,12 @@ const TowelCategory = () => {
               />
 
               <Typography
-                sx={{ fontSize: "24px", fontFamily: "Rufina", mt: 2 }}
+                sx={{
+                  fontSize: "24px",
+                  fontFamily: "Rufina",
+                  mt: 2,
+                  textAlign: "center",
+                }}
               >
                 {item.title}
               </Typography>

@@ -1,4 +1,5 @@
 import {
+  CardMedia,
   Grid,
   ImageList,
   ImageListItem,
@@ -36,15 +37,24 @@ const ThreadCategory = () => {
             key={item.img}
           >
             <ImageListItem rows={1} cols={1}>
-              <img
-                style={{ height: "216px" }}
+              <CardMedia
+                component="img"
+                sx={{
+                  height: { lg: "350px" },
+                  width: { lg: "350px" },
+                }}
                 src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                 srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                 alt={item.title}
                 loading="lazy"
               />
               <Typography
-                sx={{ fontSize: "24px", fontFamily: "Rufina", mt: 2 }}
+                sx={{
+                  fontSize: "24px",
+                  fontFamily: "Rufina",
+                  mt: 2,
+                  textAlign: "center",
+                }}
               >
                 {item.title}
               </Typography>
@@ -67,8 +77,8 @@ const itemData = [
     img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
     title: "Carded Ring",
   },
-  {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-    title: "Open End",
-  },
+  // {
+  //   img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
+  //   title: "Open End",
+  // },
 ];

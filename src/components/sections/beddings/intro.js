@@ -6,7 +6,7 @@ const Intro = () => {
     <Grid
       id="beddings"
       sx={{
-        py: "2rem",
+        py: "4rem",
         px: "5rem",
         width: "100vw",
         position: "relative",

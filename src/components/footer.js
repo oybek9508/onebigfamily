@@ -40,20 +40,28 @@ const Footer = ({ isFixed }) => {
             color: "#fff",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-evenly",
+            justifyContent: "space-between",
             height: "50%",
           }}
         >
-          <Typography
-            sx={{ fontSize: "24px", fontFamily: "Rufina" }}
-            component="div"
-          >
-            {" "}
-            Big Way Trading
-          </Typography>
-          <Typography>
-            Block no2/1/38, Batisehir, Bagcilar, Istanbul, Turkiye
-          </Typography>
+          <Box sx={{ display: "flex", mb: 2 }}>
+            <img
+              src="/BigWayTrading_Logo_wt.png"
+              alt="big way logo"
+              style={{ width: "40px", height: "40px", marginRight: "16px" }}
+              loading="lazy"
+            />
+            <Typography
+              sx={{ fontSize: "24px", fontFamily: "Rufina" }}
+              component="div"
+            >
+              {" "}
+              Big Way Trading
+            </Typography>
+          </Box>
+          <Typography>Aleje Jerozolimskie 214</Typography>
+          <Typography>02-486 Warszawa</Typography>
+          <Typography>Poland</Typography>
         </Box>
         <Box
           sx={{

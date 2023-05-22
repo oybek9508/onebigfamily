@@ -1,5 +1,12 @@
 import Layout from "@/components/layout.js";
-import { Box, Grid, Typography, ImageList, ImageListItem } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Typography,
+  ImageList,
+  ImageListItem,
+  CardMedia,
+} from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import { threadTypes } from "@/constants/threads";
@@ -10,7 +17,7 @@ const Slug = () => {
       <Layout>
         <Box sx={{ px: "5rem", py: "2rem" }}>
           {threadTypes.map((type) => (
-            <Box key="type" id={type.id}>
+            <Box key="type" id={type.id} sx={{ py: "4rem" }}>
               <Typography
                 sx={{ fontSize: "48px", fontFamily: "Rufina", fontWeight: 700 }}
               >
@@ -34,8 +41,12 @@ const Slug = () => {
                       key={item.img}
                     >
                       <ImageListItem rows={1} cols={1}>
-                        <img
-                          style={{ height: "216px" }}
+                        <CardMedia
+                          component="img"
+                          sx={{
+                            height: { lg: "350px" },
+                            width: { lg: "350px" },
+                          }}
                           src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                           srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                           alt={item.title}

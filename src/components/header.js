@@ -1,9 +1,8 @@
-import { useState } from "react";
+/* eslint-disable @next/next/no-img-element */
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
@@ -31,30 +30,60 @@ function a11yProps(index) {
   };
 }
 
+const customStyle = {
+  color: "#fff",
+  fontFamily: "PT_Serif",
+  textTransform: "capitalize",
+  fontSize: "20px",
+  fontWeight: 300,
+  "&:hover": {
+    textDecoration: "underline",
+  },
+};
+
 const DrawerAppBar = (props) => {
-  const { window } = props;
   const router = useRouter();
   const [activeNav, setActiveNav] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [value, setValue] = useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  const [bgColor, setBgColor] = useState("transparent");
+  const navRef = useRef();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
+  navRef.current = bgColor;
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 60;
 
-  console.log("router", router);
+      if (show) {
+        setBgColor("#527768");
+      } else {
+        setBgColor("transparent");
+      }
+    };
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <Box sx={{ display: "flex" }}>
       {/* <CssBaseline /> */}
-      <AppBar component="nav" position="fixed" sx={{ bgcolor: "#527768" }}>
+      <AppBar
+        component="nav"
+        position="fixed"
+        sx={{
+          bgcolor:
+            router.asPath === "/" || router.asPath.substring(0, 2) === "/#"
+              ? bgColor
+              : "#527768",
+          boxShadow: "none",
+        }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -67,6 +96,12 @@ const DrawerAppBar = (props) => {
           </IconButton>
           <Box sx={{ flexGrow: 1 }}>
             <Button sx={{ color: "#fff" }} onClick={() => router.push("/")}>
+              <img
+                src="/BigWayTrading_Logo_wt.png"
+                alt="big way logo"
+                style={{ width: "50px", height: "50px", marginRight: "16px" }}
+                loading="lazy"
+              />
               <Typography
                 component="div"
                 fontFamily="Rufina"
@@ -86,13 +121,7 @@ const DrawerAppBar = (props) => {
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <Button
-              sx={{
-                color: "#fff",
-                fontFamily: "PT_Serif",
-                textTransform: "capitalize",
-                fontSize: "20px",
-                fontWeight: 300,
-              }}
+              sx={{ ...customStyle }}
               onClick={() => router.push("/about")}
             >
               About us
@@ -112,35 +141,34 @@ const DrawerAppBar = (props) => {
                   // display: "flex",
                 }}
               >
-                <Button
-                  sx={{
-                    color: "#fff",
-                    fontFamily: "PT_Serif",
-                    textTransform: "capitalize",
-                    fontSize: "20px",
-                    fontWeight: 300,
-                  }}
-                >
-                  {item.title}
-                </Button>
+                <Button sx={{ ...customStyle }}>{item.title}</Button>
               </a>
             ))}
           </Box>
           <Box sx={{ ml: "50px" }}>
-            <Link href={`#contacts`}>
+            <a
+              {...(router.asPath !== "/"
+                ? {
+                    onClick: () => router.replace(`/#contacts`),
+                  }
+                : { onClick: () => router.push(`/#contacts`) })}
+              href={`#contacts`}
+            >
               <Button
                 sx={{
                   color: "#fff",
-                  bgcolor: "#4A7F51",
                   fontFamily: "PT_Serif",
                   textTransform: "capitalize",
                   fontSize: "24px",
                   fontWeight: 300,
+                  "&:hover": {
+                    textDecoration: "underline",
+                  },
                 }}
               >
                 Contact us
               </Button>
-            </Link>
+            </a>
           </Box>
         </Toolbar>
       </AppBar>
