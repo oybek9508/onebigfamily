@@ -4,10 +4,8 @@ import { useRef } from "react";
 
 const Contacts = () => {
   const form = useRef();
-
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
         "service_wrp2y8l",
@@ -19,11 +17,13 @@ const Contacts = () => {
         (result) => {
           console.log(result.text);
           console.log("message sent");
+          form.current.reset();
         },
         (error) => {
           console.log(error.text);
         }
-      );
+      )
+      .catch((err) => alert("There is something wrong the Email server"));
   };
   return (
     <Grid sx={{ py: "4rem", px: "5rem" }} id="contacts">

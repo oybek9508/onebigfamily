@@ -3,97 +3,61 @@ import Layout from "@/components/layout.js";
 import { Box, CardMedia, Divider, Grid, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import {
-  terryData,
-  dobbyData,
-  velourData,
-  data as jacquardData,
-  pestemalData,
-  waffleData,
-} from "@/constants/towels";
+import { terryTowelData } from "@/constants/towels";
+import DetailedPage from "@/components/common/DetailedPage";
 
 const Detailed = () => {
-  const [towelData, setTowelData] = useState([]);
-  const router = useRouter();
-  const { query } = router;
-  // const { id } = query;
-  // console.log("id", id);
-  console.log("router.query.id", router);
-  console.log("terryData.id", terryData);
+	let towelList = [];
+	const [towelData, setTowelData] = useState([]);
+	const router = useRouter();
+	const { query } = router;
 
-  const singleTerry = terryData.filter((data) => query.id === data.id);
-  const singleDobby = dobbyData.filter((data) => query.id === data.id);
-  const singleVelour = velourData.filter((data) => query.id === data.id);
-  const singleJacquard = jacquardData.filter((data) => query.id === data.id);
-  const singlePestemal = pestemalData.filter((data) => query.id === data.id);
-  const singleWaffle = waffleData.filter((data) => query.id === data.id);
+	const filteredTowels = (data) => {
+		return data.filter((d, i) => query.id === d.id);
+	};
 
-  useEffect(() => {
-    const data =
-      query.slug === "terry"
-        ? singleTerry
-        : query.slug === "dobby"
-        ? singleDobby
-        : query.slug === "jacquard"
-        ? singleJacquard
-        : query.slug === "pestemal"
-        ? singlePestemal
-        : query.slug === "waffle"
-        ? singleWaffle
-        : singleVelour;
-    setTowelData(data);
-  }, [query.slug]);
+	const singleTerry = filteredTowels(terryTowelData[0].terryData);
 
-  console.log("data >>>", towelData);
+	const singleDobby = filteredTowels(terryTowelData[1].dobbyData);
+	const singleVelour = filteredTowels(terryTowelData[5]?.velourData);
+	const singleJacquard = filteredTowels(terryTowelData[2]?.data);
+	const singlePestemal = filteredTowels(terryTowelData[3]?.pestemalData);
+	const singleWaffle = filteredTowels(terryTowelData[4]?.waffleData);
 
-  return (
-    <Grid>
-      <Layout isFixed>
-        {towelData.map((data) => (
-          <Grid
-            key={data.id}
-            sx={{ px: "5rem", py: "4rem", bgcolor: "#fff" }}
-            container
-          >
-            <Grid item md={4}>
-              <CardMedia
-                component="img"
-                sx={{
-                  height: { lg: "350px" },
-                  width: { lg: "350px" },
-                }}
-                src={data?.img}
-                alt="towel"
-                loading="lazy"
-                // height={216}
-                // width={216}
-              />
-            </Grid>
-            <Grid item md={8}>
-              <Typography variant="h5">Title: {data?.title}</Typography>
-              <Typography variant="caption" color="#007185" fontSize="14px">
-                Description: {data?.description}
-              </Typography>
+	useEffect(() => {
+		const data =
+			query.slug === "terry"
+				? singleTerry
+				: query.slug === "dobby"
+				? singleDobby
+				: query.slug === "jacquard"
+				? singleJacquard
+				: query.slug === "pestemal"
+				? singlePestemal
+				: query.slug === "waffle"
+				? singleWaffle
+				: singleVelour;
+		setTowelData(data);
+	}, [query.slug]);
 
-              <Typography variant="subtitle1" fontWeight="bold">
-                Rating: {data?.rating}
-              </Typography>
-              <Divider />
+	towelList = [
+		...singleTerry,
+		...singleDobby,
+		...singleJacquard,
+		...singlePestemal,
+		...singleWaffle,
+		...singleVelour,
+	];
 
-              <Typography color="#565959">Type: {data?.type}</Typography>
-              <Divider />
-              <Typography color="#565959">Color: {data?.color}</Typography>
-              <Divider />
-              <Typography fontSize="16px" fontWeight="bold">
-                About this item:
-              </Typography>
-              <Typography>{data?.about}</Typography>
-            </Grid>
-          </Grid>
-        ))}
-      </Layout>
-    </Grid>
-  );
+	console.log("towel data >>>", towelData);
+
+	return (
+		<Grid>
+			<Layout isFixed>
+				<DetailedPage data={towelData} dataList={towelList} />
+			</Layout>
+		</Grid>
+	);
 };
 
 export default Detailed;

@@ -11,6 +11,8 @@ import Partners from "@/components/sections/partners";
 import Reviews from "@/components/sections/reviews";
 import Contacts from "@/components/sections/contacts";
 
+console.log("hello from index js");
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {

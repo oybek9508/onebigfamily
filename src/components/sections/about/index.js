@@ -72,7 +72,7 @@ const About = () => {
               position: "relative",
               backgroundPosition: "center center",
               backgroundSize: "cover",
-              backgroundImage: "url(/assets/images/bg_images/intro3.jpg)",
+              backgroundImage: "url(assets/images/bg_images/intro3.jpg)",
               top: 0,
             }}
           >
