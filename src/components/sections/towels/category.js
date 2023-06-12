@@ -36,7 +36,15 @@ const TowelCategory = () => {
 							.substring(0, item.title.indexOf(" "))}`}
 						key={item.img}
 					>
-						<ImageListItem rows={1} cols={1}>
+						<ImageListItem
+							Box
+							sx={(theme) => ({
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
+								// boxShadow: theme.shadows[10],
+							})}
+						>
 							<CardMedia
 								component="img"
 								sx={{

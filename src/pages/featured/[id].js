@@ -8,7 +8,7 @@ const Detailed = () => {
 	return (
 		<Grid container sx={{ width: "100%" }}>
 			<Layout isFixed>
-				<DetailedPage dataList={featuredData} data={featuredData} />
+				{/* <DetailedPage dataList={featuredData} data={featuredData} /> */}1
 			</Layout>
 		</Grid>
 	);

@@ -16,10 +16,7 @@ const DetailedPage = ({ data: imageData, dataList, useData }) => {
 	const [hover, setHover] = useState(false);
 	const [itemColor, setItemColor] = useState("");
 	const { id } = router.query;
-	const detailedItem = imageData?.filter((item) => {
-		console.log("typeof item.id, typeof id", typeof item.id, typeof id);
-		return item.id === id;
-	});
+	const detailedItem = imageData;
 	console.log("imageData", imageData);
 	console.log("detailedItem", detailedItem);
 	console.log("dataList[parseInt(id - 1)]", [dataList[parseInt(id - 1)]]);
@@ -33,18 +30,27 @@ const DetailedPage = ({ data: imageData, dataList, useData }) => {
 						display: "flex",
 						bgcolor: "#fff",
 						width: "100vw",
+						justifyContent: "center",
+						flexDirection: { md: "column", lg: "row" },
 					}}
 				>
-					<Grid item md={6}>
+					<Grid item sm={12} md={6}>
 						<ImgGallery
 							setHover={setHover}
 							setItemColor={setItemColor}
 							itemColor={itemColor}
-							imageData={dataList}
+							dataList={detailedItem[0].images}
 						/>
 					</Grid>
-					<Grid id="myPortal" sx={{ marginLeft: "5%" }} container item md={6}>
-						<div style={{ display: hover && "none" }}>
+					<Grid
+						id="myPortal"
+						sx={{ marginLeft: "5%", width: "100%" }}
+						container
+						item
+						sm={12}
+						md={6}
+					>
+						<Box sx={{ display: hover && "none", width: "100%" }}>
 							<Typography variant="h5" sx={{ mb: 2 }}>
 								{data?.title}
 							</Typography>
@@ -132,7 +138,7 @@ const DetailedPage = ({ data: imageData, dataList, useData }) => {
 								About this item:
 							</Typography>
 							<Typography>{data?.about}</Typography>
-						</div>
+						</Box>
 					</Grid>
 				</Grid>
 			))}

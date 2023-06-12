@@ -16,19 +16,15 @@ const Detailed = () => {
 		return data.filter((d, i) => query.id === d.id);
 	};
 
-	const singleTerry = filteredTowels(terryTowelData[0].terryData);
-
-	const singleDobby = filteredTowels(terryTowelData[1].dobbyData);
-	const singleVelour = filteredTowels(terryTowelData[5]?.velourData);
-	const singleJacquard = filteredTowels(terryTowelData[2]?.data);
-	const singlePestemal = filteredTowels(terryTowelData[3]?.pestemalData);
-	const singleWaffle = filteredTowels(terryTowelData[4]?.waffleData);
+	const singleDobby = filteredTowels(terryTowelData[0].dobbyData);
+	const singleVelour = filteredTowels(terryTowelData[4]?.velourData);
+	const singleJacquard = filteredTowels(terryTowelData[1]?.data);
+	const singlePestemal = filteredTowels(terryTowelData[2]?.pestemalData);
+	const singleWaffle = filteredTowels(terryTowelData[3]?.waffleData);
 
 	useEffect(() => {
 		const data =
-			query.slug === "terry"
-				? singleTerry
-				: query.slug === "dobby"
+			query.slug === "dobby"
 				? singleDobby
 				: query.slug === "jacquard"
 				? singleJacquard
@@ -41,7 +37,6 @@ const Detailed = () => {
 	}, [query.slug]);
 
 	towelList = [
-		...singleTerry,
 		...singleDobby,
 		...singleJacquard,
 		...singlePestemal,
@@ -50,7 +45,7 @@ const Detailed = () => {
 	];
 
 	console.log("towel data >>>", towelData);
-
+	console.log("towelList", towelList);
 	return (
 		<Grid>
 			<Layout isFixed>

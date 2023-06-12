@@ -13,27 +13,12 @@ import { terryTowelData } from "@/constants/towels";
 
 console.log("terryTowelData", terryTowelData);
 
-// terryData = [{...}, {...}]
-// 0: {
-// 	img: 'sdsd',
-// 	title: 'sdfsf',
-// 	data: [
-// 		{
-// 			id: '1',
-// 			color: 'sdd',
-// 			size: 'sda',
-// 			images: []
-// 		}
-// 	]
-
-// }
-
 const Slug = () => {
 	return (
 		<Grid>
 			<Layout>
 				<Box sx={{ px: "5rem", py: "4rem" }}>
-					<Box id="bonitta">
+					{/* <Box id="bonitta">
 						<Typography
 							sx={{ fontSize: "48px", fontFamily: "Rufina", fontWeight: 700 }}
 						>
@@ -51,7 +36,13 @@ const Slug = () => {
 						>
 							{terryTowelData[0]?.terryData?.map((item, idx) => (
 								<Link href={`/towels/terry/${idx + 1}`} key={item.img}>
-									<ImageListItem rows={1} cols={1} sx={{ textAlign: "center" }}>
+									<Box
+										sx={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+										}}
+									>
 										<CardMedia
 											component="img"
 											sx={{
@@ -69,11 +60,11 @@ const Slug = () => {
 										>
 											{item.title}
 										</Typography>
-									</ImageListItem>
+									</Box>
 								</Link>
 							))}
 						</ImageList>
-					</Box>
+					</Box> */}
 					<Box id="dobby" sx={{ py: "4rem" }}>
 						<Typography
 							sx={{ fontSize: "48px", fontFamily: "Rufina", fontWeight: 700 }}
@@ -90,9 +81,15 @@ const Slug = () => {
 							gap={40}
 							cols={3}
 						>
-							{terryTowelData[1]?.dobbyData?.map((item, idx) => (
+							{terryTowelData[0]?.dobbyData?.map((item, idx) => (
 								<Link href={`/towels/dobby/${idx + 1}`} key={item.img}>
-									<ImageListItem rows={1} cols={1}>
+									<Box
+										sx={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+										}}
+									>
 										<CardMedia
 											component="img"
 											sx={{
@@ -110,7 +107,7 @@ const Slug = () => {
 										>
 											{item.title}
 										</Typography>
-									</ImageListItem>
+									</Box>
 								</Link>
 							))}
 						</ImageList>
@@ -131,9 +128,15 @@ const Slug = () => {
 							gap={40}
 							cols={3}
 						>
-							{terryTowelData[2]?.data?.map((item, idx) => (
+							{terryTowelData[1]?.data?.map((item, idx) => (
 								<Link href={`/towels/jacquard/${idx + 1}`} key={item.img}>
-									<ImageListItem rows={1} cols={1}>
+									<Box
+										sx={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+										}}
+									>
 										<CardMedia
 											component="img"
 											sx={{
@@ -151,7 +154,7 @@ const Slug = () => {
 										>
 											{item.title}
 										</Typography>
-									</ImageListItem>
+									</Box>
 								</Link>
 							))}
 						</ImageList>
@@ -172,9 +175,15 @@ const Slug = () => {
 							gap={40}
 							cols={3}
 						>
-							{terryTowelData[3]?.pestemalData?.map((item, idx) => (
+							{terryTowelData[2]?.pestemalData?.map((item, idx) => (
 								<Link href={`/towels/pestemal/${idx + 1}`} key={item.img}>
-									<ImageListItem rows={1} cols={1}>
+									<Box
+										sx={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+										}}
+									>
 										<CardMedia
 											component="img"
 											sx={{
@@ -192,7 +201,7 @@ const Slug = () => {
 										>
 											{item.title}
 										</Typography>
-									</ImageListItem>
+									</Box>
 								</Link>
 							))}
 						</ImageList>
@@ -213,9 +222,15 @@ const Slug = () => {
 							gap={40}
 							cols={3}
 						>
-							{terryTowelData[4]?.waffleData?.map((item, idx) => (
+							{terryTowelData[3]?.waffleData?.map((item, idx) => (
 								<Link href={`/towels/waffle/${idx + 1}`} key={item.img}>
-									<ImageListItem rows={1} cols={1}>
+									<Box
+										sx={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+										}}
+									>
 										<CardMedia
 											component="img"
 											sx={{
@@ -233,7 +248,7 @@ const Slug = () => {
 										>
 											{item.title}
 										</Typography>
-									</ImageListItem>
+									</Box>
 								</Link>
 							))}
 						</ImageList>
@@ -254,9 +269,15 @@ const Slug = () => {
 							gap={40}
 							cols={3}
 						>
-							{terryTowelData[5]?.velourData?.map((item, idx) => (
+							{terryTowelData[4]?.velourData?.map((item, idx) => (
 								<Link href={`/towels/velour/${idx + 1}`} key={item.img}>
-									<ImageListItem rows={1} cols={1}>
+									<Box
+										sx={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+										}}
+									>
 										<CardMedia
 											component="img"
 											sx={{
@@ -274,7 +295,7 @@ const Slug = () => {
 										>
 											{item.title}
 										</Typography>
-									</ImageListItem>
+									</Box>
 								</Link>
 							))}
 						</ImageList>
