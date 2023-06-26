@@ -7,7 +7,7 @@ const Intro = () => {
 			id="threads"
 			sx={{
 				py: "4rem",
-				px: "5rem",
+				px: { xs: "2rem", sm: "5rem" },
 				width: "100vw",
 				position: "relative",
 				backgroundPosition: "center center",
@@ -19,13 +19,16 @@ const Intro = () => {
 		>
 			<Box sx={{ color: "#fff" }}>
 				<Typography
-					sx={{ fontSize: "48px", fontFamily: "Rufina", fontWeight: 700 }}
+					sx={{
+						fontSize: { xs: "32px", sm: "48px" },
+						fontFamily: "Rufina",
+						fontWeight: 700,
+					}}
 				>
 					Threads
 				</Typography>
 				<Typography
 					sx={{
-						width: "90%",
 						fontSize: "20px",
 						fontFamily: "PT_Sarif",
 						lineHeight: "24px",

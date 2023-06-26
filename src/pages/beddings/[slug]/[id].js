@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-duplicate-props */
-import Layout from "@/components/layout.js";
+import Layout from "@/components/layout/index.js";
 import { Grid } from "@mui/material";
 
 import React, { useEffect, useState } from "react";
@@ -8,6 +8,7 @@ import { beddingTypes } from "@/constants/beddings";
 import DetailedPage from "@/components/common/DetailedPage";
 
 const Detailed = () => {
+	let beddingList = [];
 	const [beddingData, setBeddingData] = useState([]);
 	const router = useRouter();
 	const { query } = router;
@@ -42,7 +43,6 @@ const Detailed = () => {
 		...singleAlways,
 		...singleBaby,
 	];
-	console.log("dataList", dataList);
 
 	useEffect(() => {
 		const data =

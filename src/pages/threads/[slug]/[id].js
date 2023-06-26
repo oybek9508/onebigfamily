@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-duplicate-props */
-import Layout from "@/components/layout.js";
+import Layout from "@/components/layout/index.js";
 import { Box, CardMedia, Divider, Grid, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";

@@ -17,171 +17,171 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 const navItems = [
-  { title: "Towels", link: "towels" },
-  { title: "Beddings", link: "beddings" },
-  { title: "Threads", link: "threads" },
-  { title: "Table Cloth", link: "cloth" },
+	{ title: "Towels", link: "towels" },
+	{ title: "Beddings", link: "beddings" },
+	{ title: "Threads", link: "threads" },
+	{ title: "Table Cloth", link: "cloth" },
 ];
 
 function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
+	return {
+		id: `simple-tab-${index}`,
+		"aria-controls": `simple-tabpanel-${index}`,
+	};
 }
 
 const customStyle = {
-  color: "#fff",
-  fontFamily: "PT_Serif",
-  textTransform: "capitalize",
-  fontSize: "20px",
-  fontWeight: 300,
-  "&:hover": {
-    textDecoration: "underline",
-  },
+	color: "#fff",
+	fontFamily: "PT_Serif",
+	textTransform: "capitalize",
+	fontSize: "20px",
+	fontWeight: 300,
+	"&:hover": {
+		textDecoration: "underline",
+	},
 };
 
 const DrawerAppBar = (props) => {
-  const router = useRouter();
-  const [activeNav, setActiveNav] = useState("");
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [value, setValue] = useState(0);
-  const [bgColor, setBgColor] = useState("transparent");
-  const navRef = useRef();
+	const router = useRouter();
+	const [activeNav, setActiveNav] = useState("");
+	const [mobileOpen, setMobileOpen] = useState(false);
+	const [value, setValue] = useState(0);
+	const [bgColor, setBgColor] = useState("transparent");
+	const navRef = useRef();
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
+	const handleDrawerToggle = () => {
+		setMobileOpen((prevState) => !prevState);
+	};
 
-  navRef.current = bgColor;
-  useEffect(() => {
-    const handleScroll = () => {
-      const show = window.scrollY > 60;
+	navRef.current = bgColor;
+	useEffect(() => {
+		const handleScroll = () => {
+			const show = window.scrollY > 60;
 
-      if (show) {
-        setBgColor("#527768");
-      } else {
-        setBgColor("transparent");
-      }
-    };
-    document.addEventListener("scroll", handleScroll);
-    return () => {
-      document.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+			if (show) {
+				setBgColor("#527768");
+			} else {
+				setBgColor("transparent");
+			}
+		};
+		document.addEventListener("scroll", handleScroll);
+		return () => {
+			document.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
 
-  return (
-    <Box sx={{ display: "flex" }}>
-      {/* <CssBaseline /> */}
-      <AppBar
-        component="nav"
-        position="fixed"
-        sx={{
-          bgcolor:
-            router.asPath === "/" || router.asPath.substring(0, 2) === "/#"
-              ? bgColor
-              : "#527768",
-          boxShadow: "none",
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Box sx={{ flexGrow: 1 }}>
-            <Button sx={{ color: "#fff" }} onClick={() => router.push("/")}>
-              <img
-                src="/BigWayTrading_Logo_wt.png"
-                alt="big way logo"
-                style={{ width: "50px", height: "50px", marginRight: "16px" }}
-                loading="lazy"
-              />
-              <Typography
-                component="div"
-                fontFamily="Rufina"
-                sx={{
-                  display: {
-                    fontSize: "24px",
-                    xs: "none",
-                    sm: "block",
-                    cursor: "pointer",
-                    textTransform: "capitalize",
-                  },
-                }}
-              >
-                Big Way Trading
-              </Typography>
-            </Button>
-          </Box>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            <Button
-              sx={{ ...customStyle }}
-              onClick={() => router.push("/about")}
-            >
-              About us
-            </Button>
-            {navItems.map((item) => (
-              <a
-                {...(router.asPath !== "/"
-                  ? {
-                      onClick: () => router.replace(`/#${item.link}`),
-                    }
-                  : { onClick: () => router.push(`/#${item.link}`) })}
-                key={item.title}
-                href={`#${item.link}`}
-                style={{
-                  textDecoration: "none",
-                  curser: "pointer",
-                  // display: "flex",
-                }}
-              >
-                <Button sx={{ ...customStyle }}>{item.title}</Button>
-              </a>
-            ))}
-          </Box>
-          <Box sx={{ ml: "50px" }}>
-            <a
-              {...(router.asPath !== "/"
-                ? {
-                    onClick: () => router.replace(`/#contacts`),
-                  }
-                : { onClick: () => router.push(`/#contacts`) })}
-              href={`#contacts`}
-            >
-              <Button
-                sx={{
-                  color: "#fff",
-                  fontFamily: "PT_Serif",
-                  textTransform: "capitalize",
-                  fontSize: "24px",
-                  fontWeight: 300,
-                  "&:hover": {
-                    textDecoration: "underline",
-                  },
-                }}
-              >
-                Contact us
-              </Button>
-            </a>
-          </Box>
-        </Toolbar>
-      </AppBar>
-    </Box>
-  );
+	return (
+		<Box sx={{ display: "flex" }}>
+			{/* <CssBaseline /> */}
+			<AppBar
+				component="nav"
+				position="fixed"
+				sx={{
+					bgcolor:
+						router.asPath === "/" || router.asPath.substring(0, 2) === "/#"
+							? bgColor
+							: "#527768",
+					boxShadow: "none",
+				}}
+			>
+				<Toolbar>
+					<IconButton
+						color="inherit"
+						aria-label="open drawer"
+						edge="start"
+						onClick={handleDrawerToggle}
+						sx={{ mr: 2, display: { sm: "none" } }}
+					>
+						<MenuIcon />
+					</IconButton>
+					<Box sx={{ flexGrow: 1 }}>
+						<Button sx={{ color: "#fff" }} onClick={() => router.push("/")}>
+							<img
+								src="/BigWayTrading_Logo_wt.png"
+								alt="big way logo"
+								style={{ width: "50px", height: "50px", marginRight: "16px" }}
+								loading="lazy"
+							/>
+							<Typography
+								component="div"
+								fontFamily="Rufina"
+								sx={{
+									display: {
+										fontSize: "24px",
+										xs: "none",
+										sm: "block",
+										cursor: "pointer",
+										textTransform: "capitalize",
+									},
+								}}
+							>
+								Big Way Trading
+							</Typography>
+						</Button>
+					</Box>
+					<Box sx={{ display: { xs: "none", sm: "block" } }}>
+						<Button
+							sx={{ ...customStyle }}
+							onClick={() => router.push("/about")}
+						>
+							About us
+						</Button>
+						{navItems.map((item) => (
+							<a
+								{...(router.asPath !== "/"
+									? {
+											onClick: () => router.replace(`/#${item.link}`),
+									  }
+									: { onClick: () => router.push(`/#${item.link}`) })}
+								key={item.title}
+								href={`#${item.link}`}
+								style={{
+									textDecoration: "none",
+									curser: "pointer",
+									// display: "flex",
+								}}
+							>
+								<Button sx={{ ...customStyle }}>{item.title}</Button>
+							</a>
+						))}
+					</Box>
+					<Box sx={{ ml: "50px" }}>
+						<a
+							{...(router.asPath !== "/"
+								? {
+										onClick: () => router.replace(`/#contacts`),
+								  }
+								: { onClick: () => router.push(`/#contacts`) })}
+							href={`#contacts`}
+						>
+							<Button
+								sx={{
+									color: "#fff",
+									fontFamily: "PT_Serif",
+									textTransform: "capitalize",
+									fontSize: "24px",
+									fontWeight: 300,
+									"&:hover": {
+										textDecoration: "underline",
+									},
+								}}
+							>
+								Contact us
+							</Button>
+						</a>
+					</Box>
+				</Toolbar>
+			</AppBar>
+		</Box>
+	);
 };
 
 DrawerAppBar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
+	/**
+	 * Injected by the documentation to work in an iframe.
+	 * You won't need it on your project.
+	 */
+	window: PropTypes.func,
 };
 
 export default DrawerAppBar;

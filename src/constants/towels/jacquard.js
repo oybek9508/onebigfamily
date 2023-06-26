@@ -1,4 +1,5 @@
 const arr4 = [1, 2, 3, 4];
+const arr8 = [1, 2, 3, 4, 5, 6, 7, 8];
 const arr9 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const imageArrays = (arr, imgNo) => {
@@ -13,7 +14,7 @@ const imageArrays = (arr, imgNo) => {
 	});
 };
 
-const images1 = imageArrays(arr4, 1);
+const images1 = imageArrays(arr8, 1);
 const images2 = imageArrays(arr4, 2);
 const images3 = imageArrays(arr4, 3);
 const images4 = imageArrays(arr9, 4);

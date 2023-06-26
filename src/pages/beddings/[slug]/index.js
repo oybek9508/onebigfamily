@@ -1,4 +1,4 @@
-import Layout from "@/components/layout.js";
+import Layout from "@/components/layout/index.js";
 import {
 	Box,
 	Grid,
@@ -12,22 +12,6 @@ import React from "react";
 import { beddingTypes } from "@/constants/beddings";
 
 console.log("beddingTypes", beddingTypes);
-
-// baddingTypes =  [{...}, {...}]
-// 0: {
-//   id
-// :
-// "bonitta"
-// title
-// :
-// "Bonitta",
-// data: [
-//   id: '1',
-//   url: 'dasdf',
-//   img: 'asdfas',
-//   images: asdfas
-// ]
-// }
 
 const Slug = () => {
 	return (

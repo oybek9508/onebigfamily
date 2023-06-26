@@ -1,4 +1,7 @@
 import ImgGallery from "@/components/common/img-gallery";
+import { dobbyAboutItem } from "@/constants/towels/text/dobby";
+import { pestemalAboutItem } from "@/constants/towels/text/pestemal";
+import { waffleAboutItem } from "@/constants/towels/text/waffle";
 import { Box, CardMedia, Divider, Grid, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -11,15 +14,12 @@ const customSizeStyles = {
 };
 
 const DetailedPage = ({ data: imageData, dataList, useData }) => {
-	console.log("imageData", imageData);
 	const router = useRouter();
 	const [hover, setHover] = useState(false);
 	const [itemColor, setItemColor] = useState("");
-	const { id } = router.query;
+	console.log("router.query", router.query);
+	const { slug } = router.query;
 	const detailedItem = imageData;
-	console.log("imageData", imageData);
-	console.log("detailedItem", detailedItem);
-	console.log("dataList[parseInt(id - 1)]", [dataList[parseInt(id - 1)]]);
 	return (
 		<div>
 			{detailedItem?.map((data) => (
@@ -51,93 +51,101 @@ const DetailedPage = ({ data: imageData, dataList, useData }) => {
 						md={6}
 					>
 						<Box sx={{ display: hover && "none", width: "100%" }}>
-							<Typography variant="h5" sx={{ mb: 2 }}>
+							<Typography
+								variant="h5"
+								color="#323643"
+								sx={{ mb: 2, fontWeight: 700 }}
+							>
 								{data?.title}
 							</Typography>
-
+							<Divider sx={{ my: 2 }} />
 							<Box sx={{ display: "flex", alignItems: "center", my: 2 }}>
 								<Typography
 									variant="subtitle1"
 									fontWeight="bold"
-									sx={{ mr: 2 }}
+									color="#565959"
+									sx={{ width: "110px" }}
 								>
-									Size:
+									Possible Sizes:
 								</Typography>
-								{data?.size?.map((s) => (
+								{data?.size?.map((s, idx) => (
 									<Box
-										key={s}
-										sx={{
+										key={idx}
+										sx={(theme) => ({
 											...customSizeStyles,
-										}}
+											border: "none",
+											boxShadow: theme.shadows[1],
+										})}
 									>
 										{s}
 									</Box>
 								))}
 							</Box>
 							<Divider sx={{ mb: 2 }} />
-
-							<Typography color="#565959">Type: {data?.type}</Typography>
-							<Divider sx={{ my: 2 }} />
-							<Typography color="#565959" sx={{ textTransform: "capitalize" }}>
-								Color: {itemColor.replace("_", " ")}
-							</Typography>
-							<Divider sx={{ my: 2 }} />
-							<Box sx={{ display: "flex", mb: 2 }}>
-								{detailedItem[0]?.images?.blue && (
-									<CardMedia
-										itemColor="blue"
-										onClick={() => setItemColor("blue")}
-										component="img"
-										alt="blue towel"
-										src={detailedItem[0].images?.blue[0]?.original}
-										sx={{ width: "70px", height: "70px", mr: 2 }}
-									/>
-								)}
-								{detailedItem[0]?.images?.white && (
-									<CardMedia
-										itemColor="white"
-										onClick={() => setItemColor("white")}
-										component="img"
-										alt="white towel"
-										src={detailedItem[0].images?.white[0]?.original}
-										sx={{ width: "70px", height: "70px", mr: 2 }}
-									/>
-								)}
-								{detailedItem[0]?.images?.purple && (
-									<CardMedia
-										itemColor="purple"
-										onClick={() => setItemColor("purple")}
-										component="img"
-										alt="purple towel"
-										src={detailedItem[0].images?.purple[0]?.original}
-										sx={{ width: "70px", height: "70px", mr: 2 }}
-									/>
-								)}
-								{detailedItem[0]?.images?.dark_grey && (
-									<CardMedia
-										itemColor="dark_grey"
-										onClick={() => setItemColor("dark_grey")}
-										component="img"
-										alt="dark grey towel"
-										src={detailedItem[0].images?.dark_grey[0]?.original}
-										sx={{ width: "70px", height: "70px", mr: 2 }}
-									/>
-								)}
-								{detailedItem[0]?.images?.light_grey && (
-									<CardMedia
-										itemColor="light_grey"
-										onClick={() => setItemColor("light_grey")}
-										component="img"
-										alt="white towel"
-										src={detailedItem[0].images?.light_grey[0]?.original}
-										sx={{ width: "70px", height: "70px", mr: 2 }}
-									/>
-								)}
+							<Box sx={{ display: "flex", alignItems: "center" }}>
+								<Typography
+									color="#565959"
+									fontWeight="bold"
+									sx={{ width: "110px" }}
+								>
+									Type:
+								</Typography>
+								<Box>{data?.type}</Box>
 							</Box>
+							<Divider sx={{ my: 2 }} />
+							<Box sx={{ display: "flex", alignItems: "center" }}>
+								<Typography
+									fontWeight="bold"
+									color="#565959"
+									sx={{ textTransform: "capitalize", width: "110px" }}
+								>
+									Color Samples:
+								</Typography>
+								<Box
+									sx={{
+										mt: 2,
+										display: "flex",
+									}}
+								>
+									{data?.color?.map((s, idx) => (
+										<Box
+											key={idx}
+											sx={{
+												...customSizeStyles,
+												border: "none",
+												display: "flex",
+												flexDirection: "column",
+												justifyContent: "center",
+												alignItems: "center",
+												mr: 0,
+											}}
+										>
+											<Box
+												sx={(theme) => ({
+													width: "25px",
+													height: "25px",
+													borderRadius: "50%",
+													bgcolor: s.color,
+													mb: 1,
+													boxShadow: theme.shadows[10],
+												})}
+											/>
+											{s.name}
+										</Box>
+									))}
+								</Box>
+							</Box>
+							<Divider sx={{ my: 2 }} />
 							<Typography fontSize="16px" fontWeight="bold">
 								About this item:
 							</Typography>
-							<Typography>{data?.about}</Typography>
+							<Box>
+								{slug === "dobby" || slug === "jacquard" || slug === "velour"
+									? dobbyAboutItem
+									: slug === "pestemal"
+									? pestemalAboutItem
+									: slug === "waffle" && waffleAboutItem}
+							</Box>
 						</Box>
 					</Grid>
 				</Grid>

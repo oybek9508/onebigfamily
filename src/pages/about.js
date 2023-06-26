@@ -1,5 +1,5 @@
 import ImgGallery from "@/components/common/img-gallery";
-import Layout from "@/components/layout.js";
+import Layout from "@/components/layout/index.js";
 import { paragraph } from "@/constants/about";
 import { Grid, Typography } from "@mui/material";
 import React from "react";
@@ -7,7 +7,13 @@ import React from "react";
 const About = () => {
 	return (
 		<Layout isFixed={true}>
-			<Grid p="80px" sx={{ bgcolor: "#FFFFFF", height: "100%" }}>
+			<Grid
+				sx={{
+					bgcolor: "#FFFFFF",
+					height: "100%",
+					p: { xs: "3rem", sm: "5rem" },
+				}}
+			>
 				<Typography
 					sx={{
 						my: 4,

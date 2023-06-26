@@ -1,7 +1,7 @@
 import React from "react";
 import { featuredData } from "@/constants/featured";
 import { Grid } from "@mui/material";
-import Layout from "@/components/layout.js";
+import Layout from "@/components/layout/index.js";
 import DetailedPage from "@/components/common/DetailedPage";
 
 const Detailed = () => {

@@ -1,3 +1,4 @@
+import { itemData } from "@/constants/threads";
 import {
 	CardMedia,
 	Grid,
@@ -67,18 +68,3 @@ const ThreadCategory = () => {
 };
 
 export default ThreadCategory;
-
-const itemData = [
-	{
-		img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-		title: "Combed ",
-	},
-	{
-		img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-		title: "Carded Ring",
-	},
-	// {
-	//   img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-	//   title: "Open End",
-	// },
-];

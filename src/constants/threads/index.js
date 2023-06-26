@@ -1,4 +1,16 @@
 import { images } from "../towelImages";
+import { combedImages } from "./combed";
+
+export const itemData = [
+	{
+		img: combedImages.images1[0].original,
+		title: "Combed ",
+	},
+	{
+		img: combedImages.images1[0].original,
+		title: "Carded Ring",
+	},
+];
 
 export const threadTypes = [
 	{
@@ -8,9 +20,9 @@ export const threadTypes = [
 			{
 				id: "1",
 				url: "/combed",
-				img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+				img: combedImages.images1[0].original,
 				title: "combed1",
-				images,
+				images: combedImages.images1,
 			},
 		],
 	},
@@ -21,9 +33,9 @@ export const threadTypes = [
 			{
 				id: "1",
 				url: "/carded",
-				img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+				img: combedImages.images1[0].original,
 				title: "carded1",
-				images,
+				images: combedImages.images1,
 			},
 		],
 	},

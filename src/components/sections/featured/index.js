@@ -1,67 +1,62 @@
 import { Box, CardMedia, Grid, Typography } from "@mui/material";
 import React, { useRef } from "react";
 import Link from "next/link";
-import { featuredData } from "@/constants/featured";
+import { featuredData, featuredLinks } from "@/constants/featured";
 
 const Featured = () => {
 	const imgRef = useRef();
 	return (
 		<Grid
 			sx={{
-				px: "5rem",
-				py: "80px",
+				px: { xs: "2rem", md: "5rem" },
+				py: { xs: "40px", md: "80px" },
 			}}
 		>
 			<Box>
 				<Typography
-					sx={{ fontSize: "48px", fontWeight: 600, fontFamily: "Rufina" }}
+					sx={{
+						fontSize: { xs: "32px", md: "48px" },
+						fontWeight: 600,
+						fontFamily: "Rufina",
+					}}
 				>
 					Featured Products
 				</Typography>
 				<Grid
+					container
 					sx={{
-						// width: "100%",
-						// height: "100%",
 						mt: "40px",
 						mb: "40px",
 						display: "flex",
 						flexWrap: "wrap",
-						justifyContent: "space-between",
+						justifyContent: { xs: "center", sm: "space-between" },
 					}}
 					// gap={40}
 					// cols={3}
 				>
-					{featuredData.map((item, idx) => (
-						<Link
-							href={`/featured/${idx + 1}`}
-							key={item.img}
-							style={{
-								height: { md: "300px" },
-								width: { md: "300px" },
-								flexBasis: "30.333333%",
+					{featuredLinks.map((item, idx) => (
+						<Grid
+							item
+							xs={12}
+							sm={5}
+							md={3}
+							key={item.url}
+							sx={{
 								margin: 1,
 							}}
 						>
-							<Box
-							// rows={1}
-							// cols={1}
-							// sx={{
-							//   height: { md: "300px" },
-							//   width: { md: "300px" },
-							//   flexBasis: "33.333333%",
-							// }}
-							>
+							<Link href={item.url}>
 								<CardMedia
 									component="img"
 									ref={imgRef}
-									src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+									src={`${item.src}`}
 									// srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
 									alt={item.title}
 									loading="lazy"
 								/>
 								<Typography
 									sx={{
-										fontSize: "24px",
+										fontSize: { xs: "20px", sm: "24px" },
 										fontFamily: "Rufina",
 										mt: 2,
 										textAlign: "center",
@@ -69,8 +64,8 @@ const Featured = () => {
 								>
 									{item.title}
 								</Typography>
-							</Box>
-						</Link>
+							</Link>
+						</Grid>
 					))}
 				</Grid>
 			</Box>

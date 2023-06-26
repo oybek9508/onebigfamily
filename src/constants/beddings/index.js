@@ -1,28 +1,29 @@
 import { images } from "../towelImages";
+import { beddingImages } from "./bonitta";
 
 export const beddignsData = [
 	{
-		img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+		img: beddingImages.images1[0].original,
 		title: "Bonitta ",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+		img: beddingImages.images1[0].original,
 		title: "Bamboo ",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
+		img: beddingImages.images1[0].original,
 		title: "Premium ",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
+		img: beddingImages.images1[0].original,
 		title: "Exclusive ",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
+		img: beddingImages.images1[0].original,
 		title: "Jacquard Satin",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
+		img: beddingImages.images1[0].original,
 		title: "Digital Series",
 	},
 ];
@@ -36,16 +37,16 @@ export const beddingTypes = [
 			{
 				id: "1",
 				url: "/bonitta",
-				img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+				img: beddingImages.images1[0].original,
 				title: "bonnita1",
-				images,
+				images: beddingImages.images1,
 			},
 			{
 				id: "2",
 				url: "/bonitta",
-				img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+				img: beddingImages.images1[0].original,
 				title: "bonnita2",
-				images,
+				images: beddingImages.images1,
 			},
 		],
 	},
@@ -57,9 +58,9 @@ export const beddingTypes = [
 			{
 				id: "1",
 				url: "/bamboo",
-				img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+				img: beddingImages.images1[0].original,
 				title: "bamboo1",
-				images,
+				images: beddingImages.images1,
 			},
 		],
 	},
@@ -71,9 +72,9 @@ export const beddingTypes = [
 			{
 				id: "1",
 				url: "/premium",
-				img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+				img: beddingImages.images1[0].original,
 				title: "premium1",
-				images,
+				images: beddingImages.images1,
 			},
 		],
 	},
@@ -85,9 +86,9 @@ export const beddingTypes = [
 			{
 				id: "1",
 				url: "/exclusive",
-				img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+				img: beddingImages.images1[0].original,
 				title: "exclusive1",
-				images,
+				images: beddingImages.images1,
 			},
 		],
 	},
@@ -99,9 +100,9 @@ export const beddingTypes = [
 			{
 				id: "1",
 				url: "/jacquard",
-				img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+				img: beddingImages.images1[0].original,
 				title: "jacquard1",
-				images,
+				images: beddingImages.images1,
 			},
 		],
 	},
@@ -113,9 +114,9 @@ export const beddingTypes = [
 			{
 				id: "1",
 				url: "/digital",
-				img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+				img: beddingImages.images1[0].original,
 				title: "digital1",
-				images,
+				images: beddingImages.images1,
 			},
 		],
 	},
@@ -127,9 +128,9 @@ export const beddingTypes = [
 			{
 				id: "1",
 				url: "/cotton",
-				img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+				img: beddingImages.images1[0].original,
 				title: "cotton1",
-				images,
+				images: beddingImages.images1,
 			},
 		],
 	},
@@ -141,9 +142,9 @@ export const beddingTypes = [
 			{
 				id: "1",
 				url: "/duet",
-				img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+				img: beddingImages.images1[0].original,
 				title: "duat style 1",
-				images,
+				images: beddingImages.images1,
 			},
 		],
 	},
@@ -155,9 +156,9 @@ export const beddingTypes = [
 			{
 				id: "1",
 				url: "/deluxe",
-				img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+				img: beddingImages.images1[0].original,
 				title: "deluxe1",
-				images,
+				images: beddingImages.images1,
 			},
 		],
 	},
@@ -169,9 +170,9 @@ export const beddingTypes = [
 			{
 				id: "1",
 				url: "/always",
-				img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+				img: beddingImages.images1[0].original,
 				title: "always1",
-				images,
+				images: beddingImages.images1,
 			},
 		],
 	},
@@ -183,9 +184,9 @@ export const beddingTypes = [
 			{
 				id: "1",
 				url: "/baby",
-				img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+				img: beddingImages.images1[0].original,
 				title: "baby1",
-				images,
+				images: beddingImages.images1,
 			},
 		],
 	},
