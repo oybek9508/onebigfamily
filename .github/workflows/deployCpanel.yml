@@ -16,4 +16,4 @@ jobs:
         with:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /production.cipher.co.tz/
+          server: ${{ secrets.FTP_SERVER }}
