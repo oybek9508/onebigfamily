@@ -119,7 +119,7 @@ export const featuredLinks = [
 		title: "Waffle  № 1",
 	},
 	{
-		src: "/assets/images/towels/velour/images1/img1.JPG",
+		src: "/assets/images/towels/velour/images1/img1.jpg",
 		url: "/towels/velour/1",
 		title: `Velour "Alaska"`,
 	},
