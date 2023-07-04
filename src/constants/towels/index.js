@@ -260,12 +260,12 @@ export const terryTowelData = [
 		],
 	},
 	{
-		img: "/assets/images/towels/velour/images1/img1.JPG",
+		img: velourImages.images1[0].original,
 		title: "Velour Towels",
 		velourData: [
 			{
 				id: "1",
-				img: "/assets/images/towels/velour/images1/img1.JPG",
+				img: velourImages.images1[0].original,
 				title: "Alaska",
 				size: dobbySize,
 				type,
@@ -274,7 +274,7 @@ export const terryTowelData = [
 			},
 			{
 				id: "2",
-				img: "/assets/images/towels/velour/images2/img1.JPG",
+				img: velourImages.images2[0].original,
 				title: "Prince",
 				size: dobbySize,
 				type,
@@ -283,7 +283,7 @@ export const terryTowelData = [
 			},
 			{
 				id: "3",
-				img: "/assets/images/towels/velour/images3/img1.JPG",
+				img: velourImages.images3[0].original,
 				title: "Bonjour",
 				size: dobbySize,
 				type,
