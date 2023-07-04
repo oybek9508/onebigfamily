@@ -16,7 +16,7 @@ const Detailed = () => {
 		return data.filter((d, i) => query.id === d.id);
 	};
 
-	const singleDobby = filteredTowels(terryTowelData[0].dobbyData);
+	const singleDobby = filteredTowels(terryTowelData[0]?.dobbyData);
 	const singleVelour = filteredTowels(terryTowelData[4]?.velourData);
 	const singleJacquard = filteredTowels(terryTowelData[1]?.data);
 	const singlePestemal = filteredTowels(terryTowelData[2]?.pestemalData);
@@ -44,6 +44,7 @@ const Detailed = () => {
 		...singleVelour,
 	];
 
+	console.log(" towelData", towelData);
 	return (
 		<Grid>
 			<Layout isFixed>
