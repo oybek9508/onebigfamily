@@ -38,8 +38,8 @@ export default function Home() {
 					<Featured />
 					<Towels />
 					<Beddings />
-					<Threads />
-					<Cloth />
+					{/* <Threads />
+					<Cloth /> */}
 					<Partners />
 					<Reviews />
 					<Contacts />

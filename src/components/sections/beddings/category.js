@@ -1,12 +1,5 @@
 import { beddignsData } from "@/constants/beddings";
-import {
-	CardMedia,
-	Grid,
-	ImageList,
-	ImageListItem,
-	ImageListItemBar,
-	Typography,
-} from "@mui/material";
+import { CardMedia, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 
@@ -14,44 +7,53 @@ const BeddingCategory = () => {
 	return (
 		<Grid
 			sx={{
-				px: "5rem",
-				py: "80px",
+				px: { xs: "2rem", md: "5rem" },
+				pt: { xs: "40px", md: "80px" },
 			}}
 		>
-			<ImageList
+			<Grid
+				container
 				sx={{
-					width: "100%",
-					height: "100%",
 					mt: "40px",
 					mb: "40px",
+					display: "flex",
+					flexWrap: "wrap",
+					justifyContent: { xs: "center", sm: "space-between" },
 				}}
-				gap={40}
-				cols={3}
 			>
 				{beddignsData.map((item, idx) => (
-					<Link
-						href={`/beddings/${item.title
-							.toLocaleLowerCase()
-							.substring(0, item.title.indexOf(" "))}/#${item.title
-							.toLocaleLowerCase()
-							.substring(0, item.title.indexOf(" "))}`}
-						key={item.img}
+					<Grid
+						item
+						xs={12}
+						sm={5}
+						md={3}
+						key={item.url}
+						sx={{
+							margin: 1,
+						}}
 					>
-						<ImageListItem rows={1} cols={1}>
+						<Link
+							href={`/beddings/${item.title
+								.toLocaleLowerCase()
+								.substring(0, item.title.indexOf(" "))}/#${item.title
+								.toLocaleLowerCase()
+								.substring(0, item.title.indexOf(" "))}`}
+							key={item.img}
+						>
 							<CardMedia
 								component="img"
 								sx={{
-									height: { lg: "350px" },
-									width: { lg: "350px" },
+									height: "50%",
+									width: "90%",
 								}}
-								src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-								srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+								src={`${item.img}`}
+								// srcSet={`${item.img}`}
 								alt={item.title}
 								loading="lazy"
 							/>
 							<Typography
 								sx={{
-									fontSize: "24px",
+									fontSize: { xs: "20px", sm: "24px" },
 									fontFamily: "Rufina",
 									mt: 2,
 									textAlign: "center",
@@ -59,10 +61,10 @@ const BeddingCategory = () => {
 							>
 								{item.title}
 							</Typography>
-						</ImageListItem>
-					</Link>
+						</Link>
+					</Grid>
 				))}
-			</ImageList>
+			</Grid>
 		</Grid>
 	);
 };

@@ -48,13 +48,13 @@ const Contacts = () => {
 									mb: 4,
 								}}
 							>
-								Get In Touch With One Big Family
+								Get In Touch With Big Way Trading
 							</Typography>
 							<Typography
 								sx={{ mt: 2, fontFamily: "PT_Serif", fontSize: "14px" }}
 							>
 								We&apos;re here to help. Fill out the form below and a member of
-								the One Big Family team will get back to you as soon as
+								the Big Way Trading team will get back to you as soon as
 								possible.
 							</Typography>
 						</Box>

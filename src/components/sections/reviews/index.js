@@ -30,10 +30,10 @@ const Reviews = () => {
 						textAlign: { xs: "left", md: "right" },
 					}}
 				>
-					One Big Family is a wonderful business for textile lovers! They have a
-					great selection of fabrics and their staff is both knowledgeable and
-					friendly. I highly recommend One Big Family if you&apos;re looking for
-					a quality fabric supplier!
+					Big Way Trading is a wonderful business for textile lovers! They have
+					a great selection of fabrics and their staff is both knowledgeable and
+					friendly. I highly recommend Big Way Trading if you&apos;re looking
+					for a quality fabric supplier!
 				</Typography>
 				<Typography sx={{ fontSize: "16px", fontFamily: "PT_Serif" }}>
 					-Mina Taylor

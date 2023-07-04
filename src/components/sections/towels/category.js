@@ -1,12 +1,5 @@
 import { terryTowelData } from "@/constants/towels";
-import {
-	Box,
-	CardMedia,
-	Grid,
-	ImageList,
-	ImageListItem,
-	Typography,
-} from "@mui/material";
+import { CardMedia, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
