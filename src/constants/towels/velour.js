@@ -4,8 +4,8 @@ const imageArrays = (arr, imgNo) => {
 	return arr.map((img, idx) => {
 		let imageObj = {
 			id: idx + 1,
-			original: `/assets/images/towels/velour/images${imgNo}/img${img}.jpg`,
-			thumbnail: `/assets/images/towels/velour/images${imgNo}/img${img}.jpg`,
+			original: `/assets/images/towels/velour/images${imgNo}/img${img}.JPG`,
+			thumbnail: `/assets/images/towels/velour/images${imgNo}/img${img}.JPG`,
 		};
 		console.log("imageObj", imageObj);
 		return imageObj;
