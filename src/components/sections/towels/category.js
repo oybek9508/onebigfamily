@@ -41,14 +41,23 @@ const TowelCategory = () => {
 									.toLocaleLowerCase()
 									.substring(0, item.title.indexOf(" "))}`}
 							>
-								<CardMedia
-									component="img"
-									src={`${item.img}`}
-									// srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-									alt={item.title}
-									loading="lazy"
-								/>
-
+								<div
+									style={{
+										width: "100%",
+										height: "100%",
+										position: "relative",
+									}}
+								>
+									<Image
+										// component="img"
+										src={item.img}
+										// srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+										alt={item.title}
+										width={350}
+										height={250}
+										// loading="lazy"
+									/>
+								</div>
 								<Typography
 									sx={{
 										fontSize: { xs: "20px", sm: "24px" },
