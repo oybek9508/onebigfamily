@@ -70,7 +70,7 @@ const drawer = (
 
 const drawerWidth = 240;
 
-const DrawerAppBar = (props) => {
+const Header = (props) => {
 	const router = useRouter();
 	const [activeNav, setActiveNav] = useState("");
 	const [mobileOpen, setMobileOpen] = useState(false);
@@ -274,4 +274,4 @@ DrawerAppBar.propTypes = {
 	window: PropTypes.func,
 };
 
-export default DrawerAppBar;
+export default Header;
