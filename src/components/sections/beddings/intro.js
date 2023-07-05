@@ -8,7 +8,7 @@ const Intro = () => {
 			sx={{
 				py: "4rem",
 				px: { xs: "2rem", sm: "5rem" },
-				width: "100vw",
+				width: "100%",
 				position: "relative",
 				backgroundPosition: "center center",
 				backgroundSize: "cover",
@@ -43,18 +43,6 @@ const Intro = () => {
 					top-tier products, designed to provide unmatched softness, durability,
 					and style.
 				</Typography>
-				{/* <Button
-          sx={{
-            bgcolor: "#4A7F51",
-            mt: 4,
-            fontSize: "16px",
-            color: "#fff",
-            px: 2,
-            py: 1.5,
-          }}
-        >
-          See more
-        </Button> */}
 			</Box>
 		</Grid>
 	);

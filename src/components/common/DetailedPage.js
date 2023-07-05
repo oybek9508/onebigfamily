@@ -13,7 +13,7 @@ const customSizeStyles = {
 	p: "4px 8px",
 };
 
-const DetailedPage = ({ data: imageData, dataList, useData }) => {
+const DetailedPage = ({ data: imageData, dataList, useData, textileType }) => {
 	const router = useRouter();
 	const [hover, setHover] = useState(false);
 	const [itemColor, setItemColor] = useState("");
@@ -29,7 +29,7 @@ const DetailedPage = ({ data: imageData, dataList, useData }) => {
 						p: "8rem 5rem",
 						display: "flex",
 						bgcolor: "#fff",
-						width: "100vw",
+						width: "100%",
 						justifyContent: "center",
 						flexDirection: { md: "column", lg: "row" },
 					}}
@@ -59,7 +59,14 @@ const DetailedPage = ({ data: imageData, dataList, useData }) => {
 								{data?.title}
 							</Typography>
 							<Divider sx={{ my: 2 }} />
-							<Box sx={{ display: "flex", alignItems: "center", my: 2 }}>
+							<Box
+								sx={{
+									display: "flex",
+									alignItems: "center",
+
+									my: 2,
+								}}
+							>
 								<Typography
 									variant="subtitle1"
 									fontWeight="bold"
@@ -68,18 +75,26 @@ const DetailedPage = ({ data: imageData, dataList, useData }) => {
 								>
 									Possible Sizes:
 								</Typography>
-								{data?.size?.map((s, idx) => (
-									<Box
-										key={idx}
-										sx={(theme) => ({
-											...customSizeStyles,
-											border: "none",
-											boxShadow: theme.shadows[1],
-										})}
-									>
-										{s}
-									</Box>
-								))}
+								<Box
+									sx={{
+										display: "flex",
+										flexDirection: textileType === "bedding" && "column",
+										gap: textileType === "bedding" && 1.5,
+									}}
+								>
+									{data?.size?.map((s, idx) => (
+										<Box
+											key={idx}
+											sx={(theme) => ({
+												...customSizeStyles,
+												border: "none",
+												boxShadow: theme.shadows[1],
+											})}
+										>
+											{s}
+										</Box>
+									))}
+								</Box>
 							</Box>
 							<Divider sx={{ mb: 2 }} />
 							<Box sx={{ display: "flex", alignItems: "center" }}>

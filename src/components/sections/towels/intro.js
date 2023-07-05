@@ -8,7 +8,7 @@ const Intro = () => {
 			sx={{
 				py: "4rem",
 				px: { xs: "2rem", sm: "5rem" },
-				width: "100vw",
+				width: "100%",
 				position: "relative",
 				backgroundPosition: "center center",
 				backgroundSize: "cover",

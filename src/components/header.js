@@ -5,22 +5,28 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Link from "next/link";
 import { useRouter } from "next/router";
+import {
+	CssBaseline,
+	Divider,
+	Grid,
+	List,
+	ListItem,
+	ListItemButton,
+	ListItemIcon,
+	ListItemText,
+} from "@mui/material";
+import Link from "next/link";
 
 const navItems = [
 	{ title: "Towels", link: "towels" },
 	{ title: "Beddings", link: "beddings" },
 	{ title: "Threads", link: "threads" },
-	{ title: "Table Cloth", link: "cloth" },
+	// { title: "Table Cloth", link: "cloth" },
 ];
 
 function a11yProps(index) {
@@ -31,7 +37,6 @@ function a11yProps(index) {
 }
 
 const customStyle = {
-	color: "#fff",
 	fontFamily: "PT_Serif",
 	textTransform: "capitalize",
 	fontSize: "20px",
@@ -41,27 +46,63 @@ const customStyle = {
 	},
 };
 
+const drawer = (
+	<div>
+		<Toolbar sx={{ height: "80px" }} />
+		<Divider />
+		<List>
+			{[
+				{ title: "Towels", link: "towels" },
+				{ title: "Beddings", link: "beddings" },
+			].map((text, index) => (
+				<ListItem key={text.title} disablePadding>
+					<Link href={`/#${text.link}`}>
+						<ListItemButton>
+							<ListItemText primary={text.title} />
+							<Divider />
+						</ListItemButton>
+					</Link>
+				</ListItem>
+			))}
+		</List>
+	</div>
+);
+
+const drawerWidth = 240;
+
 const DrawerAppBar = (props) => {
 	const router = useRouter();
 	const [activeNav, setActiveNav] = useState("");
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const [value, setValue] = useState(0);
-	const [bgColor, setBgColor] = useState("transparent");
+	const [bgColor, setBgColor] = useState("white");
 	const navRef = useRef();
 
 	const handleDrawerToggle = () => {
 		setMobileOpen((prevState) => !prevState);
 	};
+	let container = null;
+	useEffect(() => {
+		if (window !== undefined) {
+			container = () => window().document.body;
+		}
+	}, []);
+	// const container = window().document.body;
+	// window !== undefined ? () => window().document.body : undefined;
 
+	const homePage =
+		bgColor !== "white" ||
+		(router.asPath !== "/" && router.asPath.substring(0, 2) !== "/#");
+	const navColor = homePage ? "#fff" : "#000";
 	navRef.current = bgColor;
 	useEffect(() => {
 		const handleScroll = () => {
-			const show = window.scrollY > 60;
+			const show = window.scrollY > 80;
 
 			if (show) {
 				setBgColor("#527768");
 			} else {
-				setBgColor("transparent");
+				setBgColor("white");
 			}
 		};
 		document.addEventListener("scroll", handleScroll);
@@ -71,35 +112,75 @@ const DrawerAppBar = (props) => {
 	}, []);
 
 	return (
-		<Box sx={{ display: "flex" }}>
-			{/* <CssBaseline /> */}
+		<Box
+			sx={(theme) => ({
+				display: "flex",
+				width: "100vw",
+				height: "80px",
+				boxShadow: theme.shadows[1],
+				justifyContent: "center",
+				alignItems: "center",
+				bgcolor:
+					router.asPath === "/" || router.asPath.substring(0, 2) === "/#"
+						? bgColor
+						: "#527768",
+				zIndex: theme.zIndex.drawer + 1,
+			})}
+		>
+			<CssBaseline />
 			<AppBar
 				component="nav"
-				position="fixed"
-				sx={{
-					bgcolor:
-						router.asPath === "/" || router.asPath.substring(0, 2) === "/#"
-							? bgColor
-							: "#527768",
+				position="sticky"
+				sx={(theme) => ({
+					maxWidth: "100%",
+					width: "1440px",
 					boxShadow: "none",
-				}}
+					bgcolor: "inherit",
+					zIndex: theme.zIndex.drawer + 1,
+				})}
 			>
-				<Toolbar>
+				<Drawer
+					container={container}
+					variant="temporary"
+					open={mobileOpen}
+					onClose={handleDrawerToggle}
+					ModalProps={{
+						keepMounted: true, // Better open performance on mobile.
+					}}
+					sx={{
+						// display: { xs: "block", sm: "none" },
+						"& .MuiDrawer-paper": {
+							boxSizing: "border-box",
+							width: drawerWidth,
+						},
+						zIndex: 99,
+					}}
+				>
+					{drawer}
+				</Drawer>
+				<Toolbar
+					sx={(theme) => ({
+						zIndex: theme.zIndex.drawer + 1,
+					})}
+				>
 					<IconButton
-						color="inherit"
 						aria-label="open drawer"
 						edge="start"
 						onClick={handleDrawerToggle}
-						sx={{ mr: 2, display: { sm: "none" } }}
+						sx={{ mr: 2, display: { md: "none" }, color: navColor }}
 					>
 						<MenuIcon />
 					</IconButton>
 					<Box sx={{ flexGrow: 1 }}>
 						<Button sx={{ color: "#fff" }} onClick={() => router.push("/")}>
 							<img
-								src="/BigWayTrading_Logo_wt.png"
+								src={
+									homePage
+										? "/BigWayTrading_Logo_wt.png"
+										: "/BigWayTrading_Logo_bk.png"
+								}
 								alt="big way logo"
-								style={{ width: "50px", height: "50px", marginRight: "16px" }}
+								style={{ width: "60px", height: "60px", marginRight: "16px" }}
 								loading="lazy"
 							/>
 							<Typography
@@ -108,10 +189,10 @@ const DrawerAppBar = (props) => {
 								sx={{
 									display: {
 										fontSize: "24px",
-										xs: "none",
-										sm: "block",
+
 										cursor: "pointer",
 										textTransform: "capitalize",
+										color: navColor,
 									},
 								}}
 							>
@@ -119,9 +200,12 @@ const DrawerAppBar = (props) => {
 							</Typography>
 						</Button>
 					</Box>
-					<Box sx={{ display: { xs: "none", sm: "block" } }}>
+					<Box sx={{ display: { xs: "none", md: "block" } }}>
 						<Button
-							sx={{ ...customStyle }}
+							sx={{
+								...customStyle,
+								color: navColor,
+							}}
 							onClick={() => router.push("/about")}
 						>
 							About us
@@ -138,14 +222,20 @@ const DrawerAppBar = (props) => {
 								style={{
 									textDecoration: "none",
 									curser: "pointer",
-									// display: "flex",
 								}}
 							>
-								<Button sx={{ ...customStyle }}>{item.title}</Button>
+								<Button
+									sx={{
+										...customStyle,
+										color: navColor,
+									}}
+								>
+									{item.title}
+								</Button>
 							</a>
 						))}
 					</Box>
-					<Box sx={{ ml: "50px" }}>
+					<Box sx={{ ml: "50px", display: { xs: "none", md: "block" } }}>
 						<a
 							{...(router.asPath !== "/"
 								? {
@@ -156,7 +246,7 @@ const DrawerAppBar = (props) => {
 						>
 							<Button
 								sx={{
-									color: "#fff",
+									color: navColor,
 									fontFamily: "PT_Serif",
 									textTransform: "capitalize",
 									fontSize: "24px",

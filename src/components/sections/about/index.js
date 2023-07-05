@@ -16,7 +16,9 @@ import "swiper/css/autoplay";
 
 const About = () => {
 	return (
-		<Grid>
+		<Grid
+			sx={{ mt: 2, height: { xs: "30vh", sm: "40vh", md: "50vh", lg: "60vh" } }}
+		>
 			<Swiper
 				effect={"fade"}
 				navigation
@@ -30,13 +32,14 @@ const About = () => {
 					clickable: true,
 				}}
 				className="mySwiper"
+				style={{ height: "100%" }}
 			>
 				<SwiperSlide>
 					<Grid
 						sx={{
 							py: "10rem",
-							width: "100vw",
-							height: "100vh",
+							width: "100%",
+							height: "100%",
 							position: "relative",
 							backgroundPosition: "center center",
 							backgroundSize: "cover",
@@ -51,8 +54,8 @@ const About = () => {
 					<Grid
 						sx={{
 							py: "10rem",
-							width: "100vw",
-							height: "100vh",
+							width: "100%",
+							height: "100%",
 							position: "relative",
 							backgroundPosition: "center center",
 							backgroundSize: "cover",
@@ -67,8 +70,8 @@ const About = () => {
 					<Grid
 						sx={{
 							py: "10rem",
-							width: "100vw",
-							height: "100vh",
+							width: "100%",
+							height: "100%",
 							position: "relative",
 							backgroundPosition: "center center",
 							backgroundSize: "cover",
@@ -83,8 +86,8 @@ const About = () => {
 					<Grid
 						sx={{
 							py: "10rem",
-							width: "100vw",
-							height: "100vh",
+							width: "100%",
+							height: "100%",
 							position: "relative",
 							backgroundPosition: "center center",
 							backgroundSize: "cover",

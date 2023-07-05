@@ -2,6 +2,7 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/router";
+import useWindowSize from "@/hooks/useWindowSize";
 
 const navItems = [
 	{ title: "Towels", link: "towels" },
@@ -18,6 +19,7 @@ const customStyle = {
 };
 
 const Footer = ({ isFixed }) => {
+	const { width } = useWindowSize();
 	const router = useRouter();
 	return (
 		<footer>
@@ -31,7 +33,7 @@ const Footer = ({ isFixed }) => {
 					position: isFixed && "fixed",
 					left: isFixed && 0,
 					bottom: isFixed && 0,
-					width: "100%",
+					width: "100vw",
 					display: "flex",
 					flexDirection: { xs: "column", sm: "row" },
 					alignItems: "center",
@@ -39,6 +41,7 @@ const Footer = ({ isFixed }) => {
 						xs: "center",
 						md: "space-between",
 					},
+					mb: { xs: "64px", md: 0 },
 				}}
 			>
 				<Grid
@@ -104,7 +107,7 @@ const Footer = ({ isFixed }) => {
 					xs={12}
 					md={6}
 					sx={{
-						display: "flex",
+						display: { xs: "none", md: "flex" },
 					}}
 				>
 					<Grid
