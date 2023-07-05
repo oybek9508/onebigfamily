@@ -57,16 +57,16 @@ const partnerList = [
 	{
 		title: "Aisha Home Textiles",
 		desciption:
-			"Aisha Home Textiles is a home textile business in Seoul, offering a wide range of quality and stylish fabrics and furnishings for the home. From curtains, bedding and upholstery to rugs and throws, Aisha Home Textiles provides customers with high-end products that add warmth and coziness to any space. With a focus on quality and unique designs, One Big Family Home Textiles is the perfect choice for any home.",
+			"Aisha Home Textile is one of Uzbekistan's premier home textile companies. With a strong focus on quality, we take pride in producing the finest home textiles that enhance the beauty and comfort of your living spaces. Our commitment to excellence has allowed us to establish fruitful business relationships with clients across 16 countries, ensuring our products reach homes around the world. Discover the perfect blend of style and functionality with Aisha Home Textile.",
 	},
 	{
-		title: "Oqtosh Textile",
+		title: "One Big Family",
 		desciption:
-			"Oqtosh Textiles is a home textile business based in Seoul, offering a wide range of high quality home textiles such as bedding, curtains, rugs, and more. The company offers personalized customer service and a unique selection of stylish and cozy home textiles to help make your living space truly yours. With their commitment to customer service and quality products, Oqtosh Textiles is the perfect place to find the perfect textile for your home.",
+			"One Big Family is a renowned company dedicated to the import and export of textile products. With our expertise and experience in the industry since 2017, we have successfully established ourselves as specialists in sourcing and delivering high-quality textile goods. Our commitment to customer satisfaction and our extensive network of partners enable us to provide exceptional products and services.",
 	},
 	{
 		title: "Terra Textile",
 		desciption:
-			"Terra Tekstil in Seoul provides quality home textiles for everyone. We have a diverse selection of items to choose from, including bedding, curtains, towels, rugs, and much more. Our experienced staff is here to help you find the perfect home textile for your needs. From traditional to modern, we have something for all tastes. Terra Tekstil will make sure your home looks beautiful and feels comfortable.",
+			"Terra Textile is a prominent textile trade company based in Turkey. With a solid foundation established in 2012, we have been actively engaged in the textile industry, catering to the diverse needs of our valued clients. Our strategic location in Turkey, a hub of textile manufacturing, allows us to source and provide a wide range of high-quality textile products to customers worldwide. Trust Terra Textile for exceptional service and a seamless textile trading experience.",
 	},
 ];

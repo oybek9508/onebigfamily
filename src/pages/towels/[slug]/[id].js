@@ -48,7 +48,11 @@ const Detailed = () => {
 	return (
 		<Grid>
 			<Layout isFixed>
-				<DetailedPage data={towelData} dataList={towelList} />
+				<DetailedPage
+					data={towelData}
+					dataList={towelList}
+					textileType="towel"
+				/>
 			</Layout>
 		</Grid>
 	);

@@ -11,7 +11,7 @@ const type = "100% Cotton";
 const color = [
 	{ name: "White", color: "#fcfcfc" },
 	{ name: "Blue", color: "#005689" },
-	{ name: "Brown", color: "#ed9f66" },
+	{ name: "Brown", color: "#854836" },
 	{ name: "Grey", color: "#8f8787" },
 	{ name: "Green", color: "#4c9173" },
 	{ name: "Purple", color: "#8971d0" },
