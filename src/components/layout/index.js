@@ -1,9 +1,9 @@
 import React from "react";
-import Footer from "../Footer";
-import Header from "../Header";
 import Sticky from "../common/Sticky";
 import { Grid } from "@mui/material";
 import MobileBottomNavigation from "../mobile-navigation/MobileBottomNavigation";
+import Header from "../header";
+import Footer from "../footer";
 
 const Layout = ({ children, isFixed }) => {
 	return (

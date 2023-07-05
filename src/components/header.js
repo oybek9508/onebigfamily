@@ -70,7 +70,7 @@ const drawer = (
 
 const drawerWidth = 240;
 
-const DrawerAppBar = (props) => {
+const Header = (props) => {
 	const router = useRouter();
 	const [activeNav, setActiveNav] = useState("");
 	const [mobileOpen, setMobileOpen] = useState(false);
@@ -266,12 +266,4 @@ const DrawerAppBar = (props) => {
 	);
 };
 
-DrawerAppBar.propTypes = {
-	/**
-	 * Injected by the documentation to work in an iframe.
-	 * You won't need it on your project.
-	 */
-	window: PropTypes.func,
-};
-
-export default DrawerAppBar;
+export default Header;
