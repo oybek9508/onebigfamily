@@ -6,11 +6,10 @@ import {
 	Drawer,
 	styled,
 } from "@mui/material";
-import HomeIcon from "@mui/icons-material/Home";
-import InfoIcon from "@mui/icons-material/Info";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
-import ContactMailIcon from "@mui/icons-material/ContactMail";
-import { CategoryOutlined } from "@mui/icons-material";
+import MarkEmailUnreadOutlinedIcon from "@mui/icons-material/MarkEmailUnreadOutlined";
 import NavLink from "../nav-link/NavLink";
 import Link from "next/link";
 import useWindowSize from "@/hooks/useWindowSize";
@@ -126,7 +125,6 @@ const MobileBottomNavigation = ({ children }) => {
 									}}
 								>
 									{<item.icon sx={iconStyle} fontSize="small" />}
-
 									{item.label}
 								</Box>
 							</Link>
@@ -142,9 +140,8 @@ const MobileBottomNavigation = ({ children }) => {
 										justifyContent: "center",
 										height: "100%",
 									}}
-									// onClick={open ? handleDrawerClose : handleDrawerOpen}
 								>
-									{<item.icon sx={iconStyle} fontSize="small" />}
+									{<item.icon sx={{ ...iconStyle }} fontSize="small" />}
 
 									{item.label}
 								</Box>
@@ -161,19 +158,19 @@ const navList = [
 	{
 		label: "Home",
 		value: "home",
-		icon: HomeIcon,
+		icon: HomeOutlinedIcon,
 		href: "/",
 	},
 	{
 		label: "About",
 		value: "about",
-		icon: InfoIcon,
+		icon: InfoOutlinedIcon,
 		href: "/about",
 	},
 	{
 		label: "Contact",
 		value: "contact",
-		icon: ContactMailIcon,
+		icon: MarkEmailUnreadOutlinedIcon,
 	},
 ];
 export default MobileBottomNavigation;

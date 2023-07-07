@@ -31,12 +31,8 @@ const StyledCard = styled(Box)(({ theme }) => ({
 	},
 }));
 const ImgBox = styled(Box)(({ theme }) => ({
-	height: 250,
+	height: ({ fixedHeight }) => (fixedHeight ? 400 : 250),
 	maxHeight: "100% !important",
-	// minHeight: "100%",
-	// width: 250,
-	// minHeight: "100%",
-	// minWidth: "100%",
 	[theme.breakpoints.up("xs")]: {
 		marginBottom: "10%",
 	},
@@ -52,8 +48,6 @@ const ImgBox = styled(Box)(({ theme }) => ({
 	[theme.breakpoints.up("xl")]: {
 		marginBottom: 100,
 	},
-	// padding: "60px 40px 20px 40px",
-	// background: "red",
 }));
 const ContentWrapper = styled(Box)(() => ({
 	padding: "1rem",
@@ -106,7 +100,7 @@ const ProductCard = (props) => {
 	return (
 		<StyledCard sx={sx}>
 			<Link href={url}>
-				<ImgBox id="imgBox">
+				<ImgBox id="imgBox" fixedHeight={fixedHeight}>
 					{/* <LazyImage
 						id="productImg"
 						src={imgUrl}
@@ -125,11 +119,11 @@ const ProductCard = (props) => {
 						loading="lazy"
 						sx={{
 							height: fixedHeight && {
-								xs: "290px",
-								sm: "250px",
-								md: "290px",
-								lg: "300px",
-								xl: "330px",
+								xs: "400px",
+								sm: "400px",
+								md: "450px",
+								lg: "430px",
+								xl: "450px",
 							},
 						}}
 					/>

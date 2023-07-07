@@ -19,7 +19,7 @@ const Slug = () => {
 	return (
 		<Grid>
 			<Layout>
-				<Box sx={{ py: "4rem" }}>
+				<Box sx={{ py: "4rem", px: { xs: "40px", xl: 0 } }}>
 					{beddingTypes.map((type) => (
 						<Box key="type" id={type.id} sx={{ py: "20px" }}>
 							<Box my={2}>

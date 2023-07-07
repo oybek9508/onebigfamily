@@ -8,7 +8,7 @@ import React from "react";
 
 const TowelCategory = () => {
 	return (
-		<Box sx={{ py: { xs: "40px", md: "80px" } }}>
+		<Box sx={{ py: { xs: "40px", md: "80px" }, px: { xs: "40px", xl: 0 } }}>
 			<Box my={2}>
 				<H1 mb="4px">Towels</H1>
 				<Paragraph color="grey.600">

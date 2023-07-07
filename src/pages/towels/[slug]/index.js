@@ -15,7 +15,7 @@ const Slug = () => {
 	return (
 		<Grid>
 			<Layout>
-				<Box sx={{ py: "2rem" }}>
+				<Box sx={{ py: "2rem", px: { xs: "40px", xl: 0 } }}>
 					<Box id="dobby" sx={{ py: "20px" }}>
 						<Box my={2}>
 							<H1 mb="4px">Dobby Towels</H1>
