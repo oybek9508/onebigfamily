@@ -68,13 +68,14 @@ const Footer = ({ isFixed }) => {
 						sx={{
 							display: "flex",
 							// justifyContent: { xs: "center", md: "inherit" },
+							alignItems: "center",
 							mb: 2,
 						}}
 					>
 						<img
 							src="/BigWayTrading_Logo_wt.png"
 							alt="big way logo"
-							style={{ width: "40px", height: "40px", marginRight: "16px" }}
+							style={{ width: "60px", height: "60px", marginRight: "16px" }}
 							loading="lazy"
 						/>
 						<Typography

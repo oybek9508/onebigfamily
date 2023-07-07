@@ -7,10 +7,10 @@ export const waffleAboutItem = (
 			accommodate individual needs and preferences.
 		</p>
 		<p>
-			- Our bathroom towels exemplify the epitome of superior quality,
-			meticulously crafted from 100% cotton to guarantee unparalleled
-			reliability and exceptional durability, ensuring a long-lasting investment
-			that withstands the test of time.
+			- Our towels exemplify the epitome of superior quality, meticulously
+			crafted from 100% cotton to guarantee unparalleled reliability and
+			exceptional durability, ensuring a long-lasting investment that withstands
+			the test of time.
 		</p>
 		<p>
 			- The key distinguishing features of our bath towels set lie in their

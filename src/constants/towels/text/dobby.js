@@ -8,10 +8,10 @@ export const dobbyAboutItem = (
 		</p>
 		<p>
 			{" "}
-			- Our bathroom towels exemplify the epitome of superior quality,
-			meticulously crafted from 100% cotton to guarantee unparalleled
-			reliability and exceptional durability, ensuring a long-lasting investment
-			that withstands the test of time.
+			- Our towels exemplify the epitome of superior quality, meticulously
+			crafted from 100% cotton to guarantee unparalleled reliability and
+			exceptional durability, ensuring a long-lasting investment that withstands
+			the test of time.
 		</p>
 		<p>
 			{" "}

@@ -21,20 +21,20 @@ const DetailedPage = ({ data: imageData, dataList, useData, textileType }) => {
 	const { slug } = router.query;
 	const detailedItem = imageData;
 	return (
-		<div>
+		<Grid>
 			{detailedItem?.map((data) => (
 				<Grid
 					key={data?.id}
 					sx={{
-						p: "8rem 5rem",
+						p: { xs: "2rem 2rem", lg: "5rem 5rem" },
 						display: "flex",
 						bgcolor: "#fff",
 						width: "100%",
 						justifyContent: "center",
-						flexDirection: { md: "column", lg: "row" },
+						flexDirection: { xs: "column", lg: "row" },
 					}}
 				>
-					<Grid item sm={12} md={6}>
+					<Grid item xs={12} sm={12} md={12} lg={6}>
 						<ImgGallery
 							setHover={setHover}
 							setItemColor={setItemColor}
@@ -44,13 +44,22 @@ const DetailedPage = ({ data: imageData, dataList, useData, textileType }) => {
 					</Grid>
 					<Grid
 						id="myPortal"
-						sx={{ marginLeft: "5%", width: "100%" }}
+						sx={{
+							ml: { xs: 0, lg: "5%" },
+							width: "100%",
+							minHeight: "120%",
+							mb: "5%",
+							position: "relative",
+							mt: { xs: "2rem", sm: "3rem", lg: 0 },
+						}}
 						container
 						item
+						xs={12}
 						sm={12}
-						md={6}
+						md={12}
+						lg={6}
 					>
-						<Box sx={{ display: hover && "none", width: "100%" }}>
+						<Box sx={{ width: "100%" }}>
 							<Typography
 								variant="h5"
 								color="#323643"
@@ -78,6 +87,7 @@ const DetailedPage = ({ data: imageData, dataList, useData, textileType }) => {
 								<Box
 									sx={{
 										display: "flex",
+										flexWrap: "wrap",
 										flexDirection: textileType === "bedding" && "column",
 										gap: textileType === "bedding" && 1.5,
 									}}
@@ -89,6 +99,8 @@ const DetailedPage = ({ data: imageData, dataList, useData, textileType }) => {
 												...customSizeStyles,
 												border: "none",
 												boxShadow: theme.shadows[1],
+												width: "101px",
+												mb: 1,
 											})}
 										>
 											{s}
@@ -120,6 +132,7 @@ const DetailedPage = ({ data: imageData, dataList, useData, textileType }) => {
 									sx={{
 										mt: 2,
 										display: "flex",
+										flexWrap: "wrap",
 									}}
 								>
 									{data?.color?.map((s, idx) => (
@@ -133,6 +146,8 @@ const DetailedPage = ({ data: imageData, dataList, useData, textileType }) => {
 												justifyContent: "center",
 												alignItems: "center",
 												mr: 0,
+												width: "64px",
+												mb: 1,
 											}}
 										>
 											<Box
@@ -165,7 +180,7 @@ const DetailedPage = ({ data: imageData, dataList, useData, textileType }) => {
 					</Grid>
 				</Grid>
 			))}
-		</div>
+		</Grid>
 	);
 };
 

@@ -1,60 +1,95 @@
 import ImageGallery from "react-image-gallery";
 import ReactImageMagnify from "react-image-magnify";
 import "react-image-gallery/styles/css/image-gallery.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
-import { featuredData } from "@/constants/featured";
+import { Box } from "@mui/material";
 
-const ImgGallery = ({ setHover, setItemColor, itemColor, dataList }) => {
+const ImgGallery = ({ setHover, dataList }) => {
 	const router = useRouter();
 	const [thumb, setThumb] = useState(1);
 	const { query } = router;
 
 	let imgs = dataList;
-	console.log("imgs", imgs);
 	const [images, setImages] = useState(imgs);
-	console.log("query.id", query);
-
-	console.log("dataList", dataList);
-	console.log("images", images);
-	console.log("thumb", thumb);
 
 	const ImgMagnify = () => (
-		<ReactImageMagnify
-			enlargedImagePosition="beside"
-			{...{
-				imageStyle: { objectFit: "scale-down" },
-				smallImage: {
-					src: imgs[thumb - 1].thumbnail,
-					width: 600,
-					height: 500,
-				},
-				largeImage: {
-					src: imgs[thumb - 1]?.thumbnail,
-					width: 1800,
-					height: 1800,
-				},
-				isHintEnabled: true,
-				enlargedImagePortalId: "myPortal",
+		<Box
+			sx={{
+				width: "600px",
+				height: "500px",
+				maxWidth: "100%",
+				maxHeight: "100%",
 			}}
-		/>
+		>
+			<ReactImageMagnify
+				enlargedImagePosition="beside"
+				{...{
+					smallImage: {
+						src: imgs[thumb - 1].thumbnail,
+						isFluidWidth: true,
+					},
+					largeImage: {
+						src: imgs[thumb - 1]?.thumbnail,
+						width: 1200,
+						height: 1800,
+					},
+					isHintEnabled: true,
+					enlargedImagePortalId: "myPortal",
+					shouldUsePositiveSpaceLens: true,
+					// lensStyle: { width: "300px", height: "300px" },
+					enlargedImageContainerStyle: {
+						border: "2px solid grey",
+						position: "absolute",
+					},
+					enlargedImageContainerDimensions: {
+						width: "120%",
+						height: "150%",
+					},
+				}}
+			/>
+		</Box>
 	);
 
 	return (
-		<ImageGallery
-			items={imgs}
-			useWindowKeydown={true}
-			thumbnailPosition="left"
-			originalHeight={16}
-			showFullscreenButton={false}
-			originalWidth={16}
-			showNav={false}
-			showPlayButton={false}
-			onMouseOver={() => setHover(true)}
-			onMouseLeave={() => setHover(false)}
-			renderItem={() => <ImgMagnify />}
-			onThumbnailClick={(e, idx) => setThumb(idx + 1)}
-		/>
+		<Box>
+			<Box sx={{ display: { xs: "none", lg: "block" } }}>
+				<ImageGallery
+					items={imgs}
+					useWindowKeydown={true}
+					thumbnailPosition="left"
+					showThumbnails={true}
+					originalHeight={16}
+					showFullscreenButton={false}
+					originalWidth={16}
+					showNav={false}
+					showPlayButton={false}
+					onMouseOver={() => setHover(true)}
+					onMouseLeave={() => setHover(false)}
+					renderItem={() => <ImgMagnify />}
+					onThumbnailClick={(e, idx) => setThumb(idx + 1)}
+				/>
+			</Box>
+			<Box sx={{ display: { xs: "block", lg: "none" } }}>
+				<ImageGallery
+					items={imgs}
+					// useWindowKeydown={true}
+					// thumbnailPosition="bottom"
+					showThumbnails={false}
+					// originalHeight={16}
+					showFullscreenButton={false}
+					// originalWidth={16}
+					showNav={true}
+					showBullets
+					showPlayButton={false}
+					// onMouseOver={() => setHover(true)}
+					// onMouseLeave={() => setHover(false)}
+					// slideOnThumbnailOver={true}
+					// renderItem={() => <ImgMagnify />}
+					// onThumbnailClick={(e, idx) => setThumb(idx + 1)}
+				/>
+			</Box>
+		</Box>
 	);
 };
 

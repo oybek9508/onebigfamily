@@ -47,7 +47,7 @@ const Detailed = () => {
 	console.log(" towelData", towelData);
 	return (
 		<Grid>
-			<Layout isFixed>
+			<Layout isFixed fullWidth>
 				<DetailedPage
 					data={towelData}
 					dataList={towelList}

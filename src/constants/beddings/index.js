@@ -1,6 +1,7 @@
 import { deluxeImages } from "./deluxe";
 import { digitalImages } from "./digital";
 import { exclusiveImages } from "./exclusive";
+import { jacquardImages } from "./jacquard";
 import { premiumImages } from "./premium";
 import { satinImages } from "./satin_digital";
 
@@ -31,6 +32,10 @@ export const beddignsData = [
 	{
 		img: digitalImages.images1[0].original,
 		title: "Digital Series",
+	},
+	{
+		img: jacquardImages.images1[0].original,
+		title: "Jacquard Satin",
 	},
 ];
 
@@ -168,7 +173,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: satinImages.images1[0].original,
-				title: "Alisa",
+				title: "Bonitta",
 				images: satinImages.images1,
 			},
 			{
@@ -177,7 +182,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: satinImages.images2[0].original,
-				title: "Dalyan",
+				title: "Ramira",
 				images: satinImages.images2,
 			},
 			{
@@ -186,7 +191,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: satinImages.images3[0].original,
-				title: "Gala",
+				title: "Hannah",
 				images: satinImages.images3,
 			},
 			{
@@ -195,7 +200,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: satinImages.images4[0].original,
-				title: "Layla",
+				title: "Kelly",
 				images: satinImages.images4,
 			},
 			{
@@ -204,7 +209,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: satinImages.images5[0].original,
-				title: "Luisa",
+				title: "Marcella",
 				images: satinImages.images5,
 			},
 			{
@@ -213,7 +218,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: satinImages.images6[0].original,
-				title: "Zena",
+				title: "Yasenya",
 				images: satinImages.images6,
 			},
 		],
@@ -221,7 +226,7 @@ export const beddingTypes = [
 	{
 		id: "4",
 		link: "exclusive",
-		title: "Exclusive Digital",
+		title: "Exclusive Satin",
 		data: [
 			{
 				id: "1",
@@ -229,7 +234,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: exclusiveImages.images1[0].original,
-				title: "Alisa",
+				title: "Fantacy",
 				images: exclusiveImages.images1,
 			},
 			{
@@ -238,7 +243,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: exclusiveImages.images2[0].original,
-				title: "Dalyan",
+				title: "Novel Line",
 				images: exclusiveImages.images2,
 			},
 			{
@@ -247,7 +252,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: exclusiveImages.images3[0].original,
-				title: "Gala",
+				title: "Stripe Style",
 				images: exclusiveImages.images3,
 			},
 			{
@@ -256,7 +261,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: exclusiveImages.images4[0].original,
-				title: "Layla",
+				title: "Modal Life",
 				images: exclusiveImages.images4,
 			},
 			{
@@ -265,7 +270,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: exclusiveImages.images5[0].original,
-				title: "Luisa",
+				title: "Santa",
 				images: exclusiveImages.images5,
 			},
 			{
@@ -274,7 +279,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: exclusiveImages.images6[0].original,
-				title: "Zena",
+				title: "Catra",
 				images: exclusiveImages.images6,
 			},
 		],
@@ -290,7 +295,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: digitalImages.images1[0].original,
-				title: "Alisa",
+				title: "Andrea",
 				images: digitalImages.images1,
 			},
 			{
@@ -299,7 +304,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: digitalImages.images2[0].original,
-				title: "Dalyan",
+				title: "Amara",
 				images: digitalImages.images2,
 			},
 			{
@@ -308,7 +313,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: digitalImages.images3[0].original,
-				title: "Gala",
+				title: "Moon",
 				images: digitalImages.images3,
 			},
 			{
@@ -317,7 +322,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: digitalImages.images4[0].original,
-				title: "Layla",
+				title: "Ocean",
 				images: digitalImages.images4,
 			},
 			{
@@ -326,7 +331,7 @@ export const beddingTypes = [
 				type,
 				size,
 				img: digitalImages.images5[0].original,
-				title: "Luisa",
+				title: "Dania",
 				images: digitalImages.images5,
 			},
 			{
@@ -335,8 +340,69 @@ export const beddingTypes = [
 				type,
 				size,
 				img: digitalImages.images6[0].original,
-				title: "Zena",
+				title: "Swan",
 				images: digitalImages.images6,
+			},
+		],
+	},
+	{
+		id: "5",
+		link: "jacquard",
+		title: "Jacquard Satin",
+		data: [
+			{
+				id: "1",
+				url: "/jacquard",
+				type,
+				size,
+				img: jacquardImages.images1[0].original,
+				title: "Dracell",
+				images: jacquardImages.images1,
+			},
+			{
+				id: "2",
+				url: "/jacquard",
+				type,
+				size,
+				img: jacquardImages.images2[0].original,
+				title: "Clover",
+				images: jacquardImages.images2,
+			},
+			{
+				id: "3",
+				url: "/jacquard",
+				type,
+				size,
+				img: jacquardImages.images3[0].original,
+				title: "Tecna",
+				images: jacquardImages.images3,
+			},
+			{
+				id: "4",
+				url: "/jacquard",
+				type,
+				size,
+				img: jacquardImages.images4[0].original,
+				title: "Herra",
+				images: jacquardImages.images4,
+			},
+			{
+				id: "5",
+				url: "/jacquard",
+				type,
+				size,
+				img: jacquardImages.images5[0].original,
+				title: "Sare",
+				images: jacquardImages.images5,
+			},
+			{
+				id: "6",
+				url: "/jacquard",
+				type,
+				size,
+				img: jacquardImages.images6[0].original,
+				title: "Lamone",
+				images: jacquardImages.images6,
 			},
 		],
 	},

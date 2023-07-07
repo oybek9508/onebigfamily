@@ -5,7 +5,7 @@ import MobileBottomNavigation from "../mobile-navigation/MobileBottomNavigation"
 import Header from "../header";
 import Footer from "../footer";
 
-const Layout = ({ children, isFixed }) => {
+const Layout = ({ children, isFixed, fullWidth }) => {
 	return (
 		<Grid
 			container
@@ -20,13 +20,7 @@ const Layout = ({ children, isFixed }) => {
 			</Sticky>
 			<Grid
 				sx={{
-					width: {
-						xs: "90%",
-						sm: "560px",
-						md: "760px",
-						lg: "1140px",
-						xl: "1440px",
-					},
+					width: fullWidth ? "100%" : "1440px",
 					maxWidth: "100%",
 				}}
 			>

@@ -49,7 +49,7 @@ const Detailed = () => {
 	console.log("beddingData", beddingData);
 	return (
 		<Grid>
-			<Layout isFixed>
+			<Layout isFixed fullWidth>
 				<DetailedPage
 					data={beddingData}
 					dataList={dataList}
