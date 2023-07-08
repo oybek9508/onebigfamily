@@ -1,4 +1,10 @@
 import ImgGallery from "@/components/common/img-gallery";
+import { threeDAboutItem } from "@/constants/beddings/text/3d";
+import { deluxeAboutItem } from "@/constants/beddings/text/deluxe";
+import { digitalAboutItem } from "@/constants/beddings/text/digital";
+import { exclusiveAboutItem } from "@/constants/beddings/text/exclusive";
+import { jacquardAboutItem } from "@/constants/beddings/text/jacquard";
+import { premiumAboutItem } from "@/constants/beddings/text/premium";
 import { dobbyAboutItem } from "@/constants/towels/text/dobby";
 import { pestemalAboutItem } from "@/constants/towels/text/pestemal";
 import { waffleAboutItem } from "@/constants/towels/text/waffle";
@@ -13,7 +19,7 @@ const customSizeStyles = {
 	p: "4px 8px",
 };
 
-const DetailedPage = ({ data: imageData, dataList, useData, textileType }) => {
+const DetailedPage = ({ data: imageData, textileType }) => {
 	const router = useRouter();
 	const [hover, setHover] = useState(false);
 	const [itemColor, setItemColor] = useState("");
@@ -34,12 +40,19 @@ const DetailedPage = ({ data: imageData, dataList, useData, textileType }) => {
 						flexDirection: { xs: "column", lg: "row" },
 					}}
 				>
-					<Grid item xs={12} sm={12} md={12} lg={6}>
+					<Grid
+						item
+						xs={12}
+						sm={12}
+						md={12}
+						lg={textileType === "bedding" ? 4.5 : 6}
+					>
 						<ImgGallery
 							setHover={setHover}
 							setItemColor={setItemColor}
 							itemColor={itemColor}
 							dataList={detailedItem[0].images}
+							textileType={textileType}
 						/>
 					</Grid>
 					<Grid
@@ -99,7 +112,7 @@ const DetailedPage = ({ data: imageData, dataList, useData, textileType }) => {
 												...customSizeStyles,
 												border: "none",
 												boxShadow: theme.shadows[1],
-												width: "101px",
+												width: textileType === "towel" ? "101px" : "100%",
 												mb: 1,
 											})}
 										>
@@ -119,63 +132,94 @@ const DetailedPage = ({ data: imageData, dataList, useData, textileType }) => {
 								</Typography>
 								<Box>{data?.type}</Box>
 							</Box>
-							<Divider sx={{ my: 2 }} />
-							<Box sx={{ display: "flex", alignItems: "center" }}>
-								<Typography
-									fontWeight="bold"
-									color="#565959"
-									sx={{ textTransform: "capitalize", width: "110px" }}
-								>
-									Color Samples:
-								</Typography>
-								<Box
-									sx={{
-										mt: 2,
-										display: "flex",
-										flexWrap: "wrap",
-									}}
-								>
-									{data?.color?.map((s, idx) => (
+							{data?.threadCount && (
+								<>
+									<Divider sx={{ my: 2 }} />
+									<Box sx={{ display: "flex", alignItems: "center" }}>
+										<Typography
+											color="#565959"
+											fontWeight="bold"
+											sx={{ width: "110px" }}
+										>
+											Thread Count:
+										</Typography>
+										<Box>{data?.threadCount}</Box>
+									</Box>
+								</>
+							)}
+							{data?.color && (
+								<>
+									<Divider sx={{ my: 2 }} />
+									<Box sx={{ display: "flex", alignItems: "center" }}>
+										<Typography
+											fontWeight="bold"
+											color="#565959"
+											sx={{ textTransform: "capitalize", width: "110px" }}
+										>
+											Color Samples:
+										</Typography>
 										<Box
-											key={idx}
 											sx={{
-												...customSizeStyles,
-												border: "none",
+												mt: 2,
 												display: "flex",
-												flexDirection: "column",
-												justifyContent: "center",
-												alignItems: "center",
-												mr: 0,
-												width: "64px",
-												mb: 1,
+												flexWrap: "wrap",
 											}}
 										>
-											<Box
-												sx={(theme) => ({
-													width: "25px",
-													height: "25px",
-													borderRadius: "50%",
-													bgcolor: s.color,
-													mb: 1,
-													boxShadow: theme.shadows[10],
-												})}
-											/>
-											{s.name}
+											{data?.color?.map((s, idx) => (
+												<Box
+													key={idx}
+													sx={{
+														...customSizeStyles,
+														border: "none",
+														display: "flex",
+														flexDirection: "column",
+														justifyContent: "center",
+														alignItems: "center",
+														mr: 0,
+														width: "64px",
+														mb: 1,
+													}}
+												>
+													<Box
+														sx={(theme) => ({
+															width: "25px",
+															height: "25px",
+															borderRadius: "50%",
+															bgcolor: s.color,
+															mb: 1,
+															boxShadow: theme.shadows[10],
+														})}
+													/>
+													{s.name}
+												</Box>
+											))}
 										</Box>
-									))}
-								</Box>
-							</Box>
+									</Box>
+								</>
+							)}
 							<Divider sx={{ my: 2 }} />
 							<Typography fontSize="16px" fontWeight="bold">
 								About this item:
 							</Typography>
-							<Box>
-								{slug === "dobby" || slug === "jacquard" || slug === "velour"
-									? dobbyAboutItem
-									: slug === "pestemal"
-									? pestemalAboutItem
-									: slug === "waffle" && waffleAboutItem}
-							</Box>
+							{textileType === "towel" && (
+								<Box>
+									{slug === "dobby" || slug === "jacquard" || slug === "velour"
+										? dobbyAboutItem
+										: slug === "pestemal"
+										? pestemalAboutItem
+										: slug === "waffle" && waffleAboutItem}
+								</Box>
+							)}
+							{textileType === "bedding" && (
+								<>
+									<Box>{slug === "premium" && premiumAboutItem}</Box>
+									<Box>{slug === "3d" && threeDAboutItem}</Box>
+									<Box>{slug === "deluxe" && deluxeAboutItem}</Box>
+									<Box>{slug === "digital" && digitalAboutItem}</Box>
+									<Box>{slug === "exclusive" && exclusiveAboutItem}</Box>
+									<Box>{slug === "jacquard" && jacquardAboutItem}</Box>
+								</>
+							)}
 						</Box>
 					</Grid>
 				</Grid>

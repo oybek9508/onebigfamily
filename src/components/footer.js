@@ -3,12 +3,12 @@ import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/router";
 import useWindowSize from "@/hooks/useWindowSize";
+import Image from "next/image";
 
 const navItems = [
 	{ title: "Towels", link: "towels" },
 	{ title: "Beddings", link: "beddings" },
-	{ title: "Threads", link: "threads" },
-	{ title: "Table Cloth", link: "cloth" },
+	// { title: "Threads", link: "threads" },
 ];
 
 const customStyle = {
@@ -47,7 +47,7 @@ const Footer = ({ isFixed }) => {
 				<Grid
 					container
 					xs={12}
-					md={5}
+					md={6}
 					item
 					sx={{
 						color: "#fff",
@@ -63,38 +63,36 @@ const Footer = ({ isFixed }) => {
 				>
 					<Grid
 						item
-						xs={12}
-						md={6}
 						sx={{
 							display: "flex",
-							// justifyContent: { xs: "center", md: "inherit" },
 							alignItems: "center",
 							mb: 2,
 						}}
 					>
-						<img
+						<Image
 							src="/BigWayTrading_Logo_wt.png"
 							alt="big way logo"
-							style={{ width: "60px", height: "60px", marginRight: "16px" }}
-							loading="lazy"
+							style={{ marginRight: "16px" }}
+							width={60}
+							height={60}
 						/>
 						<Typography
-							sx={{ fontSize: "24px", fontFamily: "Rufina" }}
+							sx={{
+								fontSize: "24px",
+								fontFamily: "Rufina",
+							}}
 							component="div"
 						>
-							{" "}
 							Big Way Trading
 						</Typography>
 					</Grid>
 					<Grid
 						item
 						alignItems="center"
-						xs={12}
-						md={4}
 						sx={{
 							display: "flex",
 							flexDirection: { xs: "column" },
-							justifyContent: { xs: "center", md: "auto" },
+							justifyContent: { xs: "center", md: "center" },
 						}}
 					>
 						<Typography>Aleje Jerozolimskie 214</Typography>
@@ -106,7 +104,7 @@ const Footer = ({ isFixed }) => {
 					container
 					item
 					xs={12}
-					md={6}
+					md={5}
 					sx={{
 						display: { xs: "none", md: "flex" },
 					}}
@@ -136,7 +134,7 @@ const Footer = ({ isFixed }) => {
 							sx={{ color: "#fff", ...customStyle }}
 							onClick={() => router.push("/about")}
 						>
-							About us
+							About
 						</Button>
 						{navItems.map((item) => (
 							<Box

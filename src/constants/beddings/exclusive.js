@@ -16,7 +16,7 @@ const imageArrays = (arr, imgNo) => {
 };
 
 const images1 = imageArrays(arr3, 1);
-const images2 = imageArrays(arr4, 2);
+const images2 = imageArrays(arr5, 2);
 const images3 = imageArrays(arr4, 3);
 const images4 = imageArrays(arr5, 4);
 const images5 = imageArrays(arr10, 5);

@@ -21,7 +21,7 @@ const Slug = () => {
 			<Layout>
 				<Box sx={{ py: "4rem", px: { xs: "40px", xl: 0 } }}>
 					{beddingTypes.map((type) => (
-						<Box key="type" id={type.id} sx={{ py: "20px" }}>
+						<Box key="type" id={type.link} sx={{ py: "20px" }}>
 							<Box my={2}>
 								<H1 mb="4px">{type.title}</H1>
 							</Box>
