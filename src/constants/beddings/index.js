@@ -238,7 +238,7 @@ export const beddingTypes = [
 				url: "/digital",
 				type,
 				size,
-				// color: [white],
+
 				threadCount: "100/cm²",
 				img: satinImages.images2[0].original,
 				title: "Ramira",

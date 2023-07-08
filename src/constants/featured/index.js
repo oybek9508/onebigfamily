@@ -109,7 +109,7 @@ export const featuredLinks = [
 		title: `Jacquard "Spring"`,
 	},
 	{
-		src: "/assets/images/beddings/deluxe/images1/img1.JPG",
+		src: "/assets/images/beddings/deluxe/images1/img1.jpg",
 		url: "/beddings/deluxe/1",
 		title: `Alisa`,
 	},
@@ -119,7 +119,7 @@ export const featuredLinks = [
 		title: `Kelly`,
 	},
 	{
-		src: "/assets/images/beddings/jacquard/images3/img1.JPG",
+		src: "/assets/images/beddings/jacquard/images3/img1.jpg",
 		url: "/beddings/jacquard/3",
 		title: `Tecna`,
 	},
