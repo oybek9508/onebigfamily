@@ -5,13 +5,12 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { Box } from "@mui/material";
 
-const ImgGallery = ({ setHover, dataList }) => {
+const ImgGallery = ({ setHover, dataList, textileType, otherProps }) => {
 	const router = useRouter();
 	const [thumb, setThumb] = useState(1);
 	const { query } = router;
 
 	let imgs = dataList;
-	const [images, setImages] = useState(imgs);
 
 	const ImgMagnify = () => (
 		<Box
@@ -19,15 +18,18 @@ const ImgGallery = ({ setHover, dataList }) => {
 				width: "600px",
 				height: "500px",
 				maxWidth: "100%",
-				maxHeight: "100%",
+				maxHeight: "70%",
+				objectFit: "cover",
 			}}
 		>
 			<ReactImageMagnify
 				enlargedImagePosition="beside"
+				// lensComponent={() => <PositiveSpaceLens />}
 				{...{
 					smallImage: {
 						src: imgs[thumb - 1].thumbnail,
 						isFluidWidth: true,
+						sizes: "(min-width: 1000px) 33.5vw, (min-width: 415px) 50vw, 100vw",
 					},
 					largeImage: {
 						src: imgs[thumb - 1]?.thumbnail,
@@ -37,14 +39,13 @@ const ImgGallery = ({ setHover, dataList }) => {
 					isHintEnabled: true,
 					enlargedImagePortalId: "myPortal",
 					shouldUsePositiveSpaceLens: true,
-					// lensStyle: { width: "300px", height: "300px" },
 					enlargedImageContainerStyle: {
-						border: "2px solid grey",
 						position: "absolute",
 					},
+					lensStyle: { width: "300px" },
 					enlargedImageContainerDimensions: {
 						width: "120%",
-						height: "150%",
+						height: textileType === "bedding" ? "80%" : "150%",
 					},
 				}}
 			/>
@@ -73,20 +74,11 @@ const ImgGallery = ({ setHover, dataList }) => {
 			<Box sx={{ display: { xs: "block", lg: "none" } }}>
 				<ImageGallery
 					items={imgs}
-					// useWindowKeydown={true}
-					// thumbnailPosition="bottom"
 					showThumbnails={false}
-					// originalHeight={16}
 					showFullscreenButton={false}
-					// originalWidth={16}
 					showNav={true}
 					showBullets
 					showPlayButton={false}
-					// onMouseOver={() => setHover(true)}
-					// onMouseLeave={() => setHover(false)}
-					// slideOnThumbnailOver={true}
-					// renderItem={() => <ImgMagnify />}
-					// onThumbnailClick={(e, idx) => setThumb(idx + 1)}
 				/>
 			</Box>
 		</Box>

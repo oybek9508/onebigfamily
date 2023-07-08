@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef, useState } from "react";
-import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -13,28 +12,19 @@ import { useRouter } from "next/router";
 import {
 	CssBaseline,
 	Divider,
-	Grid,
 	List,
 	ListItem,
 	ListItemButton,
-	ListItemIcon,
 	ListItemText,
 } from "@mui/material";
 import Link from "next/link";
+import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 
 const navItems = [
 	{ title: "Towels", link: "towels" },
 	{ title: "Beddings", link: "beddings" },
 	{ title: "Threads", link: "threads" },
-	// { title: "Table Cloth", link: "cloth" },
 ];
-
-function a11yProps(index) {
-	return {
-		id: `simple-tab-${index}`,
-		"aria-controls": `simple-tabpanel-${index}`,
-	};
-}
 
 const customStyle = {
 	fontFamily: "PT_Serif",
@@ -72,9 +62,7 @@ const drawerWidth = 240;
 
 const Header = (props) => {
 	const router = useRouter();
-	const [activeNav, setActiveNav] = useState("");
 	const [mobileOpen, setMobileOpen] = useState(false);
-	const [value, setValue] = useState(0);
 	const [bgColor, setBgColor] = useState("white");
 	const navRef = useRef();
 
@@ -87,14 +75,13 @@ const Header = (props) => {
 			container = () => window().document.body;
 		}
 	}, []);
-	// const container = window().document.body;
-	// window !== undefined ? () => window().document.body : undefined;
 
 	const homePage =
 		bgColor !== "white" ||
 		(router.asPath !== "/" && router.asPath.substring(0, 2) !== "/#");
 	const navColor = homePage ? "#fff" : "#000";
 	navRef.current = bgColor;
+
 	useEffect(() => {
 		const handleScroll = () => {
 			const show = window.scrollY > 80;
@@ -110,6 +97,36 @@ const Header = (props) => {
 			document.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
+
+	const handleNavigateBack = () => {
+		router.back();
+	};
+
+	const drawer = (
+		<Box
+			role="presentation"
+			onClick={handleDrawerToggle}
+			onKeyDown={handleDrawerToggle}
+		>
+			<Toolbar sx={{ height: "80px" }} />
+			<Divider />
+			<List>
+				{[
+					{ title: "Towels", link: "towels" },
+					{ title: "Beddings", link: "beddings" },
+				].map((text, index) => (
+					<ListItem key={text.title} disablePadding>
+						<Link href={`/#${text.link}`}>
+							<ListItemButton>
+								<ListItemText primary={text.title} />
+								<Divider />
+							</ListItemButton>
+						</Link>
+					</ListItem>
+				))}
+			</List>
+		</Box>
+	);
 
 	return (
 		<Box
@@ -148,7 +165,6 @@ const Header = (props) => {
 						keepMounted: true, // Better open performance on mobile.
 					}}
 					sx={{
-						// display: { xs: "block", sm: "none" },
 						"& .MuiDrawer-paper": {
 							boxSizing: "border-box",
 							width: drawerWidth,
@@ -158,6 +174,7 @@ const Header = (props) => {
 				>
 					{drawer}
 				</Drawer>
+
 				<Toolbar
 					sx={(theme) => ({
 						zIndex: theme.zIndex.drawer + 1,
@@ -166,11 +183,12 @@ const Header = (props) => {
 					<IconButton
 						aria-label="open drawer"
 						edge="start"
-						onClick={handleDrawerToggle}
+						onClick={handleNavigateBack}
 						sx={{ mr: 2, display: { md: "none" }, color: navColor }}
 					>
-						<MenuIcon />
+						<ArrowBackOutlinedIcon />
 					</IconButton>
+
 					<Box sx={{ flexGrow: 1 }}>
 						<Button sx={{ color: "#fff" }} onClick={() => router.push("/")}>
 							<img
@@ -180,7 +198,12 @@ const Header = (props) => {
 										: "/BigWayTrading_Logo_bk.png"
 								}
 								alt="big way logo"
-								style={{ width: "60px", height: "60px", marginRight: "16px" }}
+								style={{
+									width: "60px",
+									height: "60px",
+
+									marginRight: "16px",
+								}}
 								loading="lazy"
 							/>
 							<Typography
@@ -188,8 +211,7 @@ const Header = (props) => {
 								fontFamily="Rufina"
 								sx={{
 									display: {
-										fontSize: "24px",
-
+										fontSize: "1.3rem",
 										cursor: "pointer",
 										textTransform: "capitalize",
 										color: navColor,
@@ -208,7 +230,7 @@ const Header = (props) => {
 							}}
 							onClick={() => router.push("/about")}
 						>
-							About us
+							About
 						</Button>
 						{navItems.map((item) => (
 							<a
@@ -260,6 +282,14 @@ const Header = (props) => {
 							</Button>
 						</a>
 					</Box>
+					<IconButton
+						aria-label="open drawer"
+						edge="start"
+						onClick={handleDrawerToggle}
+						sx={{ mr: 2, display: { md: "none" }, color: navColor }}
+					>
+						<MenuIcon />
+					</IconButton>
 				</Toolbar>
 			</AppBar>
 		</Box>

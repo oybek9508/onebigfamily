@@ -104,23 +104,23 @@ export const featuredLinks = [
 		title: `Dobby "Ellegia"`,
 	},
 	{
-		src: "/assets/images/towels/pestemal/images1/img1.JPG",
-		url: "/towels/pestemal/1",
-		title: `Pestemal "Design № 1"`,
-	},
-	{
 		src: "/assets/images/towels/jacquard/images2/img1.JPG",
 		url: "/towels/jacquard/2",
 		title: `Jacquard "Spring"`,
 	},
 	{
-		src: "/assets/images/towels/waffle/images1/img1.JPG",
-		url: "/towels/waffle/1",
-		title: "Waffle  № 1",
+		src: "/assets/images/beddings/deluxe/images1/img1.JPG",
+		url: "/beddings/deluxe/1",
+		title: `Alisa`,
 	},
 	{
-		src: "/assets/images/towels/velour/images1/img1.jpg",
-		url: "/towels/velour/1",
-		title: `Velour "Alaska"`,
+		src: "/assets/images/beddings/satin/images3/img1.jpg",
+		url: "/beddings/digital/4",
+		title: `Kelly`,
+	},
+	{
+		src: "/assets/images/beddings/jacquard/images3/img1.JPG",
+		url: "/beddings/jacquard/3",
+		title: `Tecna`,
 	},
 ];

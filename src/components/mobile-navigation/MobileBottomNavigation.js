@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-	BottomNavigation,
-	BottomNavigationAction,
-	Box,
-	Drawer,
-	styled,
-} from "@mui/material";
+import { Box, Drawer, Typography, styled } from "@mui/material";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
@@ -20,10 +14,10 @@ const iconStyle = {
 	display: "flex",
 	justifyContent: "center",
 	alignItems: "center",
-	width: "25px",
+	width: "100%",
 	height: "25px",
+	color: "white",
 };
-const { mobileHeaderHeight } = layoutConstant;
 
 const StyledDrawer = styled(Drawer)(({ theme, totalheight }) => ({
 	width: 240,
@@ -31,7 +25,6 @@ const StyledDrawer = styled(Drawer)(({ theme, totalheight }) => ({
 	"& .MuiDrawer-paper": {
 		width: 240,
 		top: totalheight,
-		// height: `calc(100% - ${totalheight + mobileHeaderHeight}px)`,
 		height: "100%",
 		boxShadow: theme.shadows[2],
 		boxSizing: "border-box",
@@ -49,7 +42,7 @@ const Wrapper = styled(Box)(({ theme }) => ({
 	right: 0,
 	height: layoutConstant.mobileNavHeight,
 	justifyContent: "space-around",
-	backgroundColor: theme.palette.background.paper,
+	backgroundColor: "#527768",
 	boxShadow: "0px 1px 4px 3px rgba(0, 0, 0, 0.1)",
 	zIndex: theme.zIndex.drawer + 1,
 	"@media only screen and (max-width: 900px)": {
@@ -86,7 +79,7 @@ const MobileBottomNavigation = ({ children }) => {
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
 	};
-	console.log("width", width);
+
 	return width <= 900 ? (
 		<Box position="relative" display="flex" flexDirection="column">
 			<StyledDrawer
@@ -98,19 +91,6 @@ const MobileBottomNavigation = ({ children }) => {
 				{children}
 			</StyledDrawer>
 			<Wrapper value={value} onChange={handleChange}>
-				{/* <BottomNavigationAction label="Home" value="home" icon={<HomeIcon />} />
-
-			<BottomNavigationAction label="About" value="about" icon={<InfoIcon />} />
-			<BottomNavigationAction
-				label="Gategory"
-				value="gategory"
-				icon={<CategoryOutlined />}
-			/>
-			<BottomNavigationAction
-				label="Contact"
-				value="contact"
-				icon={<ContactMailIcon />}
-			/> */}
 				{navList.map((item) => {
 					if (item.href) {
 						return (
@@ -122,10 +102,11 @@ const MobileBottomNavigation = ({ children }) => {
 										alignItems: "center",
 										justifyContent: "center",
 										height: "100%",
+										width: "120px",
 									}}
 								>
 									{<item.icon sx={iconStyle} fontSize="small" />}
-									{item.label}
+									<Typography sx={{ color: "white" }}>{item.label}</Typography>
 								</Box>
 							</Link>
 						);
@@ -139,11 +120,12 @@ const MobileBottomNavigation = ({ children }) => {
 										alignItems: "center",
 										justifyContent: "center",
 										height: "100%",
+										width: "120px",
 									}}
 								>
 									{<item.icon sx={{ ...iconStyle }} fontSize="small" />}
 
-									{item.label}
+									<Typography sx={{ color: "white" }}>{item.label}</Typography>
 								</Box>
 							</a>
 						);

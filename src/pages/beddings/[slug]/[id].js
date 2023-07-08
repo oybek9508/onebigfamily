@@ -23,18 +23,21 @@ const Detailed = () => {
 	const singleSatin = filteredBeddings(beddingTypes[2]?.data);
 	const singleExclusive = filteredBeddings(beddingTypes[3]?.data);
 	const singleDigital = filteredBeddings(beddingTypes[4]?.data);
+	const singleJacquard = filteredBeddings(beddingTypes[5]?.data);
 
 	useEffect(() => {
 		const data =
-			slug === "satin"
+			slug === "digital"
 				? singleSatin
 				: slug === "premium"
 				? singlePremium
 				: slug === "exclusive"
 				? singleExclusive
-				: slug === "digital"
+				: slug === "3d"
 				? singleDigital
-				: singleDeluxe;
+				: slug === "deluxe"
+				? singleDeluxe
+				: slug === "jacquard" && singleJacquard;
 
 		setBeddingData(data);
 	}, [slug]);
@@ -45,6 +48,7 @@ const Detailed = () => {
 		...singleExclusive,
 		...singleDigital,
 		...singleDeluxe,
+		...singleJacquard,
 	];
 	console.log("beddingData", beddingData);
 	return (
