@@ -1,26 +1,16 @@
-const arr1 = [1];
-const arr2 = [1, 2];
-const arr3 = [1, 2, 3];
-const arr4 = [1, 2, 3, 4];
+import { imageArrays } from "@/utils/fetchImages";
+import { imgArrs } from "@/utils/imageSize";
 
-const imageArrays = (arr, imgNo) => {
-	return arr.map((img, idx) => {
-		let imageObj = {
-			id: idx + 1,
-			original: `/assets/images/beddings/satin/images${imgNo}/img${img}.jpg`,
-			thumbnail: `/assets/images/beddings/satin/images${imgNo}/img${img}.jpg`,
-		};
-		console.log("imageObj", imageObj);
-		return imageObj;
-	});
-};
+const fileType = "jpg";
+const filePath = "beddings/satin";
+const { arr1, arr2, arr3 } = imgArrs;
 
-const images1 = imageArrays(arr3, 1);
-const images2 = imageArrays(arr1, 2);
-const images3 = imageArrays(arr2, 3);
-const images4 = imageArrays(arr2, 4);
-const images5 = imageArrays(arr2, 5);
-const images6 = imageArrays(arr3, 6);
+const images1 = imageArrays(arr3, 1, filePath, fileType);
+const images2 = imageArrays(arr1, 2, filePath, fileType);
+const images3 = imageArrays(arr2, 3, filePath, fileType);
+const images4 = imageArrays(arr2, 4, filePath, fileType);
+const images5 = imageArrays(arr2, 5, filePath, fileType);
+const images6 = imageArrays(arr3, 6, filePath, fileType);
 
 export const satinImages = {
 	images1,

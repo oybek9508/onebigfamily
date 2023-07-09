@@ -1,8 +1,7 @@
-import ImgGallery from "@/components/common/img-gallery";
+import React from "react";
 import Layout from "@/components/layout/index.js";
 import { paragraph } from "@/constants/about";
 import { Grid, Typography } from "@mui/material";
-import React from "react";
 
 const About = () => {
 	return (

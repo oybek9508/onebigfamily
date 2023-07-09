@@ -20,12 +20,12 @@ const color = [
 
 export const terryTowelData = [
 	{
-		img: "/assets/images/towels/dobby/images1/img1.JPG",
+		img: dobbyImages.images1[0].original,
 		title: "Dobby Towels",
 		dobbyData: [
 			{
 				id: "1",
-				img: "/assets/images/towels/dobby/images1/img1.JPG",
+				img: dobbyImages.images1[0].original,
 				title: "Vesta",
 				size: dobbySize,
 				type,
@@ -34,7 +34,7 @@ export const terryTowelData = [
 			},
 			{
 				id: "2",
-				img: "/assets/images/towels/dobby/images2/img1.JPG",
+				img: dobbyImages.images2[0].original,
 				title: "Ellegia",
 				size: dobbySize,
 				type,
@@ -43,7 +43,7 @@ export const terryTowelData = [
 			},
 			{
 				id: "3",
-				img: "/assets/images/towels/dobby/images3/img1.JPG",
+				img: dobbyImages.images3[0].original,
 				title: "Ellegia",
 				size: dobbySize,
 				type,
@@ -52,7 +52,7 @@ export const terryTowelData = [
 			},
 			{
 				id: "5",
-				img: "/assets/images/towels/dobby/images5/img1.JPG",
+				img: dobbyImages.images5[0].original,
 				title: "Crown",
 				size: dobbySize,
 				type,
@@ -61,7 +61,7 @@ export const terryTowelData = [
 			},
 			{
 				id: "6",
-				img: "/assets/images/towels/dobby/images6/img1.JPG",
+				img: dobbyImages.images6[0].original,
 				title: "Riddles",
 				size: dobbySize,
 				type,
@@ -70,7 +70,7 @@ export const terryTowelData = [
 			},
 			{
 				id: "7",
-				img: "/assets/images/towels/dobby/images7/img1.JPG",
+				img: dobbyImages.images7[0].original,
 				title: "Oxford",
 				size: dobbySize,
 				type,

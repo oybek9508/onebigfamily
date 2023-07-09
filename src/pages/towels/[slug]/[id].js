@@ -1,13 +1,12 @@
 /* eslint-disable react/jsx-no-duplicate-props */
-import Layout from "@/components/layout/index.js";
-import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Grid } from "@mui/material";
 import { useRouter } from "next/router";
+import Layout from "@/components/layout/index.js";
 import { terryTowelData } from "@/constants/towels";
 import DetailedPage from "@/components/common/DetailedPage";
 
 const Detailed = () => {
-	let towelList = [];
 	const [towelData, setTowelData] = useState([]);
 	const router = useRouter();
 	const { query } = router;
@@ -36,23 +35,11 @@ const Detailed = () => {
 		setTowelData(data);
 	}, [query.slug]);
 
-	towelList = [
-		...singleDobby,
-		...singleJacquard,
-		...singlePestemal,
-		...singleWaffle,
-		...singleVelour,
-	];
-
 	console.log(" towelData", towelData);
 	return (
 		<Grid>
 			<Layout isFixed fullWidth>
-				<DetailedPage
-					data={towelData}
-					dataList={towelList}
-					textileType="towel"
-				/>
+				<DetailedPage data={towelData} textileType="towel" />
 			</Layout>
 		</Grid>
 	);

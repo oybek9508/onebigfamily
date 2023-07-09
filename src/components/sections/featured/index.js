@@ -5,8 +5,6 @@ import { H1 } from "@/components/Typography";
 import ProductCard from "@/components/ProductCard";
 
 const Featured = () => {
-	const imgRef = useRef();
-
 	return (
 		<Box sx={{ py: { xs: "40px", md: "80px" }, px: { xs: "40px", xl: 0 } }}>
 			<Box my={2}>

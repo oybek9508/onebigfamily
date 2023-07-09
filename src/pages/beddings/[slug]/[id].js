@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-no-duplicate-props */
-import Layout from "@/components/layout/index.js";
-import { Grid } from "@mui/material";
-
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { Grid } from "@mui/material";
+import Layout from "@/components/layout/index.js";
+
 import { beddingTypes } from "@/constants/beddings";
 import DetailedPage from "@/components/common/DetailedPage";
 
@@ -11,8 +11,6 @@ const Detailed = () => {
 	const [beddingData, setBeddingData] = useState([]);
 	const router = useRouter();
 	const { query } = router;
-	const { slug } = query;
-	console.log("router", router);
 
 	const filteredBeddings = (data) => {
 		return data.filter((d, i) => query.id === d.id);
@@ -27,38 +25,25 @@ const Detailed = () => {
 
 	useEffect(() => {
 		const data =
-			slug === "digital"
+			query.slug === "digital"
 				? singleSatin
-				: slug === "premium"
+				: query.slug === "premium"
 				? singlePremium
-				: slug === "exclusive"
+				: query.slug === "exclusive"
 				? singleExclusive
-				: slug === "3d"
+				: query.slug === "3d"
 				? singleDigital
-				: slug === "deluxe"
+				: query.slug === "deluxe"
 				? singleDeluxe
-				: slug === "jacquard" && singleJacquard;
+				: query.slug === "jacquard" && singleJacquard;
 
 		setBeddingData(data);
-	}, [slug]);
+	}, [query.slug]);
 
-	const dataList = [
-		...singleSatin,
-		...singlePremium,
-		...singleExclusive,
-		...singleDigital,
-		...singleDeluxe,
-		...singleJacquard,
-	];
-	console.log("beddingData", beddingData);
 	return (
 		<Grid>
 			<Layout isFixed fullWidth>
-				<DetailedPage
-					data={beddingData}
-					dataList={dataList}
-					textileType="bedding"
-				/>
+				<DetailedPage data={beddingData} textileType="bedding" />
 			</Layout>
 		</Grid>
 	);

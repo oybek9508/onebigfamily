@@ -1,27 +1,12 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
 import Layout from "@/components/layout/index.js";
 import About from "@/components/sections/about";
 import Featured from "@/components/sections/featured";
 import Towels from "@/components/sections/towels";
 import Beddings from "@/components/sections/beddings";
-import Threads from "@/components/sections/threads";
-import Cloth from "@/components/sections/cloth";
 import Partners from "@/components/sections/partners";
 import Reviews from "@/components/sections/reviews";
 import Contacts from "@/components/sections/contacts";
-
-const inter = Inter({ subsets: ["latin"] });
-
-// const hello = async () => {
-// 	await new Promise((res) => setTimeout(console.log(">>>>", 1), 2000));
-// 	console.log(">>>>", 4);
-// 	new Promise((res) => res(setTimeout(console.log(">>>>", 3), 1000)));
-// 	console.log(">>>>", 5);
-// 	await p.then((res) => res);
-// };
-
-// hello();
 
 export default function Home() {
 	return (
@@ -38,8 +23,6 @@ export default function Home() {
 					<Featured />
 					<Towels />
 					<Beddings />
-					{/* <Threads />
-					<Cloth /> */}
 					<Partners />
 					<Reviews />
 					<Contacts />

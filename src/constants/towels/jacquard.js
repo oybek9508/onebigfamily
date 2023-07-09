@@ -1,25 +1,16 @@
-const arr4 = [1, 2, 3, 4];
-const arr8 = [1, 2, 3, 4, 5, 6, 7, 8];
-const arr9 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+import { imageArrays } from "@/utils/fetchImages";
+import { imgArrs } from "@/utils/imageSize";
 
-const imageArrays = (arr, imgNo) => {
-	return arr.map((img, idx) => {
-		let imageObj = {
-			id: idx + 1,
-			original: `/assets/images/towels/jacquard/images${imgNo}/img${img}.JPG`,
-			thumbnail: `/assets/images/towels/jacquard/images${imgNo}/img${img}.JPG`,
-		};
-		console.log("imageObj", imageObj);
-		return imageObj;
-	});
-};
+const fileType = "JPG";
+const filePath = "/towels/jacquard";
+const { arr4, arr8, arr9 } = imgArrs;
 
-const images1 = imageArrays(arr8, 1);
-const images2 = imageArrays(arr4, 2);
-const images3 = imageArrays(arr4, 3);
-const images4 = imageArrays(arr9, 4);
-const images5 = imageArrays(arr4, 5);
-const images6 = imageArrays(arr4, 6);
+const images1 = imageArrays(arr8, 1, filePath, fileType);
+const images2 = imageArrays(arr4, 2, filePath, fileType);
+const images3 = imageArrays(arr4, 3, filePath, fileType);
+const images4 = imageArrays(arr9, 4, filePath, fileType);
+const images5 = imageArrays(arr4, 5, filePath, fileType);
+const images6 = imageArrays(arr4, 6, filePath, fileType);
 
 export const jacquardImages = {
 	images1,

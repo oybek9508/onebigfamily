@@ -1,19 +1,9 @@
 import Layout from "@/components/layout/index.js";
-import {
-	Box,
-	Grid,
-	Typography,
-	ImageList,
-	ImageListItem,
-	CardMedia,
-} from "@mui/material";
-import Link from "next/link";
+import { Box, Grid } from "@mui/material";
 import React from "react";
 import { beddingTypes } from "@/constants/beddings";
 import { H1 } from "@/components/Typography";
 import ProductCard from "@/components/ProductCard";
-
-console.log("beddingTypes", beddingTypes);
 
 const Slug = () => {
 	return (
