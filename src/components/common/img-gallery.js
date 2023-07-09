@@ -1,15 +1,11 @@
+import { useState } from "react";
 import ImageGallery from "react-image-gallery";
 import ReactImageMagnify from "react-image-magnify";
 import "react-image-gallery/styles/css/image-gallery.css";
-import { useState } from "react";
-import { useRouter } from "next/router";
 import { Box } from "@mui/material";
 
-const ImgGallery = ({ setHover, dataList, textileType, otherProps }) => {
-	const router = useRouter();
+const ImgGallery = ({ dataList, textileType }) => {
 	const [thumb, setThumb] = useState(1);
-	const { query } = router;
-
 	let imgs = dataList;
 
 	const ImgMagnify = () => (
@@ -24,7 +20,6 @@ const ImgGallery = ({ setHover, dataList, textileType, otherProps }) => {
 		>
 			<ReactImageMagnify
 				enlargedImagePosition="beside"
-				// lensComponent={() => <PositiveSpaceLens />}
 				{...{
 					smallImage: {
 						src: imgs[thumb - 1].thumbnail,
@@ -65,8 +60,6 @@ const ImgGallery = ({ setHover, dataList, textileType, otherProps }) => {
 					originalWidth={16}
 					showNav={false}
 					showPlayButton={false}
-					onMouseOver={() => setHover(true)}
-					onMouseLeave={() => setHover(false)}
 					renderItem={() => <ImgMagnify />}
 					onThumbnailClick={(e, idx) => setThumb(idx + 1)}
 				/>

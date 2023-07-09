@@ -1,20 +1,13 @@
-const arr1 = [1];
+import { imageArrays } from "@/utils/fetchImages";
+import { imgArrs } from "@/utils/imageSize";
 
-const imageArrays = (arr, imgNo) => {
-	return arr.map((img, idx) => {
-		let imageObj = {
-			id: idx + 1,
-			original: `/assets/images/towels/velour/images${imgNo}/img${img}.jpg`,
-			thumbnail: `/assets/images/towels/velour/images${imgNo}/img${img}.jpg`,
-		};
-		console.log("imageObj", imageObj);
-		return imageObj;
-	});
-};
+const fileType = "jpg";
+const filePath = "/towels/velour";
+const { arr1 } = imgArrs;
 
-const images1 = imageArrays(arr1, 1);
-const images2 = imageArrays(arr1, 2);
-const images3 = imageArrays(arr1, 3);
+const images1 = imageArrays(arr1, 1, filePath, fileType);
+const images2 = imageArrays(arr1, 2, filePath, fileType);
+const images3 = imageArrays(arr1, 3, filePath, fileType);
 
 export const velourImages = {
 	images1,

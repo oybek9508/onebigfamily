@@ -1,32 +1,24 @@
-const arr1 = [1];
-const arr3 = [1, 2, 3];
-const arr4 = [1, 2, 3, 4];
-const arr9 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+import { imageArrays } from "@/utils/fetchImages";
+import { imgArrs } from "@/utils/imageSize";
 
-const imageArrays = (arr, imgNo) => {
-	return arr.map((img, idx) => {
-		let imageObj = {
-			id: idx + 1,
-			original: `/assets/images/towels/waffle/images${imgNo}/img${img}.JPG`,
-			thumbnail: `/assets/images/towels/waffle/images${imgNo}/img${img}.JPG`,
-		};
-		console.log("imageObj", imageObj);
-		return imageObj;
-	});
+const fileType = "JPG";
+const filePath = "/towels/waffle";
+const { arr1, arr4, arr3, arr9 } = imgArrs;
+
+const imageProperties = {
+	images1: { array: arr3, index: 1 },
+	images2: { array: arr4, index: 2 },
+	images3: { array: arr3, index: 3 },
+	images4: { array: arr9, index: 4 },
+	images5: { array: arr1, index: 5 },
+	images6: { array: arr1, index: 6 },
 };
 
-const images1 = imageArrays(arr3, 1);
-const images2 = imageArrays(arr4, 2);
-const images3 = imageArrays(arr3, 3);
-const images4 = imageArrays(arr9, 4);
-const images5 = imageArrays(arr1, 5);
-const images6 = imageArrays(arr1, 6);
+const waffleImages = {};
 
-export const waffleImages = {
-	images1,
-	images2,
-	images3,
-	images4,
-	images5,
-	images6,
-};
+for (const [propertyName, { array, index }] of Object.entries(
+	imageProperties
+)) {
+	waffleImages[propertyName] = imageArrays(array, index, filePath, fileType);
+}
+export { waffleImages };

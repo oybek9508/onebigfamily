@@ -1,11 +1,6 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import React from "react";
-import SwiperCore, {
-	Navigation,
-	Pagination,
-	EffectFade,
-	Autoplay,
-} from "swiper";
+import { Navigation, Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";

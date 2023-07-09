@@ -1,17 +1,13 @@
-import Layout from "@/components/layout/index.js";
-import { Box, Grid, Typography, ImageList, CardMedia } from "@mui/material";
-import Link from "next/link";
 import React from "react";
-import { terryTowelData } from "@/constants/towels";
 import { useRouter } from "next/router";
-import { H1, Paragraph } from "@/components/Typography";
+import Layout from "@/components/layout/index.js";
+import { Box, Grid } from "@mui/material";
+import { terryTowelData } from "@/constants/towels";
+import { H1 } from "@/components/Typography";
 import ProductCard from "@/components/ProductCard";
-
-console.log("terryTowelData", terryTowelData);
 
 const Slug = () => {
 	const router = useRouter();
-	console.log("router", router);
 	return (
 		<Grid>
 			<Layout>
@@ -75,10 +71,11 @@ const Slug = () => {
 							{terryTowelData[3]?.waffleData?.map((item, idx) => (
 								<Grid key={idx} item lg={4} md={6} sm={6} xs={12}>
 									<ProductCard
+										// fixedHeight={idx > 3}
 										id={item.id}
 										imgUrl={item.img}
 										title={item.title}
-										url={`/towels/pestemal/${idx + 1}`}
+										url={`/towels/waffle/${idx + 1}`}
 									/>
 								</Grid>
 							))}

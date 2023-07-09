@@ -1,9 +1,7 @@
 import ProductCard from "@/components/ProductCard";
-import { H1, Paragraph } from "@/components/Typography";
+import { H1 } from "@/components/Typography";
 import { terryTowelData } from "@/constants/towels";
-import { Box, CardMedia, Grid, Typography } from "@mui/material";
-import Image from "next/image";
-import Link from "next/link";
+import { Box, Grid } from "@mui/material";
 import React from "react";
 
 const TowelCategory = () => {
@@ -29,69 +27,6 @@ const TowelCategory = () => {
 				))}
 			</Grid>
 		</Box>
-		// <Grid
-		// 	sx={{
-		// 		px: { xs: "2rem", md: "5rem" },
-		// 		py: { xs: "40px", md: "80px" },
-		// 	}}
-		// >
-		// 	<Grid
-		// 		container
-		// 		sx={{
-		// 			mt: "40px",
-		// 			mb: "40px",
-		// 			display: "flex",
-		// 			flexWrap: "wrap",
-		// 			justifyContent: { xs: "center", sm: "space-between" },
-		// 		}}
-		// 	>
-		// 		{terryTowelData.map((item, idx) => {
-		// 			return (
-		// 				<Grid
-		// 					item
-		// 					xs={12}
-		// 					sm={5}
-		// 					md={3.5}
-		// 					lg={3.5}
-		// 					key={item.url}
-		// 					sx={(theme) => ({
-		// 						margin: 1,
-		// 						boxShadow: theme.shadows[5],
-		// 						borderRadius: "20px",
-		// 						py: 4,
-		// 					})}
-		// 				>
-		// 					<Link
-		// 						href={`/towels/${item.title
-		// 							.toLocaleLowerCase()
-		// 							.substring(0, item.title.indexOf(" "))}/#${item.title
-		// 							.toLocaleLowerCase()
-		// 							.substring(0, item.title.indexOf(" "))}`}
-		// 					>
-		// 						<CardMedia
-		// 							component="img"
-		// 							src={item.img}
-		// 							alt={item.title}
-		// 							loading="lazy"
-		// 							sx={{ borderRadius: "20px" }}
-		// 						/>
-
-		// 						<Typography
-		// 							sx={{
-		// 								fontSize: { xs: "20px", sm: "24px" },
-		// 								fontFamily: "Rufina",
-		// 								mt: 2,
-		// 								textAlign: "center",
-		// 							}}
-		// 						>
-		// 							{item.title}
-		// 						</Typography>
-		// 					</Link>
-		// 				</Grid>
-		// 			);
-		// 		})}
-		// 	</Grid>
-		// </Grid>
 	);
 };
 
