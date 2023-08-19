@@ -1,19 +1,13 @@
 import { Box, styled } from "@mui/material";
 import clsx from "clsx";
-import React from "react";
 const StyledBox = styled(Box)(({ textTransformStyle, ellipsis }) => ({
 	textTransform: textTransformStyle || "none",
 	whiteSpace: ellipsis ? "nowrap" : "normal",
 	overflow: ellipsis ? "hidden" : "",
 	textOverflow: ellipsis ? "ellipsis" : "",
 }));
-export const H1 = ({
-	children,
-	className,
-	ellipsis,
-	textTransform,
-	...props
-}) => {
+
+export const H1 = ({ children, className, ellipsis, textTransform, ...props }) => {
 	return (
 		<StyledBox
 			textTransformStyle={textTransform}
@@ -33,13 +27,7 @@ export const H1 = ({
 		</StyledBox>
 	);
 };
-export const H2 = ({
-	children,
-	className,
-	ellipsis,
-	textTransform,
-	...props
-}) => {
+export const H2 = ({ children, className, ellipsis, textTransform, ...props }) => {
 	return (
 		<StyledBox
 			textTransformStyle={textTransform}
@@ -59,13 +47,7 @@ export const H2 = ({
 		</StyledBox>
 	);
 };
-export const H3 = ({
-	children,
-	className,
-	ellipsis,
-	textTransform,
-	...props
-}) => {
+export const H3 = ({ children, className, ellipsis, textTransform, ...props }) => {
 	return (
 		<StyledBox
 			textTransformStyle={textTransform}
@@ -85,13 +67,7 @@ export const H3 = ({
 		</StyledBox>
 	);
 };
-export const H4 = ({
-	children,
-	className,
-	ellipsis,
-	textTransform,
-	...props
-}) => {
+export const H4 = ({ children, className, ellipsis, textTransform, ...props }) => {
 	return (
 		<StyledBox
 			textTransformStyle={textTransform}
@@ -111,13 +87,7 @@ export const H4 = ({
 		</StyledBox>
 	);
 };
-export const H5 = ({
-	children,
-	className,
-	ellipsis,
-	textTransform,
-	...props
-}) => {
+export const H5 = ({ children, className, ellipsis, textTransform, ...props }) => {
 	return (
 		<StyledBox
 			textTransformStyle={textTransform}
@@ -137,13 +107,7 @@ export const H5 = ({
 		</StyledBox>
 	);
 };
-export const H6 = ({
-	children,
-	className,
-	ellipsis,
-	textTransform,
-	...props
-}) => {
+export const H6 = ({ children, className, ellipsis, textTransform, ...props }) => {
 	return (
 		<StyledBox
 			textTransformStyle={textTransform}
@@ -163,13 +127,7 @@ export const H6 = ({
 		</StyledBox>
 	);
 };
-export const Paragraph = ({
-	children,
-	className,
-	ellipsis,
-	textTransform,
-	...props
-}) => {
+export const Paragraph = ({ children, className, ellipsis, textTransform, ...props }) => {
 	return (
 		<StyledBox
 			textTransformStyle={textTransform}
@@ -187,13 +145,7 @@ export const Paragraph = ({
 		</StyledBox>
 	);
 };
-export const Small = ({
-	children,
-	className,
-	ellipsis,
-	textTransform,
-	...props
-}) => {
+export const Small = ({ children, className, ellipsis, textTransform, ...props }) => {
 	return (
 		<StyledBox
 			textTransformStyle={textTransform}
@@ -210,13 +162,7 @@ export const Small = ({
 		</StyledBox>
 	);
 };
-export const Span = ({
-	children,
-	className,
-	ellipsis,
-	textTransform,
-	...props
-}) => {
+export const Span = ({ children, className, ellipsis, textTransform, ...props }) => {
 	return (
 		<StyledBox
 			textTransformStyle={textTransform}
@@ -232,13 +178,7 @@ export const Span = ({
 		</StyledBox>
 	);
 };
-export const Tiny = ({
-	children,
-	className,
-	ellipsis,
-	textTransform,
-	...props
-}) => {
+export const Tiny = ({ children, className, ellipsis, textTransform, ...props }) => {
 	return (
 		<StyledBox
 			textTransformStyle={textTransform}

@@ -1,5 +1,4 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
-import React from "react";
+import { Box, Grid, Typography } from "@mui/material";
 
 const Intro = () => {
 	return (
@@ -29,7 +28,6 @@ const Intro = () => {
 				</Typography>
 				<Typography
 					sx={{
-						// width: "90%",
 						fontSize: "20px",
 						fontFamily: "PT_Sarif",
 						lineHeight: "24px",
@@ -37,11 +35,10 @@ const Intro = () => {
 						mt: 2,
 					}}
 				>
-					Introducing our premium towels, crafted with unparalleled quality from
-					100% cotton. Experience luxurious softness and absorbency like never
-					before, ensuring a delightful and indulgent bathing experience.
-					Elevate your daily routine with these top-tier towels, designed to
-					wrap you in comfort and durability.
+					Introducing our premium towels, crafted with unparalleled quality from 100% cotton. Experience
+					luxurious softness and absorbency like never before, ensuring a delightful and indulgent bathing
+					experience. Elevate your daily routine with these top-tier towels, designed to wrap you in comfort
+					and durability.
 				</Typography>
 			</Box>
 		</Grid>

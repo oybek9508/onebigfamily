@@ -1,5 +1,4 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
-import React from "react";
+import { Box, Grid, Typography } from "@mui/material";
 
 const Intro = () => {
 	return (
@@ -36,12 +35,10 @@ const Intro = () => {
 						mt: 2,
 					}}
 				>
-					Introducing our exquisite beddings and bed linens, meticulously
-					crafted from 100% cotton for the ultimate in quality. Experience
-					unparalleled comfort and a luxurious sleep environment that will leave
-					you refreshed and revitalized. Elevate your bedroom with these
-					top-tier products, designed to provide unmatched softness, durability,
-					and style.
+					Introducing our exquisite beddings and bed linens, meticulously crafted from 100% cotton for the
+					ultimate in quality. Experience unparalleled comfort and a luxurious sleep environment that will
+					leave you refreshed and revitalized. Elevate your bedroom with these top-tier products, designed to
+					provide unmatched softness, durability, and style.
 				</Typography>
 			</Box>
 		</Grid>

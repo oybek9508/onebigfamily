@@ -1,44 +1,34 @@
 /* eslint-disable react/jsx-no-duplicate-props */
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import { Grid } from "@mui/material";
-import Layout from "@/components/layout/index.js";
-
-import { beddingTypes } from "@/constants/beddings";
 import DetailedPage from "@/components/common/DetailedPage";
+import Layout from "@/components/layout/index.js";
+import { beddingTypes } from "@/constants/beddings";
+import { Grid } from "@mui/material";
+import memoizeOne from "memoize-one";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-const Detailed = () => {
+const Detailed = ({ ssrRenderedBeddingData }) => {
 	const [beddingData, setBeddingData] = useState([]);
 	const router = useRouter();
 	const { query } = router;
 
-	const filteredBeddings = (data) => {
-		return data.filter((d, i) => query.id === d.id);
+	const filteredBeddings = memoizeOne((data) => {
+		return data.filter((d) => query.id === d.id);
+	});
+
+	const beddingTypeMap = {
+		premium: ssrRenderedBeddingData[0]?.data,
+		deluxe: ssrRenderedBeddingData[1]?.data,
+		"3d": ssrRenderedBeddingData[4]?.data,
+		exclusive: ssrRenderedBeddingData[3]?.data,
+		digital: ssrRenderedBeddingData[2]?.data,
+		jacquard: ssrRenderedBeddingData[5]?.data,
 	};
 
-	const singlePremium = filteredBeddings(beddingTypes[0]?.data);
-	const singleDeluxe = filteredBeddings(beddingTypes[1]?.data);
-	const singleSatin = filteredBeddings(beddingTypes[2]?.data);
-	const singleExclusive = filteredBeddings(beddingTypes[3]?.data);
-	const singleDigital = filteredBeddings(beddingTypes[4]?.data);
-	const singleJacquard = filteredBeddings(beddingTypes[5]?.data);
-
 	useEffect(() => {
-		const data =
-			query.slug === "digital"
-				? singleSatin
-				: query.slug === "premium"
-				? singlePremium
-				: query.slug === "exclusive"
-				? singleExclusive
-				: query.slug === "3d"
-				? singleDigital
-				: query.slug === "deluxe"
-				? singleDeluxe
-				: query.slug === "jacquard" && singleJacquard;
-
-		setBeddingData(data);
-	}, [query.slug]);
+		const selectedBeddingData = beddingTypeMap[query.slug] || beddingTypeMap.deluxe;
+		setBeddingData(filteredBeddings(selectedBeddingData));
+	}, [query.slug, query.id]);
 
 	return (
 		<Grid>
@@ -47,6 +37,13 @@ const Detailed = () => {
 			</Layout>
 		</Grid>
 	);
+};
+
+export const getServerSideProps = async () => {
+	const data = beddingTypes;
+	return {
+		props: { ssrRenderedBeddingData: data },
+	};
 };
 
 export default Detailed;

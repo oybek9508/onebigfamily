@@ -1,8 +1,7 @@
-import { Box, Grid } from "@mui/material";
-import React, { useRef } from "react";
-import { featuredLinks } from "@/constants/featured";
-import { H1 } from "@/components/Typography";
 import ProductCard from "@/components/ProductCard";
+import { H1 } from "@/components/Typography";
+import { featuredLinks } from "@/constants/featured";
+import { Box, Grid } from "@mui/material";
 
 const Featured = () => {
 	return (

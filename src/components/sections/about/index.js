@@ -1,13 +1,17 @@
-import { Box, Grid } from "@mui/material";
 import React from "react";
-import { Navigation, Pagination, Autoplay } from "swiper";
+import { Box, Grid } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
+
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
+
+const slideData = ["intro1.jpg", "intro2.jpg", "intro3.jpg", "intro4.jpg"];
 
 const About = () => {
 	return (
@@ -21,7 +25,6 @@ const About = () => {
 				autoplay={{
 					delay: 3000,
 				}}
-				modules={[Navigation, Pagination, Autoplay]}
 				slidesPerView={1}
 				pagination={{
 					clickable: true,
@@ -29,70 +32,24 @@ const About = () => {
 				className="mySwiper"
 				style={{ height: "100%" }}
 			>
-				<SwiperSlide>
-					<Grid
-						sx={{
-							py: "10rem",
-							width: "100%",
-							height: "100%",
-							position: "relative",
-							backgroundPosition: "center center",
-							backgroundSize: "cover",
-							backgroundImage: "url(/assets/images/bg_images/intro1.jpg)",
-							top: 0,
-						}}
-					>
-						<Box sx={{ color: "#fff" }}></Box>
-					</Grid>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Grid
-						sx={{
-							py: "10rem",
-							width: "100%",
-							height: "100%",
-							position: "relative",
-							backgroundPosition: "center center",
-							backgroundSize: "cover",
-							backgroundImage: "url(/assets/images/bg_images/intro2.jpg)",
-							top: 0,
-						}}
-					>
-						<Box sx={{ color: "#fff" }}></Box>
-					</Grid>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Grid
-						sx={{
-							py: "10rem",
-							width: "100%",
-							height: "100%",
-							position: "relative",
-							backgroundPosition: "center center",
-							backgroundSize: "cover",
-							backgroundImage: "url(assets/images/bg_images/intro3.jpg)",
-							top: 0,
-						}}
-					>
-						<Box sx={{ color: "#fff" }}></Box>
-					</Grid>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Grid
-						sx={{
-							py: "10rem",
-							width: "100%",
-							height: "100%",
-							position: "relative",
-							backgroundPosition: "center center",
-							backgroundSize: "cover",
-							backgroundImage: "url(/assets/images/bg_images/intro4.jpg)",
-							top: 0,
-						}}
-					>
-						<Box sx={{ color: "#fff" }}></Box>
-					</Grid>
-				</SwiperSlide>
+				{slideData.map((slide, index) => (
+					<SwiperSlide key={index}>
+						<Grid
+							sx={{
+								py: "10rem",
+								width: "100%",
+								height: "100%",
+								position: "relative",
+								backgroundPosition: "center center",
+								backgroundSize: "cover",
+								backgroundImage: `url(/assets/images/bg_images/${slide})`,
+								top: 0,
+							}}
+						>
+							<Box sx={{ color: "#fff" }}></Box>
+						</Grid>
+					</SwiperSlide>
+				))}
 			</Swiper>
 		</Grid>
 	);

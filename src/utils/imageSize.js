@@ -1,10 +1,8 @@
-const imageSize = (size) => {
-	let arr = [];
-	for (let i = 1; i <= size; i++) {
-		arr.push(i);
-	}
-	return arr;
-};
+import memoizeOne from "memoize-one";
+
+const imageSize = memoizeOne((size) => {
+	return Array.from({ length: size }, (_, idx) => idx + 1);
+});
 
 const arr1 = imageSize(1);
 const arr2 = imageSize(2);

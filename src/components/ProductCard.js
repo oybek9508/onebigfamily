@@ -1,16 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import Link from "next/link";
-import { useTheme } from "@mui/system";
+import { CardMedia, Chip } from "@mui/material";
 import { Box, styled } from "@mui/system";
-// import Add from "@mui/icons-material/Add";
-import { Button, CardMedia, Chip } from "@mui/material";
-// import Remove from "@mui/icons-material/Remove";
-// import BazarRating from "components/BazarRating";
-// import { useAppContext } from "contexts/app/AppContext";
-import React, { useCallback, Fragment } from "react";
-import { H3, Span } from "./Typography";
+import Link from "next/link";
 import FlexBox from "./FlexBox";
-import LazyImage from "./LazyImage";
+import { H3 } from "./Typography";
 
 const StyledCard = styled(Box)(({ theme }) => ({
 	position: "relative",
@@ -21,7 +14,6 @@ const StyledCard = styled(Box)(({ theme }) => ({
 	backgroundColor: "#fff",
 	transition: "all 250ms ease-in-out",
 	"&:hover": {
-		// boxShadow: theme.shadows[2],
 		"& .css-1i2n18j": {
 			display: "flex",
 		},
@@ -65,38 +57,13 @@ const StyledChip = styled(Chip)(({ theme }) => ({
 	paddingRight: 3,
 	borderRadius: 0,
 	color: "#fff",
-	// background: theme.palette.primary.main,
 	top: "20px",
 	left: "0px",
 	zIndex: 11,
 }));
 
-const StyledButton = styled(Button)(({ theme }) => ({
-	padding: "4px",
-	borderRadius: 0,
-	transition: "all 0.3s",
-	// color: theme.palette.primary.main,
-	"&:hover": {
-		color: "#fff",
-		// background: theme.palette.primary.main,
-		// border: `1px solid ${theme.palette.primary.main}`,
-	},
-}));
-
 const ProductCard = (props) => {
-	const {
-		sx,
-		fixedHeight,
-		off,
-		url,
-		id,
-		title,
-		price,
-		imgUrl,
-		rating,
-		hideRating,
-		productColors,
-	} = props;
+	const { sx, fixedHeight, off, url, id, title, price, imgUrl, rating, hideRating, productColors } = props;
 	return (
 		<StyledCard sx={sx}>
 			<Link href={url}>
@@ -106,15 +73,13 @@ const ProductCard = (props) => {
 						src={imgUrl}
 						width={100}
 						height={100}
-						// fill={true}
+						// fill
 						layout="responsive"
 						objectFit="contain"
 					/> */}
 					<CardMedia
 						component="img"
-						// ref={imgRef}
 						src={imgUrl}
-						// srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
 						alt={title}
 						loading="lazy"
 						sx={{

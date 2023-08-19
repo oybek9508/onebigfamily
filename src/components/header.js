@@ -1,24 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect, useRef, useState } from "react";
+import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
+import { CssBaseline, Divider, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { useRouter } from "next/router";
-import {
-	CssBaseline,
-	Divider,
-	List,
-	ListItem,
-	ListItemButton,
-	ListItemText,
-} from "@mui/material";
 import Link from "next/link";
-import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
+import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
 
 const navItems = [
 	{ title: "Towels", link: "towels" },
@@ -35,28 +28,6 @@ const customStyle = {
 		textDecoration: "underline",
 	},
 };
-
-const drawer = (
-	<div>
-		<Toolbar sx={{ height: "80px" }} />
-		<Divider />
-		<List>
-			{[
-				{ title: "Towels", link: "towels" },
-				{ title: "Beddings", link: "beddings" },
-			].map((text, index) => (
-				<ListItem key={text.title} disablePadding>
-					<Link href={`/#${text.link}`}>
-						<ListItemButton>
-							<ListItemText primary={text.title} />
-							<Divider />
-						</ListItemButton>
-					</Link>
-				</ListItem>
-			))}
-		</List>
-	</div>
-);
 
 const drawerWidth = 240;
 
@@ -76,9 +47,7 @@ const Header = (props) => {
 		}
 	}, []);
 
-	const homePage =
-		bgColor !== "white" ||
-		(router.asPath !== "/" && router.asPath.substring(0, 2) !== "/#");
+	const homePage = bgColor !== "white" || (router.asPath !== "/" && router.asPath.substring(0, 2) !== "/#");
 	const navColor = homePage ? "#fff" : "#000";
 	navRef.current = bgColor;
 
@@ -103,11 +72,7 @@ const Header = (props) => {
 	};
 
 	const drawer = (
-		<Box
-			role="presentation"
-			onClick={handleDrawerToggle}
-			onKeyDown={handleDrawerToggle}
-		>
+		<Box role="presentation" onClick={handleDrawerToggle} onKeyDown={handleDrawerToggle}>
 			<Toolbar sx={{ height: "80px" }} />
 			<Divider />
 			<List>
@@ -137,10 +102,7 @@ const Header = (props) => {
 				boxShadow: theme.shadows[1],
 				justifyContent: "center",
 				alignItems: "center",
-				bgcolor:
-					router.asPath === "/" || router.asPath.substring(0, 2) === "/#"
-						? bgColor
-						: "#527768",
+				bgcolor: router.asPath === "/" || router.asPath.substring(0, 2) === "/#" ? bgColor : "#527768",
 				zIndex: theme.zIndex.drawer + 1,
 			})}
 		>
@@ -192,11 +154,7 @@ const Header = (props) => {
 					<Box sx={{ flexGrow: 1 }}>
 						<Button sx={{ color: "#fff" }} onClick={() => router.push("/")}>
 							<img
-								src={
-									homePage
-										? "/BigWayTrading_Logo_wt.png"
-										: "/BigWayTrading_Logo_bk.png"
-								}
+								src={homePage ? "/BigWayTrading_Logo_wt.png" : "/BigWayTrading_Logo_bk.png"}
 								alt="big way logo"
 								style={{
 									width: "60px",
