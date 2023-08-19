@@ -32,6 +32,7 @@
 		"eslint-config-next": "13.1.4",
 		"formik": "^2.2.9",
 		"lodash": "^4.17.21",
+		"memoize-one": "^6.0.0",
 		"moment": "^2.29.4",
 		"next": "13.1.4",
 		"object-assign": "^4.1.1",

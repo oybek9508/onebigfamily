@@ -1,14 +1,11 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
-import Link from "next/link";
-import React from "react";
-import { useRouter } from "next/router";
 import useWindowSize from "@/hooks/useWindowSize";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const navItems = [
 	{ title: "Towels", link: "towels" },
 	{ title: "Beddings", link: "beddings" },
-	// { title: "Threads", link: "threads" },
 ];
 
 const customStyle = {
@@ -28,7 +25,6 @@ const Footer = ({ isFixed }) => {
 				sx={{
 					px: { xs: "3rem", sm: "5rem" },
 					py: "3rem",
-					// height: "238px",
 					bgcolor: "#527768",
 					position: isFixed && "fixed",
 					left: isFixed && 0,
@@ -130,10 +126,7 @@ const Footer = ({ isFixed }) => {
 						>
 							Home
 						</Button>
-						<Button
-							sx={{ color: "#fff", ...customStyle }}
-							onClick={() => router.push("/about")}
-						>
+						<Button sx={{ color: "#fff", ...customStyle }} onClick={() => router.push("/about")}>
 							About
 						</Button>
 						{navItems.map((item) => (
@@ -154,9 +147,7 @@ const Footer = ({ isFixed }) => {
 									href={`#${item.link}`}
 									style={{ textDecoration: "none", curser: "pointer" }}
 								>
-									<Button sx={{ color: "#fff", ...customStyle }}>
-										{item.title}
-									</Button>
+									<Button sx={{ color: "#fff", ...customStyle }}>{item.title}</Button>
 								</a>
 							</Box>
 						))}
@@ -175,11 +166,7 @@ const Footer = ({ isFixed }) => {
 						justifyContent="center"
 					>
 						<a href="mailto:sales@bigwaytrading.com">
-							<Button
-								sx={{ color: "#fff", bgcolor: "#4A7F51", ...customStyle }}
-							>
-								Email
-							</Button>
+							<Button sx={{ color: "#fff", bgcolor: "#4A7F51", ...customStyle }}>Email</Button>
 						</a>
 					</Grid>
 				</Grid>

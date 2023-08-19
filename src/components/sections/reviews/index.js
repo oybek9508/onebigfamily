@@ -1,16 +1,10 @@
 import { Box, CardMedia, Grid, Typography } from "@mui/material";
-import React from "react";
 
 const Reviews = () => {
 	return (
-		<Grid
-			container
-			justifyContent="end"
-			sx={{ px: { xs: "3rem", sm: "5rem" }, py: "4rem", bgcolor: "#F3F4F6" }}
-		>
+		<Grid container justifyContent="end" sx={{ px: { xs: "3rem", sm: "5rem" }, py: "4rem", bgcolor: "#F3F4F6" }}>
 			<Box
 				sx={{
-					// width: "90%",
 					display: "flex",
 					flexDirection: "column",
 					alignItems: "flex-end",
@@ -30,14 +24,11 @@ const Reviews = () => {
 						textAlign: { xs: "left", md: "right" },
 					}}
 				>
-					Big Way Trading is a wonderful business for textile lovers! They have
-					a great selection of fabrics and their staff is both knowledgeable and
-					friendly. I highly recommend Big Way Trading if you&apos;re looking
-					for a quality fabric supplier!
+					Big Way Trading is a wonderful business for textile lovers! They have a great selection of fabrics
+					and their staff is both knowledgeable and friendly. I highly recommend Big Way Trading if
+					you&apos;re looking for a quality fabric supplier!
 				</Typography>
-				<Typography sx={{ fontSize: "16px", fontFamily: "PT_Serif" }}>
-					-Mina Taylor
-				</Typography>
+				<Typography sx={{ fontSize: "16px", fontFamily: "PT_Serif" }}>-Mina Taylor</Typography>
 			</Box>
 		</Grid>
 	);

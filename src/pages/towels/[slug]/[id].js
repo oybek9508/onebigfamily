@@ -1,41 +1,33 @@
-/* eslint-disable react/jsx-no-duplicate-props */
-import React, { useEffect, useState } from "react";
-import { Grid } from "@mui/material";
-import { useRouter } from "next/router";
+import DetailedPage from "@/components/common/DetailedPage";
 import Layout from "@/components/layout/index.js";
 import { terryTowelData } from "@/constants/towels";
-import DetailedPage from "@/components/common/DetailedPage";
+import { Grid } from "@mui/material";
+import memoizeOne from "memoize-one";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-const Detailed = () => {
-	const [towelData, setTowelData] = useState([]);
+const Detailed = ({ ssrRenderedTowelData }) => {
 	const router = useRouter();
 	const { query } = router;
+	const [towelData, setTowelData] = useState([]);
 
-	const filteredTowels = (data) => {
-		return data.filter((d, i) => query.id === d.id);
+	const getFilteredTowels = memoizeOne((data) => {
+		return data.filter((d) => query.id === d.id);
+	});
+
+	const towelTypes = {
+		dobby: ssrRenderedTowelData[0]?.dobbyData,
+		velour: ssrRenderedTowelData[4]?.velourData,
+		jacquard: ssrRenderedTowelData[1]?.data,
+		pestemal: ssrRenderedTowelData[2]?.pestemalData,
+		waffle: ssrRenderedTowelData[3]?.waffleData,
 	};
 
-	const singleDobby = filteredTowels(terryTowelData[0]?.dobbyData);
-	const singleVelour = filteredTowels(terryTowelData[4]?.velourData);
-	const singleJacquard = filteredTowels(terryTowelData[1]?.data);
-	const singlePestemal = filteredTowels(terryTowelData[2]?.pestemalData);
-	const singleWaffle = filteredTowels(terryTowelData[3]?.waffleData);
-
 	useEffect(() => {
-		const data =
-			query.slug === "dobby"
-				? singleDobby
-				: query.slug === "jacquard"
-				? singleJacquard
-				: query.slug === "pestemal"
-				? singlePestemal
-				: query.slug === "waffle"
-				? singleWaffle
-				: singleVelour;
-		setTowelData(data);
-	}, [query.slug]);
+		const selectedTowelData = towelTypes[query.slug] || towelTypes.velour;
+		setTowelData(getFilteredTowels(selectedTowelData));
+	}, [query.slug, query.id]);
 
-	console.log(" towelData", towelData);
 	return (
 		<Grid>
 			<Layout isFixed fullWidth>
@@ -43,6 +35,15 @@ const Detailed = () => {
 			</Layout>
 		</Grid>
 	);
+};
+
+export const getServerSideProps = async () => {
+	const data = terryTowelData;
+	return {
+		props: {
+			ssrRenderedTowelData: data,
+		},
+	};
 };
 
 export default Detailed;

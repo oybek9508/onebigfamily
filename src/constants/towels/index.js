@@ -51,7 +51,7 @@ export const terryTowelData = [
 				images: dobbyImages.images3,
 			},
 			{
-				id: "5",
+				id: "4",
 				img: dobbyImages.images5[0].original,
 				title: "Crown",
 				size: dobbySize,
@@ -60,7 +60,7 @@ export const terryTowelData = [
 				images: dobbyImages.images5,
 			},
 			{
-				id: "6",
+				id: "5",
 				img: dobbyImages.images6[0].original,
 				title: "Riddles",
 				size: dobbySize,
@@ -69,7 +69,7 @@ export const terryTowelData = [
 				images: dobbyImages.images6,
 			},
 			{
-				id: "7",
+				id: "6",
 				img: dobbyImages.images7[0].original,
 				title: "Oxford",
 				size: dobbySize,

@@ -3,7 +3,7 @@ import ImageGallery from "react-image-gallery";
 import ReactImageMagnify from "react-image-magnify";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { Box } from "@mui/material";
-
+import "./image-magnify.module.css";
 const ImgGallery = ({ dataList, textileType }) => {
 	const [thumb, setThumb] = useState(1);
 	let imgs = dataList;
@@ -19,6 +19,7 @@ const ImgGallery = ({ dataList, textileType }) => {
 			}}
 		>
 			<ReactImageMagnify
+				id="myReactImageMagnify"
 				enlargedImagePosition="beside"
 				{...{
 					smallImage: {
@@ -37,7 +38,6 @@ const ImgGallery = ({ dataList, textileType }) => {
 					enlargedImageContainerStyle: {
 						position: "absolute",
 					},
-					lensStyle: { width: "300px" },
 					enlargedImageContainerDimensions: {
 						width: "120%",
 						height: textileType === "bedding" ? "80%" : "150%",

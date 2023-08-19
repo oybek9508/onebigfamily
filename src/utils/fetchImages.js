@@ -1,4 +1,6 @@
-export const imageArrays = (arr, imgNo, imgPath, fileType) => {
+import memoizeOne from "memoize-one";
+
+export const imageArrays = memoizeOne((arr, imgNo, imgPath, fileType) => {
 	return arr.map((img, idx) => {
 		let imageObj = {
 			id: idx + 1,
@@ -7,4 +9,4 @@ export const imageArrays = (arr, imgNo, imgPath, fileType) => {
 		};
 		return imageObj;
 	});
-};
+});
