@@ -12,7 +12,7 @@ const Intro = () => {
 				backgroundPosition: "center center",
 				backgroundSize: "cover",
 				backdropFilter: "blur(5px)",
-				backgroundImage: "url(assets/images/bg_images/beddings.png)",
+				backgroundImage: "url(assets/images/bg_images/beddings.webp)",
 				top: 0,
 			}}
 		>
