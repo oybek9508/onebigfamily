@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Skeleton } from "@mui/material";
 import { Box, styled } from "@mui/system";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import FlexBox from "./FlexBox";
-import LazyImage from "./LazyImage";
 import { H3 } from "./Typography";
 
 const StyledCard = styled(Box)(({ theme }) => ({
@@ -93,7 +93,27 @@ const ProductCard = (props) => {
 			) : (
 				<Link href={url}>
 					<ImgBox id="imgBox" fixedHeight={fixedHeight}>
-						{fixedHeight ? (
+						<Box className="product-card">
+							<Box className="product-card-images">
+								<Box sx={{ maxWidth: "100%", height: "auto" }}>
+									<Image
+										id="productImg"
+										onLoad={updateImageHeight}
+										src={imgUrl}
+										alt={title}
+										loading="lazy"
+										width="0"
+										height="0"
+										style={{
+											width: "100%",
+											height: 450,
+										}}
+									/>
+								</Box>
+							</Box>
+							{/* Other product card content */}
+						</Box>
+						{/* {fixedHeight ? (
 							<Box
 								sx={{
 									height: fixedHeight && {
@@ -126,9 +146,9 @@ const ProductCard = (props) => {
 								loading="lazy"
 								layout="intrinsic"
 							/>
-						)}
-						{/* 
-						<CardMedia
+						)} */}
+
+						{/* <CardMedia
 							onLoad={updateImageHeight}
 							ref={imgRef}
 							component="img"

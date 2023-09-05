@@ -24,7 +24,7 @@ export const terryTowelData = [
 			{
 				id: "1",
 				img: dobbyImages.images1[0].original,
-				title: "Vesta",
+				title: "Armul",
 				size: dobbySize,
 				type,
 				color,
@@ -33,7 +33,7 @@ export const terryTowelData = [
 			{
 				id: "2",
 				img: dobbyImages.images2[0].original,
-				title: "Ellegia",
+				title: "Butterfly",
 				size: dobbySize,
 				type,
 				color,
@@ -42,7 +42,7 @@ export const terryTowelData = [
 			{
 				id: "3",
 				img: dobbyImages.images3[0].original,
-				title: "Ellegia",
+				title: "Crown",
 				size: dobbySize,
 				type,
 				color,
@@ -51,7 +51,7 @@ export const terryTowelData = [
 			{
 				id: "4",
 				img: dobbyImages.images4[0].original,
-				title: "Crown",
+				title: "Dresden",
 				size: dobbySize,
 				type,
 				color,
@@ -60,7 +60,7 @@ export const terryTowelData = [
 			{
 				id: "5",
 				img: dobbyImages.images5[0].original,
-				title: "Riddles",
+				title: "Gold Line",
 				size: dobbySize,
 				type,
 				color,
@@ -69,7 +69,7 @@ export const terryTowelData = [
 			{
 				id: "6",
 				img: dobbyImages.images6[0].original,
-				title: "Oxford",
+				title: "Lazanna",
 				size: dobbySize,
 				type,
 				color,
@@ -78,7 +78,7 @@ export const terryTowelData = [
 			{
 				id: "7",
 				img: dobbyImages.images7[0].original,
-				title: "Oxford",
+				title: "Velour Border",
 				size: dobbySize,
 				type,
 				color,
@@ -87,7 +87,7 @@ export const terryTowelData = [
 			{
 				id: "8",
 				img: dobbyImages.images8[0].original,
-				title: "Oxford",
+				title: "Waffle Border",
 				size: dobbySize,
 				type,
 				color,
@@ -96,7 +96,7 @@ export const terryTowelData = [
 			{
 				id: "9",
 				img: dobbyImages.images9[0].original,
-				title: "Oxford",
+				title: "Silver Line",
 				size: dobbySize,
 				type,
 				color,
@@ -111,7 +111,7 @@ export const terryTowelData = [
 			{
 				id: "1",
 				img: jacquardImages.images1[0].original,
-				title: "Pandorra",
+				title: "Bella",
 				size: dobbySize,
 				type,
 				color,
@@ -120,7 +120,7 @@ export const terryTowelData = [
 			{
 				id: "2",
 				img: jacquardImages.images2[0].original,
-				title: "Spring",
+				title: "Bondi",
 				size: dobbySize,
 				type,
 				color,
@@ -129,7 +129,7 @@ export const terryTowelData = [
 			{
 				id: "3",
 				img: jacquardImages.images3[0].original,
-				title: "Muse",
+				title: "Chanel",
 				size: dobbySize,
 				type,
 				color,
@@ -138,7 +138,7 @@ export const terryTowelData = [
 			{
 				id: "4",
 				img: jacquardImages.images4[0].original,
-				title: "Dresden",
+				title: "DNK",
 				size: dobbySize,
 				type,
 				color,
@@ -147,7 +147,7 @@ export const terryTowelData = [
 			{
 				id: "5",
 				img: jacquardImages.images5[0].original,
-				title: "Dafna",
+				title: "Elligia",
 				size: dobbySize,
 				type,
 				color,
@@ -156,7 +156,7 @@ export const terryTowelData = [
 			{
 				id: "6",
 				img: jacquardImages.images6[0].original,
-				title: "Golden Autumn",
+				title: "Lona",
 				size: dobbySize,
 				type,
 				color,
@@ -165,7 +165,7 @@ export const terryTowelData = [
 			{
 				id: "7",
 				img: jacquardImages.images7[0].original,
-				title: "Golden Autumn",
+				title: "Nelly",
 				size: dobbySize,
 				type,
 				color,
@@ -174,7 +174,7 @@ export const terryTowelData = [
 			{
 				id: "8",
 				img: jacquardImages.images8[0].original,
-				title: "Golden Autumn",
+				title: "Ronesans",
 				size: dobbySize,
 				type,
 				color,
@@ -183,7 +183,7 @@ export const terryTowelData = [
 			{
 				id: "9",
 				img: jacquardImages.images9[0].original,
-				title: "Golden Autumn",
+				title: "Safia",
 				size: dobbySize,
 				type,
 				color,
@@ -192,7 +192,7 @@ export const terryTowelData = [
 			{
 				id: "10",
 				img: jacquardImages.images10[0].original,
-				title: "Golden Autumn",
+				title: "Sakura",
 				size: dobbySize,
 				type,
 				color,
@@ -201,7 +201,7 @@ export const terryTowelData = [
 			{
 				id: "11",
 				img: jacquardImages.images11[0].original,
-				title: "Golden Autumn",
+				title: "Zefir",
 				size: dobbySize,
 				type,
 				color,
@@ -216,7 +216,7 @@ export const terryTowelData = [
 			{
 				id: "1",
 				img: waffleImages.images1[0].original,
-				title: "Waffle № 1",
+				title: "Flower",
 				size: waffleSize,
 				type,
 				color,
@@ -225,7 +225,7 @@ export const terryTowelData = [
 			{
 				id: "2",
 				img: waffleImages.images2[0].original,
-				title: "Waffle № 1",
+				title: "Waffle № 4",
 				size: waffleSize,
 				type,
 				color,
@@ -234,7 +234,7 @@ export const terryTowelData = [
 			{
 				id: "3",
 				img: waffleImages.images3[0].original,
-				title: "Waffle № 2",
+				title: "Uzor",
 				size: waffleSize,
 				type,
 				color,
@@ -243,7 +243,7 @@ export const terryTowelData = [
 			{
 				id: "4",
 				img: waffleImages.images4[0].original,
-				title: "Waffle № 3",
+				title: "Waffle",
 				size: waffleSize,
 				type,
 				color,
@@ -258,7 +258,7 @@ export const terryTowelData = [
 			{
 				id: "1",
 				img: velourImages.images1[0].original,
-				title: "Alaska",
+				title: "Hermes",
 				size: dobbySize,
 				type,
 				color,
@@ -267,7 +267,7 @@ export const terryTowelData = [
 			{
 				id: "2",
 				img: velourImages.images2[0].original,
-				title: "Prince",
+				title: "Wire",
 				size: dobbySize,
 				type,
 				color,
