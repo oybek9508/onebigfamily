@@ -8,17 +8,17 @@ export const featuredLinks = [
 	{
 		src: dobbyImages.images1[0].original,
 		url: "/towels/dobby/1",
-		title: `Dobby "Vesta"`,
+		title: `Dobby "Armul"`,
 	},
 	{
 		src: dobbyImages.images2[0].original,
 		url: "/towels/dobby/2",
-		title: `Dobby "Ellegia"`,
+		title: `Dobby "Butterfly"`,
 	},
 	{
 		src: jacquardImages.images2[0].original,
 		url: "/towels/jacquard/2",
-		title: `Jacquard "Spring"`,
+		title: `Jacquard "Bondi"`,
 	},
 	{
 		src: deluxeImages.images1[0].original,

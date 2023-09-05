@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
-					<link rel="shortcut icon" href="public/BigWayTrading_Logo_bk.png.png" />
+					<link rel="shortcut icon" href="public/BigWayTrading_Logo_bk.svg" />
 					<link
 						rel="stylesheet"
 						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -40,9 +40,9 @@ MyDocument.getInitialProps = async (ctx) => {
 	ctx.renderPage = () =>
 		originalRenderPage({
 			enhanceApp: (App) =>
-				(function EnhanceApp(props) {
+				function EnhanceApp(props) {
 					return <App emotionCache={cache} {...props} />;
-				}),
+				},
 		});
 	/* eslint-enable */
 

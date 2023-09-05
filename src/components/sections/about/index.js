@@ -1,23 +1,20 @@
-import React from "react";
 import { Box, Grid } from "@mui/material";
+import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 import "swiper/css";
+import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import "swiper/css/autoplay";
 
-const slideData = ["intro1.jpg", "intro2.jpg", "intro3.jpg", "intro4.jpg"];
+const slideData = ["intro1.webp", "intro2.webp", "intro3.webp", "intro4.webp"];
 
 const About = () => {
 	return (
-		<Grid
-			sx={{ mt: 2, height: { xs: "30vh", sm: "40vh", md: "50vh", lg: "60vh" } }}
-		>
+		<Grid sx={{ mt: 2, height: { xs: "30vh", sm: "40vh", md: "50vh", lg: "60vh" } }}>
 			<Swiper
 				effect={"fade"}
 				navigation

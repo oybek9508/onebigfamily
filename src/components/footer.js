@@ -66,7 +66,7 @@ const Footer = ({ isFixed }) => {
 						}}
 					>
 						<Image
-							src="/BigWayTrading_Logo_wt.png"
+							src="/BigWayTrading_Logo_wt.svg"
 							alt="big way logo"
 							style={{ marginRight: "16px" }}
 							width={60}

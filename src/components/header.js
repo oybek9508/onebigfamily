@@ -155,7 +155,7 @@ const Header = (props) => {
 					<Box sx={{ flexGrow: 1 }}>
 						<Button sx={{ color: "#fff" }} onClick={() => router.push("/")}>
 							<Image
-								src={homePage ? "/BigWayTrading_Logo_wt.png" : "/BigWayTrading_Logo_bk.png"}
+								src={homePage ? "/BigWayTrading_Logo_wt.svg" : "/BigWayTrading_Logo_bk.svg"}
 								alt="big way logo"
 								width={60}
 								height={60}
