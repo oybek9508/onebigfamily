@@ -1,8 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { CardMedia, Chip } from "@mui/material";
+import { Skeleton } from "@mui/material";
 import { Box, styled } from "@mui/system";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import FlexBox from "./FlexBox";
+import LazyImage from "./LazyImage";
 import { H3 } from "./Typography";
 
 const StyledCard = styled(Box)(({ theme }) => ({
@@ -49,70 +51,121 @@ const ContentWrapper = styled(Box)(() => ({
 		textOverflow: "ellipsis",
 	},
 }));
-const StyledChip = styled(Chip)(({ theme }) => ({
-	position: "absolute",
-	fontSize: "10px",
-	fontWeight: 600,
-	paddingLeft: 3,
-	paddingRight: 3,
-	borderRadius: 0,
-	color: "#fff",
-	top: "20px",
-	left: "0px",
-	zIndex: 11,
-}));
 
 const ProductCard = (props) => {
-	const { sx, fixedHeight, off, url, id, title, price, imgUrl, rating, hideRating, productColors } = props;
+	const imgRef = useRef(null);
+	const [imgHeight, setImgHeight] = useState(0);
+	const [imageHeight, setImageHeight] = useState(0);
+
+	const { sx, fixedHeight, url, title, imgUrl } = props;
+
+	const updateImageHeight = () => {
+		if (imgRef.current) {
+			setImgHeight(imgRef.current.offsetHeight);
+		}
+	};
+
+	useEffect(() => {
+		// Initial image height calculation
+		updateImageHeight();
+
+		// Attach the event listener
+		window.addEventListener("resize", updateImageHeight);
+
+		// Clean up the event listener on unmount
+		return () => {
+			window.removeEventListener("resize", updateImageHeight);
+		};
+	}, []);
+
+	useEffect(() => {
+		if (imgHeight === 0) {
+			setImageHeight(200);
+		} else {
+			setImageHeight(imgHeight);
+		}
+	}, []);
+
 	return (
 		<StyledCard sx={sx}>
-			<Link href={url}>
-				<ImgBox id="imgBox" fixedHeight={fixedHeight}>
-					{/* <LazyImage
-						id="productImg"
-						src={imgUrl}
-						width={100}
-						height={100}
-						// fill
-						layout="responsive"
-						objectFit="contain"
-					/> */}
-					<CardMedia
-						component="img"
-						src={imgUrl}
-						alt={title}
-						loading="lazy"
-						sx={{
-							height: fixedHeight && {
-								xs: "400px",
-								sm: "400px",
-								md: "450px",
-								lg: "430px",
-								xl: "450px",
-							},
-						}}
-					/>
-				</ImgBox>
-
-				<ContentWrapper>
-					<FlexBox>
-						<Box flex="1 1 0" minWidth="0px">
-							<H3
-								mb={1}
-								className="title"
-								fontSize="24px"
-								textAlign="center"
-								fontWeight="700"
-								color="text.secondary"
-								title={title}
+			{!imgUrl ? (
+				<Skeleton variant="rectangular" width={464} height={450} />
+			) : (
+				<Link href={url}>
+					<ImgBox id="imgBox" fixedHeight={fixedHeight}>
+						{fixedHeight ? (
+							<Box
+								sx={{
+									height: fixedHeight && {
+										xs: "400px",
+										sm: "400px",
+										md: "450px",
+										lg: "430px",
+										xl: "450px",
+									},
+								}}
 							>
-								{title}
-							</H3>
-						</Box>
-						{/* <Button>Visit</Button> */}
-					</FlexBox>
-				</ContentWrapper>
-			</Link>
+								<LazyImage
+									id="productImg"
+									onLoad={updateImageHeight}
+									src={imgUrl}
+									alt={title}
+									loading="lazy"
+									layout="fill"
+									objectFit="cover"
+								/>
+							</Box>
+						) : (
+							<LazyImage
+								id="productImg"
+								onLoad={updateImageHeight}
+								src={imgUrl}
+								alt={title}
+								width={394}
+								height={450}
+								loading="lazy"
+								layout="intrinsic"
+							/>
+						)}
+						{/* 
+						<CardMedia
+							onLoad={updateImageHeight}
+							ref={imgRef}
+							component="img"
+							src={imgUrl}
+							alt={title}
+							loading="lazy"
+							sx={{
+								height: fixedHeight && {
+									xs: "400px",
+									sm: "400px",
+									md: "450px",
+									lg: "430px",
+									xl: "450px",
+								},
+							}}
+						/> */}
+					</ImgBox>
+
+					<ContentWrapper>
+						<FlexBox>
+							<Box flex="1 1 0" minWidth="0px">
+								<H3
+									mb={1}
+									className="title"
+									fontSize="24px"
+									textAlign="center"
+									fontWeight="700"
+									color="text.secondary"
+									title={title}
+								>
+									{title}
+								</H3>
+							</Box>
+						</FlexBox>
+					</ContentWrapper>
+				</Link>
+			)}
 		</StyledCard>
 	);
 };

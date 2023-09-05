@@ -9,6 +9,7 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
@@ -153,13 +154,13 @@ const Header = (props) => {
 
 					<Box sx={{ flexGrow: 1 }}>
 						<Button sx={{ color: "#fff" }} onClick={() => router.push("/")}>
-							<img
+							<Image
 								src={homePage ? "/BigWayTrading_Logo_wt.png" : "/BigWayTrading_Logo_bk.png"}
 								alt="big way logo"
+								width={60}
+								height={60}
+								intrinsic
 								style={{
-									width: "60px",
-									height: "60px",
-
 									marginRight: "16px",
 								}}
 								loading="lazy"
