@@ -1,16 +1,14 @@
 import { imageArrays } from "@/utils/fetchImages";
 import { imgArrs } from "@/utils/imageSize";
 
-const fileType = "jpg";
+const fileType = "webp";
 const filePath = "/towels/velour";
-const { arr1 } = imgArrs;
+const { arr4 } = imgArrs;
 
-const images1 = imageArrays(arr1, 1, filePath, fileType);
-const images2 = imageArrays(arr1, 2, filePath, fileType);
-const images3 = imageArrays(arr1, 3, filePath, fileType);
+const images1 = imageArrays(arr4, 1, filePath, fileType);
+const images2 = imageArrays(arr4, 2, filePath, fileType);
 
 export const velourImages = {
 	images1,
 	images2,
-	images3,
 };

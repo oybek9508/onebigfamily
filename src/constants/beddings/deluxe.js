@@ -1,7 +1,7 @@
 import { imageArrays } from "@/utils/fetchImages";
 import { imgArrs } from "@/utils/imageSize";
 
-const fileType = "jpg";
+const fileType = "webp";
 const filePath = "beddings/deluxe";
 const { arr2, arr3, arr4, arr5, arr8 } = imgArrs;
 

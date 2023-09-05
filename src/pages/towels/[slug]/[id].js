@@ -17,10 +17,9 @@ const Detailed = ({ ssrRenderedTowelData }) => {
 
 	const towelTypes = {
 		dobby: ssrRenderedTowelData[0]?.dobbyData,
-		velour: ssrRenderedTowelData[4]?.velourData,
+		velour: ssrRenderedTowelData[3]?.velourData,
 		jacquard: ssrRenderedTowelData[1]?.data,
-		pestemal: ssrRenderedTowelData[2]?.pestemalData,
-		waffle: ssrRenderedTowelData[3]?.waffleData,
+		waffle: ssrRenderedTowelData[2]?.waffleData,
 	};
 
 	useEffect(() => {
