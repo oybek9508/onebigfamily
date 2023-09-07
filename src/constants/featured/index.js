@@ -18,7 +18,7 @@ export const featuredLinks = [
 	{
 		src: jacquardImages.images2[0].original,
 		url: "/towels/jacquard/2",
-		title: `Jacquard "Bondi"`,
+		title: `Jacquard "Bella"`,
 	},
 	{
 		src: deluxeImages.images1[0].original,
@@ -31,7 +31,6 @@ export const featuredLinks = [
 		title: `Kelly`,
 	},
 	{
-		src: "/assets/images/beddings/jacquard/images3/img1.webp",
 		src: jacquardBeddingImages.images3[0].original,
 		url: "/beddings/jacquard/3",
 		title: `Tecna`,

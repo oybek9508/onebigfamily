@@ -111,7 +111,7 @@ export const terryTowelData = [
 			{
 				id: "1",
 				img: jacquardImages.images1[0].original,
-				title: "Bella",
+				title: "Nelly",
 				size: dobbySize,
 				type,
 				color,
@@ -120,7 +120,7 @@ export const terryTowelData = [
 			{
 				id: "2",
 				img: jacquardImages.images2[0].original,
-				title: "Bondi",
+				title: "Bella",
 				size: dobbySize,
 				type,
 				color,
@@ -129,7 +129,7 @@ export const terryTowelData = [
 			{
 				id: "3",
 				img: jacquardImages.images3[0].original,
-				title: "Chanel",
+				title: "Bondi",
 				size: dobbySize,
 				type,
 				color,
@@ -138,7 +138,7 @@ export const terryTowelData = [
 			{
 				id: "4",
 				img: jacquardImages.images4[0].original,
-				title: "DNK",
+				title: "Chanel",
 				size: dobbySize,
 				type,
 				color,
@@ -147,7 +147,7 @@ export const terryTowelData = [
 			{
 				id: "5",
 				img: jacquardImages.images5[0].original,
-				title: "Elligia",
+				title: "DNK",
 				size: dobbySize,
 				type,
 				color,
@@ -156,7 +156,7 @@ export const terryTowelData = [
 			{
 				id: "6",
 				img: jacquardImages.images6[0].original,
-				title: "Lona",
+				title: "Ellegia",
 				size: dobbySize,
 				type,
 				color,
@@ -165,7 +165,7 @@ export const terryTowelData = [
 			{
 				id: "7",
 				img: jacquardImages.images7[0].original,
-				title: "Nelly",
+				title: "Lona",
 				size: dobbySize,
 				type,
 				color,
@@ -216,7 +216,7 @@ export const terryTowelData = [
 			{
 				id: "1",
 				img: waffleImages.images1[0].original,
-				title: "Flower",
+				title: "Waffle № 4",
 				size: waffleSize,
 				type,
 				color,
@@ -225,7 +225,7 @@ export const terryTowelData = [
 			{
 				id: "2",
 				img: waffleImages.images2[0].original,
-				title: "Waffle № 4",
+				title: "Waffle № 3",
 				size: waffleSize,
 				type,
 				color,
@@ -243,7 +243,7 @@ export const terryTowelData = [
 			{
 				id: "4",
 				img: waffleImages.images4[0].original,
-				title: "Waffle",
+				title: "Flower",
 				size: waffleSize,
 				type,
 				color,
@@ -258,7 +258,7 @@ export const terryTowelData = [
 			{
 				id: "1",
 				img: velourImages.images1[0].original,
-				title: "Hermes",
+				title: "Wire",
 				size: dobbySize,
 				type,
 				color,
@@ -267,7 +267,7 @@ export const terryTowelData = [
 			{
 				id: "2",
 				img: velourImages.images2[0].original,
-				title: "Wire",
+				title: "Hermes",
 				size: dobbySize,
 				type,
 				color,
