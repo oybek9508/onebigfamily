@@ -3,6 +3,8 @@ import { Skeleton } from "@mui/material";
 import { Box, styled } from "@mui/system";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import BlurImage from "../../public/assets/blur.webp";
 import FlexBox from "./FlexBox";
 import { H3 } from "./Typography";
 
@@ -26,10 +28,17 @@ const StyledCard = styled(Box)(({ theme }) => ({
 		},
 	},
 }));
-const ImgBox = styled(Box)(() => ({
-	height: ({ fixedHeight }) => (fixedHeight ? 400 : 250),
-	maxHeight: "100% !important",
+
+const ImgBox = styled(Box)(({ fixedHeight }) => ({
+	...(!fixedHeight && {
+		maxHeight: "100% !important",
+		display: "flex",
+		flex: 1,
+		alignItems: "center",
+		justifyContent: "center",
+	}),
 }));
+
 const ContentWrapper = styled(Box)(() => ({
 	padding: "1rem",
 	display: "flex",
@@ -43,8 +52,10 @@ const ContentWrapper = styled(Box)(() => ({
 }));
 
 const ProductCard = (props) => {
+	const [onLoadHeight, setOnLoadHeight] = useState(null);
 	const { sx, fixedHeight, url, title, imgUrl } = props;
 
+	console.log("onLoadHeight", onLoadHeight);
 	return (
 		<StyledCard sx={sx}>
 			{!imgUrl ? (
@@ -56,7 +67,6 @@ const ProductCard = (props) => {
 						height: "100%",
 						display: "flex",
 						flexDirection: "column",
-						justifyContent: "space-between",
 					}}
 				>
 					<ImgBox id="imgBox" fixedHeight={fixedHeight}>
@@ -65,19 +75,24 @@ const ProductCard = (props) => {
 								display: "flex",
 								alignItems: "center",
 								justifyContent: "center",
-								height: fixedHeight && {
-									xs: "400px",
-									sm: "400px",
-									md: "450px",
-									lg: "450px",
-									xl: "450px",
-								},
-								minHeight: !fixedHeight && { xs: 200, sm: 250, md: 300 },
+								height: fixedHeight
+									? {
+											xs: "500px",
+											sm: "500px",
+											md: "550px",
+											lg: "550px",
+											xl: "600px",
+									  }
+									: onLoadHeight || "auto",
+								minHeight: !fixedHeight && { xs: 200 },
 							}}
 						>
 							<Image
 								id="productImg"
 								src={imgUrl}
+								onLoad={() => setOnLoadHeight(300)}
+								onLoadingComplete={() => setOnLoadHeight(null)}
+								blurDataURL={BlurImage}
 								alt={title}
 								loading="lazy"
 								width="0"
@@ -89,24 +104,6 @@ const ProductCard = (props) => {
 								}}
 							/>
 						</Box>
-
-						{/* <CardMedia
-							onLoad={updateImageHeight}
-							ref={imgRef}
-							component="img"
-							src={imgUrl}
-							alt={title}
-							loading="lazy"
-							sx={{
-								height: fixedHeight && {
-									xs: "400px",
-									sm: "400px",
-									md: "450px",
-									lg: "430px",
-									xl: "450px",
-								},
-							}}
-						/> */}
 					</ImgBox>
 
 					<ContentWrapper>
