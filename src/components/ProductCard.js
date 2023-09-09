@@ -76,14 +76,15 @@ const ProductCard = (props) => {
 								alignItems: "center",
 								justifyContent: "center",
 								height: fixedHeight
-									? {
-											xs: "500px",
-											sm: "500px",
-											md: "550px",
-											lg: "550px",
-											xl: "600px",
-									  }
-									: onLoadHeight || "auto",
+									? 500
+									: // {
+									  // 		xs: "500px",
+									  // 		sm: "500px",
+									  // 		md: "550px",
+									  // 		lg: "550px",
+									  // 		xl: "600px",
+									  //   }
+									  onLoadHeight || "auto",
 								minHeight: !fixedHeight && { xs: 200 },
 							}}
 						>
@@ -98,7 +99,7 @@ const ProductCard = (props) => {
 								width="0"
 								height="0"
 								style={{
-									objectFit: !fixedHeight && "contain",
+									objectFit: "contain",
 									width: "100%",
 									height: fixedHeight ? "100%" : "90%",
 								}}
