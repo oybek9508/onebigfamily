@@ -15,7 +15,7 @@ const TowelProducts = ({ title, data, path }) => {
 							id={item.id}
 							imgUrl={item.img}
 							title={item.title}
-							url={`/towels/${path}/${idx + 1}`}
+							url={`/towels/${path}/${idx + 1}?path=${path}`}
 						/>
 					</Grid>
 				))}

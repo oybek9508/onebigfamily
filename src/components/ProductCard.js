@@ -54,8 +54,6 @@ const ContentWrapper = styled(Box)(() => ({
 const ProductCard = (props) => {
 	const [onLoadHeight, setOnLoadHeight] = useState(null);
 	const { sx, fixedHeight, url, title, imgUrl } = props;
-
-	console.log("onLoadHeight", onLoadHeight);
 	return (
 		<StyledCard sx={sx}>
 			{!imgUrl ? (

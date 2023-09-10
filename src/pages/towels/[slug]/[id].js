@@ -11,6 +11,27 @@ const Detailed = ({ ssrRenderedTowelData }) => {
 	const { query } = router;
 	const [towelData, setTowelData] = useState([]);
 
+	useEffect(() => {
+		const handleBackButton = () => {
+			const { path } = query;
+			// Define your custom back button behavior here
+			// For example, navigate to a specific route when the back button is pressed
+			window.location.href = `/towels/${path}#${path}`;
+		};
+
+		// Add an event listener to the window's popstate event (back/forward navigation)
+		window.addEventListener("popstate", handleBackButton);
+
+		// Clean up the event listener when the component unmounts
+		return () => {
+			window.removeEventListener("popstate", handleBackButton);
+		};
+	}, [router.query]);
+
+	const filteredBeddings = memoizeOne((data) => {
+		return data.filter((d) => query.id === d.id);
+	});
+
 	const getFilteredTowels = memoizeOne((data) => {
 		return data.filter((d) => query.id === d.id);
 	});

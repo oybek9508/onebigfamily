@@ -153,7 +153,7 @@ const Header = (props) => {
 					</IconButton>
 
 					<Box sx={{ flexGrow: 1 }}>
-						<Button sx={{ color: "#fff" }} onClick={() => router.push("/")}>
+						<Button sx={{ color: "#fff", gap: 1 }} onClick={() => router.push("/")}>
 							<Image
 								src={homePage ? "/BigWayTrading_Logo_wt.svg" : "/BigWayTrading_Logo_bk.svg"}
 								alt="big way logo"
@@ -170,7 +170,8 @@ const Header = (props) => {
 								fontFamily="Rufina"
 								sx={{
 									display: {
-										fontSize: "1.3rem",
+										fontSize: "1.5rem",
+										fontWeight: 600,
 										cursor: "pointer",
 										textTransform: "capitalize",
 										color: navColor,
