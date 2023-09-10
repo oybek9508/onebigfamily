@@ -63,6 +63,7 @@ const Footer = ({ isFixed }) => {
 							display: "flex",
 							alignItems: "center",
 							mb: 2,
+							gap: 1,
 						}}
 					>
 						<Image
@@ -74,7 +75,8 @@ const Footer = ({ isFixed }) => {
 						/>
 						<Typography
 							sx={{
-								fontSize: "24px",
+								fontWeight: 600,
+								fontSize: "1.5rem",
 								fontFamily: "Rufina",
 							}}
 							component="div"
