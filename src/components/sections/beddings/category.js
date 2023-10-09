@@ -26,6 +26,7 @@ const BeddingCategory = () => {
 							id={item.id}
 							imgUrl={item.img}
 							title={item.title}
+							subtitle={item.subtitle}
 							url={generateProductUrl(item.title)}
 						/>
 					</Grid>

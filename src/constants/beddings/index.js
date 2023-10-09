@@ -4,6 +4,12 @@ import { exclusiveImages } from "./exclusive";
 import { jacquardImages } from "./jacquard";
 import { premiumImages } from "./premium";
 import { satinImages } from "./satin_digital";
+import { threeDSubtitle } from "./subtitle/3d";
+import { deluxeSubtitle } from "./subtitle/deluxe";
+import { digitalSubtitle } from "./subtitle/digital";
+import { exclusiveSubtitle } from "./subtitle/exclusive_satin";
+import { jacquardSubtitle } from "./subtitle/jacquard";
+import { premiumSubitle } from "./subtitle/premium";
 
 const type = "100% Cotton";
 const jacquardType = "Mixture of Cotton, Silk and Linen";
@@ -47,26 +53,32 @@ export const beddignsData = [
 	{
 		img: premiumImages.images1[0].original,
 		title: "Premium Satin",
+		subtitle: premiumSubitle.buhara,
 	},
 	{
 		img: deluxeImages.images1[0].original,
 		title: "Deluxe Ranforce",
+		subtitle: deluxeSubtitle.alisa,
 	},
 	{
 		img: satinImages.images1[0].original,
 		title: "Digital Satin",
+		subtitle: digitalSubtitle.bonitta,
 	},
 	{
 		img: exclusiveImages.images1[0].original,
 		title: "Exclusive Satin",
+		subtitle: exclusiveSubtitle.fantasy,
 	},
 	{
 		img: digitalImages.images1[0].original,
 		title: "3D Series",
+		subtitle: threeDSubtitle.andera,
 	},
 	{
 		img: jacquardImages.images1[0].original,
 		title: "Jacquard Satin",
+		subtitle: jacquardSubtitle.dracel,
 	},
 ];
 
@@ -75,6 +87,7 @@ export const beddingTypes = [
 		id: "1",
 		link: "premium",
 		title: "Premium Satin",
+		subtitle: premiumSubitle.buhara,
 		data: [
 			{
 				id: "1",
@@ -85,6 +98,7 @@ export const beddingTypes = [
 				threadCount: "120/cm²",
 				img: premiumImages.images1[0].original,
 				title: "Buhara",
+				subtitle: premiumSubitle.buhara,
 				images: premiumImages.images1,
 			},
 			{
@@ -96,6 +110,7 @@ export const beddingTypes = [
 				threadCount: "120/cm²",
 				img: premiumImages.images2[0].original,
 				title: "Florenza",
+				subtitle: premiumSubitle.florenza,
 				images: premiumImages.images2,
 			},
 			{
@@ -107,6 +122,7 @@ export const beddingTypes = [
 				threadCount: "120/cm²",
 				img: premiumImages.images3[0].original,
 				title: "Mirabel",
+				subtitle: premiumSubitle.mirable,
 				images: premiumImages.images3,
 			},
 			{
@@ -118,6 +134,7 @@ export const beddingTypes = [
 				threadCount: "120/cm²",
 				img: premiumImages.images4[0].original,
 				title: "Imaj",
+				subtitle: premiumSubitle.imaj,
 				images: premiumImages.images4,
 			},
 			{
@@ -129,6 +146,7 @@ export const beddingTypes = [
 				threadCount: "120/cm²",
 				img: premiumImages.images5[0].original,
 				title: "Mona",
+				subtitle: premiumSubitle.mona,
 				images: premiumImages.images5,
 			},
 			{
@@ -140,6 +158,7 @@ export const beddingTypes = [
 				threadCount: "120/cm²",
 				img: premiumImages.images6[0].original,
 				title: "Stella",
+				subtitle: premiumSubitle.stella,
 				images: premiumImages.images6,
 			},
 		],
@@ -158,6 +177,7 @@ export const beddingTypes = [
 				threadCount: "60/cm²",
 				img: deluxeImages.images1[0].original,
 				title: "Alisa",
+				subtitle: deluxeSubtitle.alisa,
 				images: deluxeImages.images1,
 			},
 			{
@@ -169,6 +189,7 @@ export const beddingTypes = [
 				threadCount: "60/cm²",
 				img: deluxeImages.images2[0].original,
 				title: "Dalyan",
+				subtitle: deluxeSubtitle.dalyan,
 				images: deluxeImages.images2,
 			},
 			{
@@ -180,6 +201,7 @@ export const beddingTypes = [
 				threadCount: "60/cm²",
 				img: deluxeImages.images3[0].original,
 				title: "Gala",
+				subtitle: deluxeSubtitle.gala,
 				images: deluxeImages.images3,
 			},
 			{
@@ -191,6 +213,7 @@ export const beddingTypes = [
 				threadCount: "60/cm²",
 				img: deluxeImages.images4[2].original,
 				title: "Layla",
+				subtitle: deluxeSubtitle.layla,
 				images: deluxeImages.images4,
 			},
 			{
@@ -202,6 +225,7 @@ export const beddingTypes = [
 				threadCount: "60/cm²",
 				img: deluxeImages.images5[0].original,
 				title: "Luisa",
+				subtitle: deluxeSubtitle.luisa,
 				images: deluxeImages.images5,
 			},
 			{
@@ -213,6 +237,7 @@ export const beddingTypes = [
 				threadCount: "60/cm²",
 				img: deluxeImages.images6[0].original,
 				title: "Zena",
+				subtitle: deluxeSubtitle.zena,
 				images: deluxeImages.images6,
 			},
 		],
@@ -231,6 +256,7 @@ export const beddingTypes = [
 				threadCount: "100/cm²",
 				img: satinImages.images1[0].original,
 				title: "Bonitta",
+				subtitle: digitalSubtitle.bonitta,
 				images: satinImages.images1,
 			},
 			{
@@ -242,6 +268,7 @@ export const beddingTypes = [
 				threadCount: "100/cm²",
 				img: satinImages.images2[0].original,
 				title: "Ramira",
+				subtitle: digitalSubtitle.ramira,
 				images: satinImages.images2,
 			},
 			{
@@ -253,6 +280,7 @@ export const beddingTypes = [
 				threadCount: "100/cm²",
 				img: satinImages.images3[0].original,
 				title: "Hannah",
+				subtitle: digitalSubtitle.hannah,
 				images: satinImages.images3,
 			},
 			{
@@ -264,6 +292,7 @@ export const beddingTypes = [
 				threadCount: "100/cm²",
 				img: satinImages.images4[0].original,
 				title: "Kelly",
+				subtitle: digitalSubtitle.kelly,
 				images: satinImages.images4,
 			},
 			{
@@ -275,6 +304,7 @@ export const beddingTypes = [
 				threadCount: "100/cm²",
 				img: satinImages.images5[0].original,
 				title: "Marcela",
+				subtitle: digitalSubtitle.marcela,
 				images: satinImages.images5,
 			},
 			{
@@ -286,6 +316,7 @@ export const beddingTypes = [
 				threadCount: "100/cm²",
 				img: satinImages.images6[0].original,
 				title: "Yasenya",
+				subtitle: digitalSubtitle.yaseyna,
 				images: satinImages.images6,
 			},
 		],
@@ -303,6 +334,7 @@ export const beddingTypes = [
 				color: [brown, black, denim, caramel],
 				img: exclusiveImages.images1[0].original,
 				title: "Fantacy",
+				subtitle: exclusiveSubtitle.fantasy,
 				images: exclusiveImages.images1,
 			},
 			{
@@ -313,6 +345,7 @@ export const beddingTypes = [
 				color: [almond, white, sand, black, brown],
 				img: exclusiveImages.images2[0].original,
 				title: "Novel Line",
+				subtitle: exclusiveSubtitle.novel,
 				images: exclusiveImages.images2,
 			},
 			{
@@ -323,6 +356,7 @@ export const beddingTypes = [
 				color: [white, grey, cream, red],
 				img: exclusiveImages.images3[0].original,
 				title: "Stripe Style",
+				subtitle: exclusiveSubtitle.srtipe,
 				images: exclusiveImages.images3,
 			},
 			{
@@ -333,6 +367,7 @@ export const beddingTypes = [
 				color: [lavender, coral, rose],
 				img: exclusiveImages.images4[0].original,
 				title: "Moda Life",
+				subtitle: exclusiveSubtitle.moda,
 				images: exclusiveImages.images4,
 			},
 			{
@@ -343,6 +378,7 @@ export const beddingTypes = [
 
 				img: exclusiveImages.images5[0].original,
 				title: "Santa",
+				subtitle: exclusiveSubtitle.santa,
 				images: exclusiveImages.images5,
 			},
 			{
@@ -353,6 +389,7 @@ export const beddingTypes = [
 				color: [ercu, champagne],
 				img: exclusiveImages.images6[0].original,
 				title: "Catra",
+				subtitle: exclusiveSubtitle.catra,
 				images: exclusiveImages.images6,
 			},
 		],
@@ -369,6 +406,7 @@ export const beddingTypes = [
 				size,
 				img: digitalImages.images1[0].original,
 				title: "Andrea",
+				subtitle: threeDSubtitle.andera,
 				images: digitalImages.images1,
 			},
 			{
@@ -378,6 +416,7 @@ export const beddingTypes = [
 				size,
 				img: digitalImages.images2[0].original,
 				title: "Amara",
+				subtitle: threeDSubtitle.amara,
 				images: digitalImages.images2,
 			},
 			{
@@ -387,6 +426,7 @@ export const beddingTypes = [
 				size,
 				img: digitalImages.images3[0].original,
 				title: "Moon",
+				subtitle: threeDSubtitle.moon,
 				images: digitalImages.images3,
 			},
 			{
@@ -396,6 +436,7 @@ export const beddingTypes = [
 				size,
 				img: digitalImages.images4[0].original,
 				title: "Ocean",
+				subtitle: threeDSubtitle.ocean,
 				images: digitalImages.images4,
 			},
 			{
@@ -405,6 +446,7 @@ export const beddingTypes = [
 				size,
 				img: digitalImages.images5[0].original,
 				title: "Dania",
+				subtitle: threeDSubtitle.dania,
 				images: digitalImages.images5,
 			},
 			{
@@ -414,6 +456,7 @@ export const beddingTypes = [
 				size,
 				img: digitalImages.images6[0].original,
 				title: "Swan",
+				subtitle: threeDSubtitle.swan,
 				images: digitalImages.images6,
 			},
 		],
@@ -431,6 +474,7 @@ export const beddingTypes = [
 				color: [denim, beige, lavender, brownie],
 				img: jacquardImages.images1[0].original,
 				title: "Dracell",
+				subtitle: jacquardSubtitle.dracel,
 				images: jacquardImages.images1,
 			},
 			{
@@ -441,6 +485,7 @@ export const beddingTypes = [
 				color: [red, grey, green],
 				img: jacquardImages.images2[0].original,
 				title: "Clover",
+				subtitle: jacquardSubtitle.clover,
 				images: jacquardImages.images2,
 			},
 			{
@@ -451,6 +496,7 @@ export const beddingTypes = [
 				color: [navy, mink, anthacide],
 				img: jacquardImages.images3[0].original,
 				title: "Tecna",
+				subtitle: jacquardSubtitle.tecna,
 				images: jacquardImages.images3,
 			},
 			{
@@ -461,6 +507,7 @@ export const beddingTypes = [
 				color: [white, powder, champagne, lavender],
 				img: jacquardImages.images4[0].original,
 				title: "Herra",
+				subtitle: jacquardSubtitle.herra,
 				images: jacquardImages.images4,
 			},
 			{
@@ -471,6 +518,7 @@ export const beddingTypes = [
 				color: [lilac, white, smoke],
 				img: jacquardImages.images5[1].original,
 				title: "Sare",
+				subtitle: jacquardSubtitle.sare,
 				images: jacquardImages.images5,
 			},
 			{
@@ -481,6 +529,7 @@ export const beddingTypes = [
 				color: [soil, grey, cream],
 				img: jacquardImages.images6[0].original,
 				title: "Lamone",
+				subtitle: jacquardSubtitle.lamone,
 				images: jacquardImages.images6,
 			},
 		],
