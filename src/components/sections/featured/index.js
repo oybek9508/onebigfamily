@@ -17,6 +17,7 @@ const Featured = () => {
 							id={item.id}
 							imgUrl={item.src}
 							title={item.title}
+							subtitle={item.subtitle}
 							url={item.url}
 						/>
 					</Grid>

@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Skeleton } from "@mui/material";
+import { Skeleton, Typography } from "@mui/material";
 import { Box, styled } from "@mui/system";
 import Image from "next/image";
 import Link from "next/link";
@@ -53,7 +53,7 @@ const ContentWrapper = styled(Box)(() => ({
 
 const ProductCard = (props) => {
 	const [onLoadHeight, setOnLoadHeight] = useState(null);
-	const { sx, fixedHeight, url, title, imgUrl } = props;
+	const { sx, fixedHeight, url, title, subtitle, imgUrl } = props;
 	return (
 		<StyledCard sx={sx}>
 			{!imgUrl ? (
@@ -73,16 +73,7 @@ const ProductCard = (props) => {
 								display: "flex",
 								alignItems: "center",
 								justifyContent: "center",
-								height: fixedHeight
-									? 500
-									: // {
-									  // 		xs: "500px",
-									  // 		sm: "500px",
-									  // 		md: "550px",
-									  // 		lg: "550px",
-									  // 		xl: "600px",
-									  //   }
-									  onLoadHeight || "auto",
+								height: fixedHeight ? 500 : onLoadHeight || "auto",
 								minHeight: !fixedHeight && { xs: 200 },
 							}}
 						>
@@ -112,13 +103,16 @@ const ProductCard = (props) => {
 									mb={1}
 									className="title"
 									fontSize="24px"
-									textAlign="center"
+									textAlign="left"
 									fontWeight="700"
 									color="text.secondary"
 									title={title}
 								>
 									{title}
 								</H3>
+								<Typography variant="body2" color="text.secondary">
+									{subtitle}
+								</Typography>
 							</Box>
 						</FlexBox>
 					</ContentWrapper>

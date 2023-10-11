@@ -26,6 +26,7 @@ const Slug = ({ data }) => {
 													id={item.id}
 													imgUrl={item.img}
 													title={item.title}
+													subtitle={item.subtitle}
 													url={`/beddings${item.url}/${idx + 1}?link=${type.link}`}
 												/>
 											</Grid>
