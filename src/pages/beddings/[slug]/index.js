@@ -4,8 +4,6 @@ import Layout from "@/components/layout/index.js";
 import { beddingTypes } from "@/constants/beddings";
 import { Box, Grid } from "@mui/material";
 
-const SECTIONS = ["premium", "deluxe", "digital", "exclusive", "3d", "jacquard"];
-
 const Slug = ({ data }) => {
 	return (
 		<Grid>
