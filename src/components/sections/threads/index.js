@@ -1,15 +1,15 @@
 import { Grid } from "@mui/material";
 import React from "react";
-import TowelCategory from "./category";
 import Intro from "./intro";
+import ThreadCategory from "./category";
 
-const Towels = () => {
+const Threads = () => {
 	return (
 		<Grid>
 			<Intro />
-			<TowelCategory />
+			<ThreadCategory />
 		</Grid>
 	);
 };
 
-export default Towels;
+export default Threads;

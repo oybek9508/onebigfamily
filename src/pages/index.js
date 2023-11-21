@@ -5,6 +5,7 @@ import Contacts from "@/components/sections/contacts";
 import Featured from "@/components/sections/featured";
 import Partners from "@/components/sections/partners";
 import Reviews from "@/components/sections/reviews";
+import Threads from "@/components/sections/threads";
 import Towels from "@/components/sections/towels";
 import Head from "next/head";
 
@@ -23,6 +24,7 @@ export default function Home() {
 					<Featured />
 					<Towels />
 					<Beddings />
+					<Threads />
 					<Partners />
 					<Reviews />
 					<Contacts />
