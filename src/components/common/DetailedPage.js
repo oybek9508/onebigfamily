@@ -5,7 +5,12 @@ import { digitalAboutItem } from "@/constants/beddings/text/digital";
 import { exclusiveAboutItem } from "@/constants/beddings/text/exclusive";
 import { jacquardAboutItem } from "@/constants/beddings/text/jacquard";
 import { premiumAboutItem } from "@/constants/beddings/text/premium";
+import { bambooAboutItem } from "@/constants/threads/text/bamboo";
+import { cottonAboutItem } from "@/constants/threads/text/cotton";
+import { polyesterAboutItem } from "@/constants/threads/text/polyester";
+import { viscoseAboutItem } from "@/constants/threads/text/viscose";
 import { dobbyAboutItem } from "@/constants/towels/text/dobby";
+import { inceptionAboutItem } from "@/constants/towels/text/inception";
 import { pestemalAboutItem } from "@/constants/towels/text/pestemal";
 import { waffleAboutItem } from "@/constants/towels/text/waffle";
 import { Box, Divider, Grid, Typography } from "@mui/material";
@@ -19,10 +24,11 @@ const customSizeStyles = {
 	p: "4px 8px",
 };
 
-const DetailedPage = ({ data: imageData, textileType }) => {
+const DetailedPage = ({ data: imageData, textileType, alignStart }) => {
 	const router = useRouter();
 	const [itemColor, setItemColor] = useState("");
 	const { slug } = router.query;
+
 	return (
 		<Grid>
 			{imageData &&
@@ -38,13 +44,7 @@ const DetailedPage = ({ data: imageData, textileType }) => {
 							flexDirection: { xs: "column", lg: "row" },
 						}}
 					>
-						<Grid
-							item
-							xs={12}
-							sm={12}
-							md={12}
-							lg={textileType === "bedding" ? 4.5 : 6}
-						>
+						<Grid item xs={12} sm={12} md={12} lg={textileType === "bedding" ? 4.5 : 6}>
 							<ImgGallery
 								setItemColor={setItemColor}
 								itemColor={itemColor}
@@ -70,11 +70,7 @@ const DetailedPage = ({ data: imageData, textileType }) => {
 							lg={6}
 						>
 							<Box sx={{ width: "100%" }}>
-								<Typography
-									variant="h5"
-									color="#323643"
-									sx={{ mb: 2, fontWeight: 700 }}
-								>
+								<Typography variant="h5" color="#323643" sx={{ mb: 2, fontWeight: 700 }}>
 									{data?.title}
 								</Typography>
 								<Divider sx={{ my: 2 }} />
@@ -82,7 +78,6 @@ const DetailedPage = ({ data: imageData, textileType }) => {
 									sx={{
 										display: "flex",
 										alignItems: "center",
-
 										my: 2,
 									}}
 								>
@@ -120,11 +115,7 @@ const DetailedPage = ({ data: imageData, textileType }) => {
 								</Box>
 								<Divider sx={{ mb: 2 }} />
 								<Box sx={{ display: "flex", alignItems: "center" }}>
-									<Typography
-										color="#565959"
-										fontWeight="bold"
-										sx={{ width: "110px" }}
-									>
+									<Typography color="#565959" fontWeight="bold" sx={{ width: "110px" }}>
 										Type:
 									</Typography>
 									<Box>{data?.type}</Box>
@@ -133,11 +124,7 @@ const DetailedPage = ({ data: imageData, textileType }) => {
 									<>
 										<Divider sx={{ my: 2 }} />
 										<Box sx={{ display: "flex", alignItems: "center" }}>
-											<Typography
-												color="#565959"
-												fontWeight="bold"
-												sx={{ width: "110px" }}
-											>
+											<Typography color="#565959" fontWeight="bold" sx={{ width: "110px" }}>
 												Thread Count:
 											</Typography>
 											<Box>{data?.threadCount}</Box>
@@ -159,6 +146,7 @@ const DetailedPage = ({ data: imageData, textileType }) => {
 												sx={{
 													mt: 2,
 													display: "flex",
+													alignItems: !!alignStart ? "flex-start" : "center",
 													flexWrap: "wrap",
 												}}
 											>
@@ -200,13 +188,13 @@ const DetailedPage = ({ data: imageData, textileType }) => {
 								</Typography>
 								{textileType === "towel" && (
 									<Box>
-										{slug === "dobby" ||
-										slug === "jacquard" ||
-										slug === "velour"
+										{slug === "dobby" || slug === "jacquard" || slug === "velour"
 											? dobbyAboutItem
 											: slug === "pestemal"
 											? pestemalAboutItem
-											: slug === "waffle" && waffleAboutItem}
+											: slug === "waffle"
+											? waffleAboutItem
+											: slug === "inception" && inceptionAboutItem}
 									</Box>
 								)}
 								{textileType === "bedding" && (
@@ -217,6 +205,14 @@ const DetailedPage = ({ data: imageData, textileType }) => {
 										<Box>{slug === "digital" && digitalAboutItem}</Box>
 										<Box>{slug === "exclusive" && exclusiveAboutItem}</Box>
 										<Box>{slug === "jacquard" && jacquardAboutItem}</Box>
+									</>
+								)}
+								{textileType === "thread" && (
+									<>
+										<Box>{slug === "bamboo" && bambooAboutItem}</Box>
+										<Box>{slug === "cotton" && cottonAboutItem}</Box>
+										<Box>{slug === "polyester" && polyesterAboutItem}</Box>
+										<Box>{slug === "viscose" && viscoseAboutItem}</Box>
 									</>
 								)}
 							</Box>

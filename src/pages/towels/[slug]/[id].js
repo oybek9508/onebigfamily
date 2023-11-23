@@ -37,21 +37,22 @@ const Detailed = ({ ssrRenderedTowelData }) => {
 	});
 
 	const towelTypes = {
-		dobby: ssrRenderedTowelData[0]?.dobbyData,
-		velour: ssrRenderedTowelData[3]?.velourData,
-		jacquard: ssrRenderedTowelData[1]?.data,
-		waffle: ssrRenderedTowelData[2]?.waffleData,
+		inception: ssrRenderedTowelData[0]?.inceptionData,
+		dobby: ssrRenderedTowelData[1]?.dobbyData,
+		velour: ssrRenderedTowelData[4]?.velourData,
+		jacquard: ssrRenderedTowelData[2]?.data,
+		waffle: ssrRenderedTowelData[3]?.waffleData,
 	};
 
 	useEffect(() => {
-		const selectedTowelData = towelTypes[query.slug] || towelTypes.velour;
+		const selectedTowelData = towelTypes[query.slug] || towelTypes.dobby;
 		setTowelData(getFilteredTowels(selectedTowelData));
 	}, [query.slug, query.id]);
 
 	return (
 		<Grid>
 			<Layout isFixed fullWidth>
-				<DetailedPage data={towelData} textileType="towel" />
+				<DetailedPage data={towelData} textileType="towel" alignStart={towelData[0]?.title === "Inception"} />
 			</Layout>
 		</Grid>
 	);
