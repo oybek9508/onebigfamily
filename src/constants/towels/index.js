@@ -1,6 +1,8 @@
 import { dobbyImages } from "./dobby";
+import { inceptionImages } from "./inception";
 import { jacquardImages } from "./jacquard";
 import { dobbySubtitle } from "./subtitle/dobby";
+import { inceptionSubtitle } from "./subtitle/inception";
 import { jacquardSubtitle } from "./subtitle/jacquard";
 import { velourSubtitle } from "./subtitle/velour";
 import { waffleSubtitle } from "./subtitle/waffle";
@@ -9,6 +11,7 @@ import { waffleImages } from "./waffle";
 
 const dobbySize = ["33x33cm", "50x90cm", "70x140cm", "100x180cm"];
 const waffleSize = ["33x50cm", "40x70cm", "50x90cm", "70x140cm", "100x150cm"];
+const inceptionSize = ["50x90", "70x140cm", "100x180cm"];
 const type = "100% Cotton";
 const color = [
 	{ name: "White", color: "#fcfcfc" },
@@ -19,8 +22,52 @@ const color = [
 	{ name: "Purple", color: "#8971d0" },
 	{ name: "Pink", color: " #ffc1c8" },
 ];
+// White, Dark Grey, Light Grey, Blue
+const inceptionColor = [
+	{ name: "White", color: "#fcfcfc" },
+	{ name: "Blue", color: "#005689" },
+	{ name: "Light Grey", color: "#F5F5F5" },
+	{ name: "Dark Grey", color: "#A9A9A9" },
+];
 
 export const terryTowelData = [
+	{
+		img: inceptionImages.images1[0].original,
+		title: "Inception Towels",
+		subtitle: inceptionSubtitle.inception1,
+		inceptionData: [
+			{
+				id: "1",
+				img: inceptionImages.images1[0].original,
+				title: "Inception",
+				subtitle: inceptionSubtitle.inception1,
+				size: inceptionSize,
+				type,
+				color: inceptionColor,
+				images: inceptionImages.images1,
+			},
+			{
+				id: "2",
+				img: inceptionImages.images2[0].original,
+				title: "Inception",
+				subtitle: inceptionSubtitle.inception2,
+				size: inceptionSize,
+				type,
+				color: inceptionColor,
+				images: inceptionImages.images2,
+			},
+			{
+				id: "3",
+				img: inceptionImages.images3[0].original,
+				title: "Inception",
+				subtitle: inceptionSubtitle.inception3,
+				size: inceptionSize,
+				type,
+				color: inceptionColor,
+				images: inceptionImages.images3,
+			},
+		],
+	},
 	{
 		img: dobbyImages.images1[0].original,
 		title: "Dobby Towels",

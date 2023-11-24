@@ -19,7 +19,6 @@ const Slug = ({ data }) => {
 
 export const getServerSideProps = async () => {
 	const data = towelSections;
-
 	return {
 		props: {
 			data,

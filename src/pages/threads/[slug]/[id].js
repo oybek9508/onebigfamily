@@ -44,7 +44,7 @@ const Detailed = ({ ssrRenderedTowelData }) => {
 	return (
 		<Grid>
 			<Layout isFixed fullWidth>
-				<DetailedPage data={threadData} textileType="threads" />
+				<DetailedPage data={threadData} textileType="thread" />
 			</Layout>
 		</Grid>
 	);
