@@ -16,7 +16,7 @@ const ThreadCategory = () => {
 	return (
 		<Box sx={{ py: { xs: "40px", md: "80px" }, px: { xs: "40px", xl: 0 } }}>
 			<Box my={2}>
-				<H1 mb="4px">Towels</H1>
+				<H1 mb="4px">Threads</H1>
 			</Box>
 			<Grid container mb={-0.5} spacing={3}>
 				{memoizedThreadsData?.map((item, ind) => {
