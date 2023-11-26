@@ -14,10 +14,16 @@ export default class MyDocument extends Document {
 						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
 					/>
 					<meta name="naver-site-verification" content="e8afd070701fb8fd8bc12375e6db6498d4f7ce14" />
-					<meta name="description" content="Big Way Trading" />
 					<meta property="og:type" content="website" />
 					<meta property="og:title" content="Big Way Trading" />
-					<meta property="og:description" content="Big Way Trading" />
+					<meta
+						property="og:description"
+						content="At Big Way Trading, our main focus is on exporting and importing a wide range of high-quality Home Textile products. We specialize in products such as towels, beddings, cloths, threads, and more. Our dedication to delivering excellent textile products has allowed us to forge strong relationships with both domestic and international clients."
+					/>
+					<meta
+						name="description"
+						content="At Big Way Trading, our main focus is on exporting and importing a wide range of high-quality Home Textile products. We specialize in products such as towels, beddings, cloths, threads, and more. Our dedication to delivering excellent textile products has allowed us to forge strong relationships with both domestic and international clients."
+					/>
 				</Head>
 				<body>
 					<Main />

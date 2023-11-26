@@ -3,9 +3,6 @@ import { cottonImages } from "./cotton";
 import { polyesterImages } from "./polyester";
 import { viscoseImages } from "./viscose";
 
-// const type = "100% Cotton";
-// const size = ["33x33cm", "50x90cm", "70x140cm", "100x180cm"];
-
 export const threadsData = [
 	{
 		img: bambooImages.images1[0].original,

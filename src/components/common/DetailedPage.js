@@ -87,7 +87,7 @@ const DetailedPage = ({ data: imageData, textileType, alignStart }) => {
 										color="#565959"
 										sx={{ width: "110px" }}
 									>
-										Possible Sizes:
+										{data?.size?.length > 1 ? "Sizes" : data?.size?.length === 1 && "Size"}:
 									</Typography>
 									<Box
 										sx={{
@@ -140,7 +140,10 @@ const DetailedPage = ({ data: imageData, textileType, alignStart }) => {
 												color="#565959"
 												sx={{ textTransform: "capitalize", width: "110px" }}
 											>
-												Color Samples:
+												{data?.color?.length === 1
+													? "Color"
+													: data?.color?.length > 1 && "Colors"}
+												:
 											</Typography>
 											<Box
 												sx={{
