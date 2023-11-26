@@ -35,10 +35,8 @@ const Intro = () => {
 						mt: 2,
 					}}
 				>
-					Introducing our premium towels, crafted with unparalleled quality from 100% cotton. Experience
-					luxurious softness and absorbency like never before, ensuring a delightful and indulgent bathing
-					experience. Elevate your daily routine with these top-tier towels, designed to wrap you in comfort
-					and durability.
+					Elevate your textile artistry with the superior quality and durability that our top-tier threads and
+					yarns provide, promising a world of possibilities for your crafting endeavors.
 				</Typography>
 			</Box>
 		</Grid>

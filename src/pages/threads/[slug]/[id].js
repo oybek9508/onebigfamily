@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import DetailedPage from "@/components/common/DetailedPage";
 import Layout from "@/components/layout";
 import { threadsData } from "@/constants/threads";
