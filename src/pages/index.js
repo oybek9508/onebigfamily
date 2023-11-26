@@ -1,5 +1,7 @@
 import Layout from "@/components/layout/index.js";
 import About from "@/components/sections/about";
+import Bathrobes from "@/components/sections/bathrobe";
+import BathrobeCategory from "@/components/sections/bathrobe/category";
 import Beddings from "@/components/sections/beddings";
 import Contacts from "@/components/sections/contacts";
 import Featured from "@/components/sections/featured";
@@ -25,6 +27,7 @@ export default function Home() {
 					<Towels />
 					<Beddings />
 					<Threads />
+					<Bathrobes />
 					<Partners />
 					<Reviews />
 					<Contacts />
