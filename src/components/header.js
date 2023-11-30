@@ -13,6 +13,7 @@ import Image from "next/legacy/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
+import DownloadButton from "./DownloadButton";
 
 const navItems = [
 	{ title: "Towels", link: "towels" },
@@ -30,6 +31,8 @@ const customStyle = {
 		textDecoration: "underline",
 	},
 };
+
+console.log("process.env.PUBLIC_URL", process.env.PUBLIC_URL);
 
 const drawerWidth = 240;
 
@@ -218,6 +221,7 @@ const Header = (props) => {
 							</a>
 						))}
 					</Box>
+					<DownloadButton {...{ navColor, title: "Catalog PDF" }} />
 					<Box sx={{ ml: "50px", display: { xs: "none", md: "block" } }}>
 						<a
 							{...(router.asPath !== "/"
