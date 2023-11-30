@@ -1,15 +1,5 @@
-import { deluxeImages } from "../beddings/deluxe";
-import { jacquardImages as jacquardBeddingImages } from "../beddings/jacquard";
-import { satinImages } from "../beddings/satin_digital";
-import { deluxeSubtitle } from "../beddings/subtitle/deluxe";
-import { digitalSubtitle } from "../beddings/subtitle/digital";
-import { jacquardSubtitle } from "../beddings/subtitle/jacquard";
-import { dobbyImages } from "../towels/dobby";
 import { inceptionImages } from "../towels/inception";
-import { jacquardImages } from "../towels/jacquard";
-import { dobbySubtitle } from "../towels/subtitle/dobby";
 import { inceptionSubtitle } from "../towels/subtitle/inception";
-import { jacquardSubtitle as towelJacquardSubtitle } from "../towels/subtitle/jacquard";
 
 export const featuredLinks = [
 	{
@@ -31,21 +21,21 @@ export const featuredLinks = [
 		subtitle: inceptionSubtitle.inception3,
 	},
 	{
-		src: deluxeImages.images1[0].original,
-		url: "/beddings/deluxe/1",
-		title: `Alisa`,
-		subtitle: deluxeSubtitle.alisa,
+		src: inceptionImages.images4[0].original,
+		url: "/towels/inception/4",
+		title: "Inception Towels",
+		subtitle: inceptionSubtitle.inception4,
 	},
 	{
-		src: satinImages.images3[0].original,
-		url: "/beddings/digital/4",
-		title: `Kelly`,
-		subtitle: digitalSubtitle.kelly,
+		src: inceptionImages.images5[0].original,
+		url: "/towels/inception/5",
+		title: "Inception Towels",
+		subtitle: inceptionSubtitle.inception5,
 	},
 	{
-		src: jacquardBeddingImages.images3[0].original,
-		url: "/beddings/jacquard/3",
-		title: `Tecna`,
-		subtitle: jacquardSubtitle.tecna,
+		src: inceptionImages.images6[0].original,
+		url: "/towels/inception/6",
+		title: "Inception Towels",
+		subtitle: inceptionSubtitle.inception6,
 	},
 ];
