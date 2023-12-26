@@ -2,6 +2,9 @@ import useWindowSize from "@/hooks/useWindowSize";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import Image from "next/legacy/image";
 import { useRouter } from "next/router";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import EmailIcon from "@mui/icons-material/Email";
+import Link from "next/link";
 
 const navItems = [
 	{ title: "Towels", link: "towels" },
@@ -15,8 +18,22 @@ const customStyle = {
 	textTransform: "capitalize",
 };
 
+const phoneStyle = {
+	fontFamily: "Ariel",
+	fontSize: 16,
+	fontWeight: 400,
+	fontStyle: "normal",
+	color: "#fff",
+};
+
+const countryStyle = {
+	fontFamily: "Roboto",
+	fontSize: 16,
+	fontWeight: "bold",
+	color: "#fff",
+};
+
 const Footer = ({ isFixed }) => {
-	const { width } = useWindowSize();
 	const router = useRouter();
 	return (
 		<footer>
@@ -32,7 +49,7 @@ const Footer = ({ isFixed }) => {
 					width: "100vw",
 					display: "flex",
 					flexDirection: { xs: "column", sm: "row" },
-					alignItems: "center",
+					alignItems: "flex-start",
 					justifyContent: {
 						xs: "center",
 						md: "space-between",
@@ -43,7 +60,7 @@ const Footer = ({ isFixed }) => {
 				<Grid
 					container
 					xs={12}
-					md={6}
+					md={3}
 					item
 					sx={{
 						color: "#fff",
@@ -102,9 +119,75 @@ const Footer = ({ isFixed }) => {
 					container
 					item
 					xs={12}
-					md={5}
+					md={1}
 					sx={{
 						display: { xs: "none", md: "flex" },
+						alignItems: "center",
+						justifyContent: "center",
+					}}
+				>
+					<Grid
+						item
+						xs={12}
+						sx={{
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "flex-start",
+							justifyContent: "center",
+							mt: 2,
+							gap: 3,
+						}}
+					>
+						<Typography sx={{ width: "100%", color: "#fff", fontWeight: 600, fontSize: 18 }}>
+							Products
+						</Typography>
+						<Box sx={{ display: "flex", flexDirection: "column", gap: 1, alignItems: "flex-start" }}>
+							<Typography
+								sx={{
+									color: "#fff",
+									...customStyle,
+								}}
+								onClick={() => router.push("/")}
+							>
+								Home
+							</Typography>
+							<Typography sx={{ color: "#fff", ...customStyle }} onClick={() => router.push("/about")}>
+								About
+							</Typography>
+
+							{navItems.map((item) => (
+								<Box
+									key={item.title}
+									sx={{
+										display: "flex",
+										flexDirection: "column",
+										alignItems: "center",
+									}}
+								>
+									<a
+										{...(router.asPath !== "/"
+											? {
+													onClick: () => router.replace(`/#${item.link}`),
+											  }
+											: { onClick: () => router.push(`/#${item.link}`) })}
+										href={`#${item.link}`}
+										style={{ textDecoration: "none", curser: "pointer" }}
+									>
+										<Typography sx={{ color: "#fff", ...customStyle }}>{item.title}</Typography>
+									</a>
+								</Box>
+							))}
+						</Box>
+					</Grid>
+				</Grid>
+				<Grid
+					container
+					item
+					xs={12}
+					md={2}
+					sx={{
+						display: { xs: "none", md: "flex" },
+						justifyContent: "center",
 					}}
 				>
 					<Grid
@@ -113,63 +196,139 @@ const Footer = ({ isFixed }) => {
 						md={7}
 						sx={{
 							display: "flex",
-							flexDirection: { xs: "column", sm: "row" },
-							alignItems: "center",
+							flexDirection: "column",
+							alignItems: "flex-start",
 							justifyContent: "center",
 							mt: 2,
+							gap: 3,
 						}}
 					>
-						<Button
-							sx={{
-								color: "#fff",
-								...customStyle,
-							}}
-							onClick={() => router.push("/")}
-						>
-							Home
-						</Button>
-						<Button sx={{ color: "#fff", ...customStyle }} onClick={() => router.push("/about")}>
-							About
-						</Button>
-						{navItems.map((item) => (
+						<Typography sx={{ color: "#fff", fontWeight: 600, fontSize: 18 }}>Follow us</Typography>
+						<Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 1 }}>
 							<Box
-								key={item.title}
 								sx={{
 									display: "flex",
-									flexDirection: "column",
-									alignItems: "center",
+									alignContent: "center",
 								}}
 							>
-								<a
-									{...(router.asPath !== "/"
-										? {
-												onClick: () => router.replace(`/#${item.link}`),
-										  }
-										: { onClick: () => router.push(`/#${item.link}`) })}
-									href={`#${item.link}`}
-									style={{ textDecoration: "none", curser: "pointer" }}
-								>
-									<Button sx={{ color: "#fff", ...customStyle }}>{item.title}</Button>
-								</a>
+								<Typography sx={phoneStyle}>
+									<Link
+										target="_blank"
+										href="https://www.facebook.com/bigwaytradingllc?mibextid=LQQJ4d"
+										style={{ textDecoration: "underline" }}
+									>
+										Facebook
+									</Link>
+								</Typography>
 							</Box>
-						))}
+							<Box sx={{ display: "flex", alignContent: "center" }}>
+								<Typography sx={phoneStyle}>
+									<Link
+										target="_blank"
+										href="https://www.instagram.com/bigwaytrading.com_?igsh=aWVtZGdxMm90YThk&utm_source=qrm"
+										style={{ textDecoration: "underline" }}
+									>
+										Instagram
+									</Link>
+								</Typography>
+							</Box>
+							<Box sx={{ display: "flex", alignContent: "center" }}>
+								<Typography sx={phoneStyle}>
+									<Link
+										target="_blank"
+										href="https://api.whatsapp.com/send?phone=%2B48571780101&app=facebook&entry_point=page_cta"
+										style={{ textDecoration: "underline" }}
+									>
+										Whatsapp
+									</Link>
+								</Typography>
+							</Box>
+						</Box>
 					</Grid>
+				</Grid>
+				<Grid
+					container
+					item
+					xs={12}
+					md={5}
+					sx={{
+						display: { xs: "none", md: "flex" },
+						justifyContent: "center",
+					}}
+				>
 					<Grid
 						item
-						container
-						sx={{
-							ml: { xs: 0, sm: "50px" },
-							mt: 2,
-							width: { xs: "100%", sm: "auto" },
-						}}
 						xs={12}
-						md={1}
-						alignItems="center"
-						justifyContent="center"
+						md={12}
+						sx={{
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "flex-start",
+							justifyContent: "center",
+							mt: 2,
+							gap: 3,
+						}}
 					>
-						<a href="mailto:sales@bigwaytrading.com">
-							<Button sx={{ color: "#fff", bgcolor: "#4A7F51", ...customStyle }}>Email</Button>
-						</a>
+						<Typography sx={{ color: "#fff", fontWeight: 600, fontSize: 18 }}>Contact us</Typography>
+						<Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+							<Box sx={{ display: "flex", gap: 2 }}>
+								<Box>
+									<LocalPhoneIcon sx={{ color: "#fff" }} />
+								</Box>
+								<Box>
+									<Box
+										sx={{
+											display: "flex",
+											alignContent: "center",
+											gap: 1,
+										}}
+									>
+										<Typography sx={phoneStyle}>+48 571 78 01 01</Typography>
+										<Typography sx={countryStyle}>🇵🇱 Poland</Typography>
+									</Box>
+									<Box sx={{ display: "flex", alignContent: "center", gap: 1 }}>
+										<Typography sx={phoneStyle}>+49 176 7279 9554</Typography>
+										<Typography sx={countryStyle}>🇩🇪 Germany</Typography>
+									</Box>
+									<Box sx={{ display: "flex", alignContent: "center", gap: 1 }}>
+										<Typography sx={phoneStyle}>+44 7715 239446</Typography>
+										<Typography sx={countryStyle}>🇬🇧 UK</Typography>
+									</Box>
+								</Box>
+							</Box>
+							<Box sx={{ display: "flex", gap: 2 }}>
+								<Box>
+									<EmailIcon sx={{ color: "#fff" }} />
+								</Box>
+								<Box>
+									<Box
+										sx={{
+											display: "flex",
+											flexDirection: "column",
+										}}
+									>
+										<Typography sx={phoneStyle}>
+											<Link
+												target="_blank"
+												href="mailto:sales@bigwaytrading.com"
+												style={{ textDecoration: "underline" }}
+											>
+												sales@bigwaytrading.com
+											</Link>
+										</Typography>
+										<Typography sx={phoneStyle}>
+											<Link
+												target="_blank"
+												href="mailto:info@bigwaytrading.com"
+												style={{ textDecoration: "underline" }}
+											>
+												info@bigwaytrading.com
+											</Link>
+										</Typography>
+									</Box>
+								</Box>
+							</Box>
+						</Box>
 					</Grid>
 				</Grid>
 			</Grid>
