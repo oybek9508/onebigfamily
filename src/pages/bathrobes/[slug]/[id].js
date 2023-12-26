@@ -42,7 +42,7 @@ const Detailed = ({ ssrRenderedBathrobeData }) => {
 	return (
 		<Grid>
 			<Layout isFixed fullWidth>
-				<DetailedPage data={bathrobeData} />
+				<DetailedPage data={bathrobeData} textileType="bathrobe" />
 			</Layout>
 		</Grid>
 	);

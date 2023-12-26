@@ -19,7 +19,7 @@ const navItems = [
 	{ title: "Towels", link: "towels" },
 	{ title: "Beddings", link: "beddings" },
 	{ title: "Threads", link: "threads" },
-	{ title: "Bathrobe", link: "bathrobes" },
+	{ title: "Bathrobes", link: "bathrobes" },
 ];
 
 const customStyle = {

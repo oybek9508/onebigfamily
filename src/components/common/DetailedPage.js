@@ -1,4 +1,5 @@
 import ImgGallery from "@/components/common/img-gallery";
+import { bathrobeAboutItem } from "@/constants/bathrobes/text/bathrobe";
 import { threeDAboutItem } from "@/constants/beddings/text/3d";
 import { deluxeAboutItem } from "@/constants/beddings/text/deluxe";
 import { digitalAboutItem } from "@/constants/beddings/text/digital";
@@ -73,53 +74,61 @@ const DetailedPage = ({ data: imageData, textileType, alignStart }) => {
 								<Typography variant="h5" color="#323643" sx={{ mb: 2, fontWeight: 700 }}>
 									{data?.title}
 								</Typography>
-								<Divider sx={{ my: 2 }} />
-								<Box
-									sx={{
-										display: "flex",
-										alignItems: "center",
-										my: 2,
-									}}
-								>
-									<Typography
-										variant="subtitle1"
-										fontWeight="bold"
-										color="#565959"
-										sx={{ width: "110px" }}
-									>
-										{data?.size?.length > 1 ? "Sizes" : data?.size?.length === 1 && "Size"}:
-									</Typography>
-									<Box
-										sx={{
-											display: "flex",
-											flexWrap: "wrap",
-											flexDirection: textileType === "bedding" && "column",
-											gap: textileType === "bedding" && 1.5,
-										}}
-									>
-										{data?.size?.map((s, idx) => (
-											<Box
-												key={idx}
-												sx={(theme) => ({
-													...customSizeStyles,
-													border: "none",
-													boxShadow: theme.shadows[1],
-													width: textileType === "towel" ? "101px" : "100%",
-													mb: 1,
-												})}
+								{data?.size?.length > 0 && (
+									<>
+										<Divider sx={{ my: 2 }} />
+										<Box
+											sx={{
+												display: "flex",
+												alignItems: "center",
+												my: 2,
+											}}
+										>
+											<Typography
+												variant="subtitle1"
+												fontWeight="bold"
+												color="#565959"
+												sx={{ width: "110px" }}
 											>
-												{s}
+												{data?.size?.length > 1 ? "Sizes" : data?.size?.length === 1 && "Size"}
+											</Typography>
+											<Box
+												sx={{
+													display: "flex",
+													flexWrap: "wrap",
+													flexDirection: textileType === "bedding" && "column",
+													gap: textileType === "bedding" && 1.5,
+												}}
+											>
+												{data?.size?.map((s, idx) => (
+													<Box
+														key={idx}
+														sx={(theme) => ({
+															...customSizeStyles,
+															border: "none",
+															boxShadow: theme.shadows[1],
+															width: textileType === "towel" ? "101px" : "100%",
+															mb: 1,
+														})}
+													>
+														{s}
+													</Box>
+												))}
 											</Box>
-										))}
-									</Box>
-								</Box>
-								<Divider sx={{ mb: 2 }} />
-								<Box sx={{ display: "flex", alignItems: "center" }}>
-									<Typography color="#565959" fontWeight="bold" sx={{ width: "110px" }}>
-										Type:
-									</Typography>
-									<Box>{data?.type}</Box>
-								</Box>
+										</Box>
+									</>
+								)}
+								{data?.type && (
+									<>
+										<Divider sx={{ mb: 2 }} />
+										<Box sx={{ display: "flex", alignItems: "center" }}>
+											<Typography color="#565959" fontWeight="bold" sx={{ width: "110px" }}>
+												Type:
+											</Typography>
+											<Box>{data?.type}</Box>
+										</Box>
+									</>
+								)}
 								{data?.threadCount && (
 									<>
 										<Divider sx={{ my: 2 }} />
@@ -216,6 +225,11 @@ const DetailedPage = ({ data: imageData, textileType, alignStart }) => {
 										<Box>{slug === "cotton" && cottonAboutItem}</Box>
 										<Box>{slug === "polyester" && polyesterAboutItem}</Box>
 										<Box>{slug === "viscose" && viscoseAboutItem}</Box>
+									</>
+								)}
+								{textileType === "bathrobe" && (
+									<>
+										<Box>{slug === "bathrobe" && bathrobeAboutItem}</Box>
 									</>
 								)}
 							</Box>
