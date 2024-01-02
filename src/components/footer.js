@@ -5,6 +5,9 @@ import { useRouter } from "next/router";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 const navItems = [
 	{ title: "Towels", link: "towels" },
@@ -205,44 +208,32 @@ const Footer = ({ isFixed }) => {
 					>
 						<Typography sx={{ color: "#fff", fontWeight: 600, fontSize: 18 }}>Follow us</Typography>
 						<Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 1 }}>
-							<Box
-								sx={{
-									display: "flex",
-									alignContent: "center",
-								}}
+							<Link
+								target="_blank"
+								href="https://www.facebook.com/bigwaytradingllc?mibextid=LQQJ4d"
+								style={{ textDecoration: "underline", cursor: "pointer", color: "white" }}
 							>
-								<Typography sx={phoneStyle}>
-									<Link
-										target="_blank"
-										href="https://www.facebook.com/bigwaytradingllc?mibextid=LQQJ4d"
-										style={{ textDecoration: "underline" }}
-									>
-										Facebook
-									</Link>
-								</Typography>
-							</Box>
-							<Box sx={{ display: "flex", alignContent: "center" }}>
-								<Typography sx={phoneStyle}>
-									<Link
-										target="_blank"
-										href="https://www.instagram.com/bigwaytrading.com_?igsh=aWVtZGdxMm90YThk&utm_source=qrm"
-										style={{ textDecoration: "underline" }}
-									>
-										Instagram
-									</Link>
-								</Typography>
-							</Box>
-							<Box sx={{ display: "flex", alignContent: "center" }}>
-								<Typography sx={phoneStyle}>
-									<Link
-										target="_blank"
-										href="https://api.whatsapp.com/send?phone=%2B48571780101&app=facebook&entry_point=page_cta"
-										style={{ textDecoration: "underline" }}
-									>
-										Whatsapp
-									</Link>
-								</Typography>
-							</Box>
+								<Box
+									sx={{
+										display: "flex",
+										alignContent: "center",
+										gap: 0.5,
+									}}
+								>
+									<FacebookIcon />
+									<Typography sx={phoneStyle}>Facebook</Typography>
+								</Box>
+							</Link>
+							<Link
+								target="_blank"
+								href="https://www.instagram.com/bigwaytrading.com_?igsh=aWVtZGdxMm90YThk&utm_source=qrm"
+								style={{ textDecoration: "underline", cursor: "pointer", color: "white" }}
+							>
+								<Box sx={{ display: "flex", alignContent: "center", gap: 0.5 }}>
+									<InstagramIcon />
+									<Typography sx={phoneStyle}>Instagram</Typography>
+								</Box>
+							</Link>
 						</Box>
 					</Grid>
 				</Grid>
@@ -271,9 +262,10 @@ const Footer = ({ isFixed }) => {
 					>
 						<Typography sx={{ color: "#fff", fontWeight: 600, fontSize: 18 }}>Contact us</Typography>
 						<Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-							<Box sx={{ display: "flex", gap: 2 }}>
-								<Box>
+							<Box sx={{ display: "flex", alignItems: "flex-start", gap: 2 }}>
+								<Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
 									<LocalPhoneIcon sx={{ color: "#fff" }} />
+									<WhatsAppIcon sx={{ color: "#fff" }} />
 								</Box>
 								<Box>
 									<Box
@@ -297,8 +289,9 @@ const Footer = ({ isFixed }) => {
 								</Box>
 							</Box>
 							<Box sx={{ display: "flex", gap: 2 }}>
-								<Box>
+								<Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
 									<EmailIcon sx={{ color: "#fff" }} />
+									<WhatsAppIcon sx={{ visibility: "hidden" }} />
 								</Box>
 								<Box>
 									<Box
