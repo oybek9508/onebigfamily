@@ -4,10 +4,10 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 import MarkEmailUnreadOutlinedIcon from "@mui/icons-material/MarkEmailUnreadOutlined";
-import NavLink from "../nav-link/NavLink";
 import Link from "next/link";
 import useWindowSize from "@/hooks/useWindowSize";
 import { layoutConstant } from "@/utils/constants";
+import { useRouter } from "next/router";
 
 const iconStyle = {
 	marginBottom: "4px",
@@ -52,6 +52,8 @@ const Wrapper = styled(Box)(({ theme }) => ({
 }));
 
 const MobileBottomNavigation = ({ children }) => {
+	const router = useRouter();
+	console.log("router", router);
 	const width = useWindowSize();
 	const [open, setOpen] = React.useState(false);
 	const [value, setValue] = React.useState("home");
@@ -112,22 +114,22 @@ const MobileBottomNavigation = ({ children }) => {
 						);
 					} else {
 						return (
-							<a href="mailto:sales@bigwaytrading.com" key={item.label}>
-								<Box
-									sx={{
-										display: "flex",
-										flexDirection: "column",
-										alignItems: "center",
-										justifyContent: "center",
-										height: "100%",
-										width: "120px",
-									}}
-								>
-									{<item.icon sx={{ ...iconStyle }} fontSize="small" />}
+							<Box
+								onClick={() => router.replace("/#contacts")}
+								key={item.label}
+								sx={{
+									display: "flex",
+									flexDirection: "column",
+									alignItems: "center",
+									justifyContent: "center",
+									height: "100%",
+									width: "120px",
+								}}
+							>
+								{<item.icon sx={{ ...iconStyle }} fontSize="small" />}
 
-									<Typography sx={{ color: "white" }}>{item.label}</Typography>
-								</Box>
-							</a>
+								<Typography sx={{ color: "white" }}>{item.label}</Typography>
+							</Box>
 						);
 					}
 				})}
