@@ -32,8 +32,6 @@ const customStyle = {
 	},
 };
 
-console.log("process.env.PUBLIC_URL", process.env.PUBLIC_URL);
-
 const drawerWidth = 240;
 
 const Header = (props) => {
@@ -81,10 +79,7 @@ const Header = (props) => {
 			<Toolbar sx={{ height: "80px" }} />
 			<Divider />
 			<List>
-				{[
-					{ title: "Towels", link: "towels" },
-					{ title: "Beddings", link: "beddings" },
-				].map((text, index) => (
+				{navItems.map((text, index) => (
 					<ListItem key={text.title} disablePadding>
 						<Link href={`/#${text.link}`}>
 							<ListItemButton>

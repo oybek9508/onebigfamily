@@ -189,7 +189,7 @@ const Footer = ({ isFixed }) => {
 					xs={12}
 					md={2}
 					sx={{
-						display: { xs: "none", md: "flex" },
+						display: "flex",
 						justifyContent: "center",
 					}}
 				>
@@ -199,15 +199,26 @@ const Footer = ({ isFixed }) => {
 						md={7}
 						sx={{
 							display: "flex",
-							flexDirection: "column",
+							flexDirection: { xs: "row", md: "column" },
 							alignItems: "flex-start",
 							justifyContent: "center",
 							mt: 2,
 							gap: 3,
 						}}
 					>
-						<Typography sx={{ color: "#fff", fontWeight: 600, fontSize: 18 }}>Follow us</Typography>
-						<Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 1 }}>
+						<Typography
+							sx={{ display: { xs: "none", md: "block" }, color: "#fff", fontWeight: 600, fontSize: 18 }}
+						>
+							Follow us
+						</Typography>
+						<Box
+							sx={{
+								display: "flex",
+								flexDirection: { xs: "row", md: "column" },
+								alignItems: "flex-start",
+								gap: { xs: 2, md: 1 },
+							}}
+						>
 							<Link
 								target="_blank"
 								href="https://www.facebook.com/bigwaytradingllc?mibextid=LQQJ4d"
@@ -220,8 +231,10 @@ const Footer = ({ isFixed }) => {
 										gap: 0.5,
 									}}
 								>
-									<FacebookIcon />
-									<Typography sx={phoneStyle}>Facebook</Typography>
+									<FacebookIcon sx={{ fontSize: { xs: 40, md: 24 } }} />
+									<Typography sx={{ ...phoneStyle, display: { xs: "none", md: "block" } }}>
+										Facebook
+									</Typography>
 								</Box>
 							</Link>
 							<Link
@@ -230,8 +243,10 @@ const Footer = ({ isFixed }) => {
 								style={{ textDecoration: "underline", cursor: "pointer", color: "white" }}
 							>
 								<Box sx={{ display: "flex", alignContent: "center", gap: 0.5 }}>
-									<InstagramIcon />
-									<Typography sx={phoneStyle}>Instagram</Typography>
+									<InstagramIcon sx={{ fontSize: { xs: 40, md: 24 } }} />
+									<Typography sx={{ ...phoneStyle, display: { xs: "none", md: "block" } }}>
+										Instagram
+									</Typography>
 								</Box>
 							</Link>
 						</Box>
